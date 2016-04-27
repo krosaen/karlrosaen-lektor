@@ -14,6 +14,6 @@ body:
 <p>
     This website is hosted statically on Amazon S3 and built with
     <a href="http://getlektor.com">Lektor</a>. Source code available
-    <a href="#">on github</a>.
+    <a href="https://github.com/krosaen/karlrosaen-lektor">on github</a>.
 </p>
 
