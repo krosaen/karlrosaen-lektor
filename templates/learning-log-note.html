@@ -8,6 +8,24 @@
     </ol>
 {% endblock %}
 {% block body %}
+    {% set siblings = this.get_siblings() %}
+    {% set older = siblings.next_page %}
+    {% set newer = siblings.prev_page %}
+    <div class="prev-next">
+    {% if older %}
+        <div class="nav-prev">
+            <a href="{{ older|url }}">previous</a>
+        </div>
+    {% endif %}
+    {% if newer %}
+        <div class="nav-next">
+            <a href="{{ newer|url }}">next</a>
+        </div>
+    {% endif %}
+    <br>
+    </div>
+
+
     <p class="ll-summary">{{ this.summary }}</p>
     <h2>{{ this.title }}</h2>
     {{ this.body }}

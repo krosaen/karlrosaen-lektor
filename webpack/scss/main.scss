@@ -196,6 +196,21 @@ $breadcrumb-separator:          "/";
   }
 }
 
+.prev-next {
+  width: 100%;
+
+  .nav-prev {
+    float: left;
+  }
+  .nav-next {
+    float: right;
+    margin-right: 10px;
+  }
+  br {
+    clear: both;
+  }
+}
+
 
 
 
