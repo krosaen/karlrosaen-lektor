@@ -6,31 +6,7 @@ _discoverable: no
 ---
 body:
 
-### Prior Art
-
-This is not an original idea and there are some great posts & resources out there about a machine learning curriculum including:
-
-- [The Open Source Data Science Masters](http://datasciencemasters.org): another person who laid out a curriculum and worked through it.
-- [Quora thread: How do I learn Machine Learning?](https://www.quora.com/Machine-Learning/How-do-I-learn-machine-learning-1)
-- [Recommended ML Curriculum](http://sebastianraschka.com/faq/docs/ml-curriculum.html) from Sebastian Raschka, the author of the Python Machine Learning book that I'm working through
-
-### Getting inspired
-
-If you are just dabbling in ML here are some great resources to get you inspired and give you a lay of the land:
-
-- [Talking Machines Podcast](http://www.thetalkingmachines.com)
-- [The Master Algorithm](http://www.amazon.com/The-Master-Algorithm-Ultimate-Learning/dp/0465065708) and [my review on Amazon](http://www.amazon.com/review/R1BR5BVSKJAE7A)
-- [Becoming a data scientist podcast](http://www.becomingadatascientist.com)
-
-### Starting Point
-
-I'm not starting from scratch: I've written software professionally for many years in everything from C/C++ and Java to Python and Ruby and have a masters degree in computer engineering, which included a general engineering education with lot's of calculus courses. I've also dabbled with different ML tools and perused books over the years. So my curriculum doesn't include things like learning Python or how to slurp data from websites and clean things up.
-
-I think my weakest background is in probability, statistics and linear algebra. I took one course on each during my undergraduate program and seem to have retained more about linear algebra. 
-
-### Overview
-
-Without further ado, my curriculum includes 3 areas:
+My curriculum includes 3 areas:
 
 - Probability and Statistics fundamentals: [Stanford's Free online Probability and Statistics Course](https://lagunita.stanford.edu/courses/OLI/ProbStat/Open/about) and problem sets from the text [All of Statistics](http://www.amazon.com/All-Statistics-Statistical-Inference-Springer/dp/0387402721)
 - Applied ML techniques:  [Python Machine Learning](http://www.amazon.com/Python-Machine-Learning-Sebastian-Raschka/dp/1783555130) 
@@ -103,4 +79,24 @@ I have a sense that if I were comfortable proving, or at least following the pro
 In support of this, I've found that time spent on fundamentals of computing have never been wasted; I've probably taken a run at [SICP](https://mitpress.mit.edu/sicp/) 3 different times, making it further and learning new things each time, and believe it's made me a much better programmer.
 
 However, this idea that I will become a master mathematician along the way is quixotic and I want to make sure I keep my eye on the ball; I've so far done little more than peruse Brendan's book to give myself a big picture reminder of fundamental techniques and terminology that could be relevant when staring at a new theorem or formula. If nothing else it's a nice reminder of some of what makes up the foundations of math: sets, logic, induction, relations, functions.
+
+### Getting inspired
+
+If you are just dabbling in ML here are some great resources to get you inspired and give you a lay of the land:
+
+- [Talking Machines Podcast](http://www.thetalkingmachines.com)
+- [The Master Algorithm](http://www.amazon.com/The-Master-Algorithm-Ultimate-Learning/dp/0465065708) and [my review on Amazon](http://www.amazon.com/review/R1BR5BVSKJAE7A)
+- [Becoming a data scientist podcast](http://www.becomingadatascientist.com)
+
+### Prior Art
+
+This is not an original idea and there are some great posts & resources out there about a machine learning curriculum including:
+
+- [The Open Source Data Science Masters](http://datasciencemasters.org): another person who laid out a curriculum and worked through it.
+- [Quora thread: How do I learn Machine Learning?](https://www.quora.com/Machine-Learning/How-do-I-learn-machine-learning-1)
+- [Recommended ML Curriculum](http://sebastianraschka.com/faq/docs/ml-curriculum.html) from Sebastian Raschka, the author of the Python Machine Learning book that I'm working through
+
+### Starting Point
+
+I'm not starting from scratch: I've written software professionally for many years in everything from C/C++ and Java to Python and Ruby and have a masters degree in computer engineering, which included a general engineering education with lot's of calculus courses. I've also dabbled with different ML tools and perused books over the years. So my curriculum doesn't include things like learning Python or how to slurp data from websites and clean things up and you may wish to consult other guides for good resources on the fastest way to get up to speed on programming as it most relates to ML / data science.
 
