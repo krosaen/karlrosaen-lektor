@@ -48,7 +48,7 @@ header {
     }
   }
 
-  @media (min-width: 400px) {
+  @media (min-width: 360px) {
     ul {
       margin-top: 0;
       display: inline-block;
@@ -147,6 +147,10 @@ ul.ll-list {
 
       > a {
         text-decoration:none;
+
+        > .pub-date {
+          text-decoration: underline;
+        }
       }
     }
 

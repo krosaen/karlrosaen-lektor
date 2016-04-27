@@ -15,7 +15,7 @@
     <ul class="ll-list">
         {% for note in this.pagination.items %}
             <li>
-                <h3><a href="{{ note|url }}">{{ note.pub_date | dateformat('E, M/d') }}—{{ note.summary }}</a></h3>
+                <h3><a href="{{ note|url }}"><span class="pub-date">{{ note.pub_date | dateformat('E, M/d') }}</span>—<span class="summary">{{ note.summary }}</span></a></h3>
             </li>
         {% endfor %}
     </ul>
