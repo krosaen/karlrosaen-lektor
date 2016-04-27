@@ -3,11 +3,11 @@ pub_date: 2016-03-16
 body:
 
 Today I wrapped up playing with the NBA game net rating data set in a
-Jupyter IPython notebook ([on github](https://github.com/krosaen/ml-study/blob/master/basic-stats/nba-games-net-rating-boxplots/NbaTeamGameNetRatingsPlots.ipynb)).
+[Jupyter IPython notebook](http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/basic-stats/nba-games-net-rating-boxplots/NbaTeamGameNetRatingsPlots.ipynb).
 Not exactly setting the world on fire but was nice to get the basics going with
 Jupyter notebooks and to figure out how to make it viewable on github.
 
-<a target=_blank href="https://github.com/krosaen/ml-study/blob/master/basic-stats/nba-games-net-rating-boxplots/NbaTeamGameNetRatingsPlots.ipynb">
+<a target=_blank href="http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/basic-stats/nba-games-net-rating-boxplots/NbaTeamGameNetRatingsPlots.ipynb">
    <img src="boxplot.png" width=400>
 </a>
 
