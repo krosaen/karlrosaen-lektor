@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block title %}Karl Rosaen{% endblock %}
+{% block body %}
+
+    <p>
+        Hey, I'm Karl.
+    </p>
+    {% set me = this.attachments.get('karl-square2.jpg') %}
+    <img src="{{ me.thumbnail(400) | url }}" width="200">
+
+    <p>
+        I'm currently in the midst of a
+        <a href="{{ '/learning-sabbatical' | url }}">learning sabbatical</a>
+        focused <a href="{{ '/ml' | url }}">on machine learning</a> in Ann Arbor
+        and most recently lead product and engineering at <a href="http://food52.com">Food52</a>.
+    </p>
+
+    <p>
+        You can find me on
+        <a href="http://twitter.com/krosaen">Twitter</a>,
+        <a href="http://github.com/krosaen">Github</a>,
+        <a href="http://instagram.com/krosaen">Instagram</a>,
+        <a href="https://food52.com/users/43983-karl-rosaen">Food52</a>,
+        and <a href="https://www.linkedin.com/in/karlrosaen">LinkedIn</a>.
+    </p>
+
+    {{ this.body }}
+
+
+
+{% endblock %}

@@ -1,0 +1,19 @@
+_model: page
+---
+_template: about.html
+---
+_discoverable: no
+---
+body:
+
+<p>
+    I'm also a huge Detroit Pistons fan—my brother and I have
+    <a href="http://brosaen.com">a podcast</a> about them.
+</p>
+
+<p>
+    This website is hosted statically on Amazon S3 and built with
+    <a href="http://getlektor.com">Lektor</a>. Source code available
+    <a href="#">on github</a>.
+</p>
+

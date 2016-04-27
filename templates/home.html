@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block title %}Karl Rosaen{% endblock %}
+{% block body %}
+    <p>
+        Hey, I'm Karl.
+    </p>
+
+    <p>
+        I'm currently in the midst of a
+        <a href="{{ '/learning-sabbatical' | url }}">learning sabbatical</a>
+        focused <a href="{{ '/ml' | url }}">on machine learning</a> in Ann Arbor.
+    </p>
+
+    <p>
+        You can read more about me
+        <a href="{{ '/about' | url }}">here</a>
+        if you like, and find me on
+        <a href="http://twitter.com/krosaen">Twitter</a>,
+        <a href="http://github.com/krosaen">Github</a>,
+        <a href="http://instagram.com/krosaen">Instagram</a>,
+        <a href="https://food52.com/users/43983-karl-rosaen">Food52</a>,
+        and <a href="https://www.linkedin.com/in/karlrosaen">LinkedIn</a>.
+    </p>
+
+    <h3>Latest Posts</h3>
+    <ul>
+        {% for article in this.children %}
+            <li><a href="{{ article | url }}">{{ article.title }}</a></li>
+        {% endfor %}
+
+    </ul>
+{#    <p><a href="#">RSS Feed</a></p>#}
+
+{% endblock %}

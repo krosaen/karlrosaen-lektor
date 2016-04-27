@@ -1,0 +1,28 @@
+pub_date: 2016-03-16
+---
+body:
+
+Today I wrapped up playing with the NBA game net rating data set in a
+Jupyter IPython notebook ([on github](https://github.com/krosaen/ml-study/blob/master/basic-stats/nba-games-net-rating-boxplots/NbaTeamGameNetRatingsPlots.ipynb)).
+Not exactly setting the world on fire but was nice to get the basics going with
+Jupyter notebooks and to figure out how to make it viewable on github.
+
+<a target=_blank href="https://github.com/krosaen/ml-study/blob/master/basic-stats/nba-games-net-rating-boxplots/NbaTeamGameNetRatingsPlots.ipynb">
+   <img src="boxplot.png" width=400>
+</a>
+
+I also wrapped up the "examining distributions" section of the stanford stats class.
+
+Concepts:
+
+- The standard deviation is the average squared delta from the mean
+- similar to mean it is heavily affected by outliers and best suited for symmetric datasets, otherwise box plots are likely better
+- The standard deviation rule: for a normal distribution, 68% of the data falls within 1 std deviation of the mean, 95% fall within 2 and 99.7% fall within 3.
+
+Techniques:
+- calculate the standard deviation of a data set
+- report what % fall within 1, 2 and 3 standard deviations
+- Given mean and std deviation, apply standard rule to answer questions like: what range will 95% of the observations fall? What % of observations will fall above 1 std deviation from mean?
+
+---
+summary: IPython notebook on nba game net ratings and "examining distributions" in stats course.

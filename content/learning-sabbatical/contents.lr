@@ -1,0 +1,85 @@
+pub_date: 2016-04-25
+---
+title: A Learning Sabbatical
+---
+body:
+
+I recently left my job leading product and engineering at [a startup](http://food52.com) and embarked on what I've come to call a "learning sabbatical" [focused on machine learning](/ml/).
+
+I love learning and have certainly learned more about software engineering and product development since graduating years ago than during the program. In addition to getting practical experience, there's the continuous scanning of new technologies, nighttime readings, occasional dabbling, all of which has allowed me to stay relatively up to date with recent developments and to make reasonable decisions about technologies to introduce at work.
+
+So I had a chance to learn plenty while at Food52: we learned React and brought it to bear on an internal CMS rewrite, applied Cascalog to build a batch processing system to continuously precompute per-user data that's expensive to query on the fly, and learned enough about Swift to feel comfortable committing to use it in a new app. Many of the principles I've absorbed by following the clojure community were instrumental in building a robust commerce system, albeit in ruby.
+
+### Enter Machine Learning
+
+One of the things I've been into learning more about over the past few years is machine learning, going back to taking [Andrew NG's course](https://www.coursera.org/learn/machine-learning/) when it was still hosted on Stanford's website, and perusing through [various]((http://www.cs.cmu.edu/~tom/mlbook.html) [books](http://www.amazon.com/Programming-Collective-Intelligence-Building-Applications/dp/0596529325) along the way. In the past year especially there's been an explosion in interest, press coverage and resources available to learn more about it too, even a book intended for a general audience, [The Master Algorithm](http://www.amazon.com/Master-Algorithm-Ultimate-Learning-Machine/dp/0465065708), which I highly recommend.
+
+<aside class='pullquote'>
+<blockquote>
+<p>
+I've been getting an increasingly urgent sense that machine learning is going to have as big an impact on the world as (hand written) software itself, and will be at least a component of most software systems in the future.
+</p>
+</blockquote>
+</aside>
+
+I think the hype around machine learning is well founded. Usually when we write software, we take a look at some desired transformation of data and figure out how to make that happen by hand, painstakingly, by writing code. That's still a big win because once you write the code, it can run a bazillion times and automate what would otherwise be a manual process of, say, producing a financial report about last month's orders, or rendering a web page personalized to a user every time they visit a website. With machine learning, you show a program some examples of what you want to happen and it figures out how to do that, and how to generalize to new examples. 
+
+For example, say we wish to extract box scores from a sports website and we notice that the data tends to appear in a particular place in each game summary page. We could hand write a program to scrape this information from each page, or we could use machine learning and train a model by showing it examples of pages and the box score data we wish to extract, and it could figure out how to do that automatically. And for certain applications, like recognizing faces in images, machine learning surpasses what humans can do by hand, no matter how hard we try. 
+
+Machine learning, when it can be applied effectively, automates the automation, in that it automates generating programs, than in turn automate some other mundane process. Sounds kind of important :) While this is a gross simplification of both software and machine learning, I've been getting an increasingly urgent sense that machine learning is going to have as big an impact on the world as (hand written) software itself, and will be at least a component of most software systems in the future.
+
+### Not so easy
+
+Learning ML, however, has been harder for me than, say, picking up a new programming language, web framework or database management system. There are very approachable tutorials and books out there that can walk you through some interesting examples—classifying datasets, recognizing hand written digits from images and the like. But the deeper I dive the more confident I am that a mastery of fundamental principals of probability and statistics is key to applying machine learning with confidence. "I followed a tutorial and have a python / scikit-learn script to classify hand written digits" is the new, "I followed this ruby on rails tutorial and produced a twitter clone"—it's a good start, but a far cry from software engineering. And while [I've tried](https://twitter.com/krosaen/status/643760233077207040) to bone up on statistics with regular bite-sized sessions, it is just, well, harder for me than the familiar world of software, and it's been ages since I took the one stats class in college.
+
+<aside class='pullquote'>
+<blockquote>
+<p>
+Wouldn't it be great, I thought, if I could just have a few months to dive into this stuff and gain the mastery I need to really consider machine learning part of my toolkit, wherever that may lead?
+</p>
+</blockquote>
+</aside>
+
+Combine the difficulty of diving into an unfamiliar field with an increasingly packed schedule leading a growing team at work and throw in a new baby at home, and I was left with a lot of chapter-1-and-done's and unfinished coursera courses.
+
+Wouldn't it be great, I thought, if I could just have a few months to dive into this stuff and gain the mastery I need to really consider machine learning part of my toolkit, wherever that may lead? As the end of the year approached and I got some time off I had some head space to start considering a plan concretely. I even had some family encouragement:
+
+<img src="dad-encouragement.png" width=260>
+
+(that's my dad after reading [The Master Algorithm](http://www.amazon.com/Master-Algorithm-Ultimate-Learning-Machine/dp/0465065708))
+
+Thankfully one of the biggest obstacles was already met: savings. I'm very fortunate and won't pretend this is an option for everyone, but each time my pay has increased or I receive any sort of bonus or stock option payout, I'm careful to not immediately upgrade my life style (too much). This allowed for starting Real Time Farms years ago, and after a few more years working again, the tank had refilled enough that considering taking a few months off was again an option.
+
+So we're good, just quit my job right? Well, what about the next job? Isn't looking for work while unemployed a much weaker position than from an existing one? But I didn't want a new job. I just wanted some time to learn. And I couldn't leap directly into a position requiring the machine learning expertise I didn't have.
+
+<aside class='pullquote'>
+<blockquote>
+<p>
+Will employers holding the kind of jobs I'll ultimately seek take my "self study" seriously? 
+</p>
+</blockquote>
+</aside>
+
+What about credentials? Will employers holding the kind of jobs I'll ultimately seek take my "self study" seriously? Would I be better off going back to school? As for school, well, I already have a masters degree and I have a feeling that the coursework available at universities is no better for an already primed engineer than what's available for free online. There is just *so much* great material available, from books, to tutorials, to open source courseware with videos, problem sets, everything. I suspected that on balance, going back to school would be less focused on exactly what I wanted to learn. Plus, you can't beat the tuition prices of studying at home using free or inexpensive resources.
+
+As for credentials, I'm not the [first](http://datasciencemasters.org/) [person](http://www.becomingadatascientist.com/) to try something like this, and while I'm sure some companies will only let proven machine learning researchers touch anything related to ML, I'm thankful that the field of technology is very meritocratic, and so long as I can actually gain expertise and skills during my studies, I'm reasonably confident there will be companies that will take a chance.
+
+The final hurdle was the fear of disappointing my co-workers and hurting my company. I was advised by many not to worry too much about this (would a company think twice of leaving an employee if it felt it needed to?), but it was hard, particularly at a startup where every person holds what seems to be a vital role, and the bonds created are closer to college roommate level than professional acquaintances. Totally irrational (as it turns out) visions of everyone hating me kept me up at night. Nothing really fixed this, but coming up with a transition plan that I would have ready to propose, along with being prepared to give 2 months notice, helped.
+
+### Making the leap
+
+After a few days of hand wringing, the decision finally stuck. I was going to leave my job, that was it. When the new year rolled in and I told the team, they were surprised but took the news in stride, and appreciated my willingness to spend several weeks helping transition.  I spent the next few weeks helping transition, and nothing has exploded so far as I can tell, though I can't guarantee there hasn't been or won't continue to be transition pain left at the hands of my friends there.
+
+<aside class='pullquote'>
+<blockquote>
+<p>
+Some of my fears remain and won't be resolved until I'm back in the workforce.
+</p>
+</blockquote>
+</aside>
+
+So here I am, a few weeks in. You can read more about my curriculum [here](/ml) and follow along [here](/ml/learning-log). It's slightly embarrassing how elementary my studies are at this point, but between going on a 2 week vacation and getting this dang website setup, I've only had about 2 weeks of study so far and hope to have more to show soon.
+
+Some of my fears remain and won't be resolved until I'm back in the workforce. It will be hard to keep focused and progress through the curriculum I have laid out and continue to hone, and it will be hard to know when to stop. But so far I am 100% happy that I've made this modest leap in my life and am enjoying learning full time again for the first time many years.
+
+And what about you? Do you have a burning desire to take some time off and study a topic? I don't think it would be an entirely irrational plan. Just be sure to find an area of focus that really merits a deep dive. A few months of dabbling seems unlikely to lead to expertise deep enough to apply on the (new) job. Also: if you can, save your money. The difference between leasing a car and and driving an old beater (or no car at all) can add up to 3-4 months of living expenses over the course of a few years. Carving out time to spend gaining new expertise every few years may be the best investment you could possibly make.

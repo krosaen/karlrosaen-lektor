@@ -1,0 +1,61 @@
+pub_date: 2016-04-25
+---
+title: What Machine Learning Means for Product Development
+---
+body:
+
+A successful new product delivers a compelling user experience for an unmet need. I think this is why there is such a natural marriage between technology and product development; as technology progresses it opens up feasibility of meeting previously unmet or poorly met needs. When something big happens, like the web, or the advent of pocket supercomputers aka smart phones, we all get to dream up ways these things can be leveraged to deliver value to users.
+
+New technology is particularly exciting for entrepreneurs and underdogs. Established companies eventually get a lock on new markets. For example, it is increasingly difficult for a solo developer to build a profitable app, but when the iPhone and Android first launched, there was a window there where those who quickly saw ways smartphones could meet previously poorly met needs, like easily sharing photos or finding nearby places to eat, could make a killing.
+
+<aside class='pullquote'>
+<blockquote>
+<p>
+What are things that still feel like busy work but you assume must still require humans? Maybe they don't! 
+</p>
+</blockquote>
+</aside>
+
+I think machine learning is increasingly becoming something that every product dreamer needs to be at least somewhat versed in, as it unlocks UX that would have previously seemed like magic. But the key is knowing what remains magic and what is actually possible, or near possible. So while having an interface that can take commands via text or voice is now a reality, it would still be too big a leap to say, "imagine a robot that can babysit my 2 year old", or at least for a small startup :)
+
+Here are some areas that are thriving:
+- Inferring structure from loosely specified natural input
+- Recommending things for you based on your interests (e.g amazon with products, netflix with movies)
+- Automating things that used to require human intervention; routine human like responses and interactions. What are things that still feel like busy work but you assume must still require humans? Maybe they don't! 
+- A computer that can see, hear, understand more
+- Customization at scale
+
+To make this more concrete, here are some comparisons for new ideas that were successful years ago and ones that might have a better shot today. Note that the ideas on the left are not bad, just already have been done well and/or addressed by several companies.
+
+<table>
+<tr>
+  <th>Before ML</th>
+  <th>After ML</th>
+</tr>
+<tr>
+  <td>Track customer relationships</td>
+  <td>Automate follow ups and replies for customer relationships</td>
+</tr>
+<tr>
+  <td>Simple UI for managing my photos into collections and albums</td>
+  <td>Automatically organize my photos and let me search by face, location, thing...</td>
+</tr>
+<tr>
+  <td>Crowd sourced recipe database</td>
+  <td>Tell me what to cook based on interests revealed in my Twitter and Instagram feeds</td>
+</tr>
+<tr>
+  <td>Easy to use website and app for tracking my finances and budgets</td>
+  <td>Analyze my expenses and tell me how my budget compares to other people with similar income, tell me the most effective way to save more money</td>
+</tr>
+<tr>
+  <td>Hot or not?</td>
+  <td>AmIHot?</td>
+</tr>
+<tr>
+  <td>iFart</td>
+  <td>Who Farted?</td>
+</tr>
+</table>
+
+Of course, new technology provides no guarantee that what you want to build will actually help people, and I'm guessing that ML aided smart flops will be as amusing as ever. But it's becoming realistic to imagine that new products will start to understand us and that they should require less work on our part to give us what we need.

@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block breadcrumbs %}
+    <ol class="breadcrumb">
+        <li><a href="{{ '/ml' | url }}">ML Study</a></li>
+        <li class="active">Learning Log</li>
+    </ol>
+{% endblock %}
+{% from "macros/pagination.html" import render_pagination %}
+{% block body %}
+    <h2>Learning Log</h2>
+    <p>
+        Day to day reflections as I work my way through the curriculum. Find related
+        <a href="https://github.com/krosaen/ml-study">IPython notebooks and Python sourcecode here</a>.
+    </p>
+    <ul class="ll-list">
+        {% for note in this.pagination.items %}
+            <li>
+                <h3><a href="{{ note|url }}">{{ note.pub_date | dateformat('E, M/d') }}—{{ note.summary }}</a></h3>
+            </li>
+        {% endfor %}
+    </ul>
+
+    {% if this.pagination.pages > 1 %}
+        {{ render_pagination(this.pagination) }}
+    {% endif %}
+{% endblock %}

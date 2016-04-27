@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block title %}{{ this.title }}{% endblock %}
+{% block body %}
+    <h2>{{ this.title }}</h2>
+    <span class="published-at">{{ this.pub_date|dateformat('MMMM YYYY') }}</span>
+    <article class="post">
+    {{ this.body }}
+    </article>
+{% endblock %}

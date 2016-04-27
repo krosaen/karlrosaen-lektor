@@ -1,0 +1,106 @@
+_model: ml-curriculum
+---
+_template: ml.html
+---
+_discoverable: no
+---
+body:
+
+### Prior Art
+
+This is not an original idea and there are some great posts & resources out there about a machine learning curriculum including:
+
+- [The Open Source Data Science Masters](http://datasciencemasters.org): another person who laid out a curriculum and worked through it.
+- [Quora thread: How do I learn Machine Learning?](https://www.quora.com/Machine-Learning/How-do-I-learn-machine-learning-1)
+- [Recommended ML Curriculum](http://sebastianraschka.com/faq/docs/ml-curriculum.html) from Sebastian Raschka, the author of the Python Machine Learning book that I'm working through
+
+### Getting inspired
+
+If you are just dabbling in ML here are some great resources to get you inspired and give you a lay of the land:
+
+- [Talking Machines Podcast](http://www.thetalkingmachines.com)
+- [The Master Algorithm](http://www.amazon.com/The-Master-Algorithm-Ultimate-Learning/dp/0465065708) and [my review on Amazon](http://www.amazon.com/review/R1BR5BVSKJAE7A)
+- [Becoming a data scientist podcast](http://www.becomingadatascientist.com)
+
+### Starting Point
+
+I'm not starting from scratch: I've written software professionally for many years in everything from C/C++ and Java to Python and Ruby and have a masters degree in computer engineering, which included a general engineering education with lot's of calculus courses. I've also dabbled with different ML tools and perused books over the years. So my curriculum doesn't include things like learning Python or how to slurp data from websites and clean things up.
+
+I think my weakest background is in probability, statistics and linear algebra. I took one course on each during my undergraduate program and seem to have retained more about linear algebra. 
+
+### Overview
+
+Without further ado, my curriculum includes 3 areas:
+
+- Probability and Statistics fundamentals: [Stanford's Free online Probability and Statistics Course](https://lagunita.stanford.edu/courses/OLI/ProbStat/Open/about) and problem sets from the text [All of Statistics](http://www.amazon.com/All-Statistics-Statistical-Inference-Springer/dp/0387402721)
+- Applied ML techniques:  [Python Machine Learning](http://www.amazon.com/Python-Machine-Learning-Sebastian-Raschka/dp/1783555130) 
+- Capstone project 
+
+I view this as attacking understanding and ability in machine learning from the bottom, the middle and the top. 
+
+#### Probability and Statistics
+
+Another name for machine learning is statistical inference. I get the sense that the machine learning community is a bit more willing to use whatever tools empirically work than the applied stats community, which prefers to have stronger theoretical underpinnings for how/why a particular statistical model can be predictive under certain circumstances (the Talking Machines Podcast as well as The Master Algorithm book are both great for getting this overview). But the two fields are very tightly related and the more I read the more it seems like it's often a tomato / tomahto situation, for instance, [this paper](http://www.robots.ox.ac.uk/~szheng/papers/CRFasRNN.pdf) showing how conditional random fields, a probabilistic graphical model (the fanciest kind of statistical model as far as I can tell) can be modeled as a recurrent neural network. The [section on graphical models in The Deep Learning book](http://www.deeplearningbook.org/contents/graphical_models.html) also gives a nod to the relationship between the two fields.
+
+With this in mind, if I want to have a deeper intuition for how many of these techniques work, I really need to understand probability and statistics deeply. And it's not easy to just dive right into conditional random fields if you don't know the basics about random variables, probability distributions and the like cold. I think it's also important to understand bread and butter techniques like linear and logistic regression as they should be the first thing attempted on most datasets before fancier models are deemed necessary.
+
+So my goal in this section is to start at the bottom and work my way through:
+
+- [Stanford's Free online Probability and Statistics Course](https://lagunita.stanford.edu/courses/OLI/ProbStat/Open/about): a very basic introduction to statistics; it doesn't get to random variables until about half way through. While has seemed almost *too* basic at times, for instance reviewing the mean, median and mode, I'm already glad to have spent time on it and have spiced it up by applying some of the basics to data sets of interest to me (e.g [box plots of NBA teams' margin of victory](http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/basic-stats/nba-games-net-rating-boxplots/NbaTeamGameNetRatingsPlots.ipynb)).
+- [All of Statistics](http://www.amazon.com/All-Statistics-Statistical-Inference-Springer/dp/0387402721) book and problem sets from CMU's [course from the author of the](http://www.stat.cmu.edu/~larry/=stat705/) and its more introductory CS counterpart [CS 36-700](https://www.dropbox.com/s/5xf2mfd7k6w0ipk/syllabus.pdf?dl=0). Note that some of the materials for the latter appears to no longer be online, but I nabbed some of the problem sets before.
+
+What I appreciate about the All of Statistics book compared to others I've looked at, including my text from college, is that it doesn't spend too much time on counting methods (knowing how many ways one can deal a full house with a deck of cards isn't particularly relevant) and is otherwise more comprehensive, getting into some techniques for statistical inference.
+
+#### Applied ML Techniques
+
+The goal of this area is to have confidence actually applying machine learning techniques to real data sets and includes many practical considerations such as cleaning up and normalizing data, choosing the right model, cross validating to avoid overfitting, evaluating performance and things like that. I already worked through about half of Andrew NG's course (now [on Coursera](https://www.coursera.org/learn/machine-learning/)) years ago, and am tempted to start over, but I recently came across a book, [Python Machine Learning](http://www.amazon.com/Python-Machine-Learning-Sebastian-Raschka/dp/1783555130) that is just fantastic. Similar to NG's course, it mixes theoretical background, hand implemented algorithms and use of off the shelf tools, and I prefer to work through examples in Python and IPython notebooks, and it will be nice to get familiar with [Scikit-learn](http://scikit-learn.org/). It's also great that the author has made the source code for all notebooks related to the book [available on github](https://github.com/rasbt/python-machine-learning-book).
+
+So far [I've begun worked through the book example by example](http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/python-ml-book/ch02/ch02.ipynb) myself, avoiding looking at his solutions if at all possible.
+
+#### Capstone Project
+
+Once I'm about halfway through the ML book, I want to start carving out time to regularly work on a capstone project: something that will challenge me to apply some of the skills I've gained and also inspire further study of topics that become important to solving the challenge at hand. I have tons of ideas and will share more when things become concrete.
+
+One great resource for this is [Kaggle](https://www.kaggle.com) which hosts data science competitions. There are many real world data sets and problems, and you are welcome to submit a model and see how you fare even after a competition closes. Winners of each competition often post their solutions. I view entering a Kaggle competition or two as a good fallback should my ideas prove unrealistic.
+
+### Exhaustive list of Resources 
+
+Here are the resources on my radar—let me know if there's anything not here that I should seriously consider or that might bump one of the choices made above.
+
+Some areas, like linear algebra, I've decided to skip completely for the time being and get by on my rusty skills as long as I can, but it may turn out I find it becomes vital to brush up.
+
+### ML
+
+- [Andrew NG's ML course](https://www.coursera.org/learn/machine-learning)
+- http://statweb.stanford.edu/~tibs/ElemStatLearn/
+- [Advanced Data Analysis from an Elementary Point of View](http://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/)
+- [Machine Learning for Hackers](http://xyclade.github.io/MachineLearning/)
+- [Probabilistic Programming & Bayesian Methods for Hackers](http://camdavidsonpilon.github.io/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/)
+- [The Deep Learning Book](http://www.deeplearningbook.org/contents/graphical_models.html)
+  - this has a great [overview of graphical models](http://www.deeplearningbook.org/contents/graphical_models.html)
+- [Elements of Statistical Learning](http://statweb.stanford.edu/~tibs/ElemStatLearn/)
+- [Data Science from Scratch](http://www.amazon.com/Data-Science-Scratch-Principles-Python/dp/149190142X): I bought this book and have enjoyed perusing.
+
+### Probability and statistics
+
+- [Stanford's online intro to Probability and Statistics](https://lagunita.stanford.edu/courses/OLI/ProbStat/Open/about)
+- [All of Statistics - A Concise Course in Statistical Inference](http://www.stat.cmu.edu/~larry/all-of-statistics/)
+- [CMU's Intermediate Statistics course with problem sets / solutions from book](http://www.stat.cmu.edu/~larry/=stat705/)
+
+### Linear Algebra
+
+- [Linear Algebra Notes](http://www.cs.cmu.edu/~zkolter/course/linalg/linalg_notes.pdf)
+- [Free Linear Algebra Text](http://joshua.smcvt.edu/linalg.html/)
+- [Linear Algebra course MIT's Open Courseware](http://ocw.mit.edu/courses/mathematics/18-06sc-linear-algebra-fall-2011/index.htm)
+
+### Math & Proofs fundamentals
+
+- [Introduction to Proofs, an Inquiry-Based approach](http://joshua.smcvt.edu/proofs/)
+- "Everything You Always Wanted To Know About Mathematics (But didn’t even know to ask)"—the text for [CMU's Concepts of Mathematics course](https://www.andrew.cmu.edu/course/21-127/) by [Brendan Sullivan](http://math.cmu.edu/~bwsulliv/): he apparently wrote this book for [his PHD thesis](http://math.cmu.edu/~bwsulliv/defense.pdf). The book doesn't seem to be available for purchase or download online, but the author was kind enough to send me a copy when I emailed and asked: how cool!
+
+I have a sense that if I were comfortable proving, or at least following the proofs of important theorems in statistics, deeper insights would stick. I think that's the problem I've had in the past with stats coursework: it's so easy to glaze over 3 pages of dense text that includes 4-5 theorems without understanding much more than how to plug and chug. One theorem I've already spent some time with proving and re-proving is Bayes'.
+
+In support of this, I've found that time spent on fundamentals of computing have never been wasted; I've probably taken a run at [SICP](https://mitpress.mit.edu/sicp/) 3 different times, making it further and learning new things each time, and believe it's made me a much better programmer.
+
+However, this idea that I will become a master mathematician along the way is quixotic and I want to make sure I keep my eye on the ball; I've so far done little more than peruse Brendan's book to give myself a big picture reminder of fundamental techniques and terminology that could be relevant when staring at a new theorem or formula. If nothing else it's a nice reminder of some of what makes up the foundations of math: sets, logic, induction, relations, functions.
+

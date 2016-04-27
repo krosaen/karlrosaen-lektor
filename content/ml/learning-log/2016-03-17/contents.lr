@@ -1,0 +1,46 @@
+pub_date: 2016-03-17
+---
+body:
+
+Switching gears today and beginning to work my way through Python Machine Learning. I read through this before but now want to go through it again more slowly, trying out each example myself and perhaps applying the techniques to new datasets as I go. I chose this book because it has a nice balance of conceptual background and practical application of libraries. It also has a great overview of the important details of applying an algorithm, including data pre-processing, dimensionality reduction, evaluating the model by comparing one trained on one portion of the dataset against an unseen segment (e.g does it seem to generalize), hyperparamter tuning etc. These concerns were also covered in Andrew NG's machine learning class that I took part of a couple of years ago and while I by no means remember everything from that course, I remember enough to know that this book does a good job covering these topics.
+
+Working my way through this book and familiarizing myself with many of the algorithms available in scikit-learn is the 2nd of the 3 prongs in my ML curriculum, the first being stats and probability and the final being a larger project TBD (but ideas abound).
+
+Anyways, today it's chapters 1 and 2. Chapter 1 includes an overview of ML, how to get setup with the necessary tools and the like. I'm already setup with an install of python3, scikit-learn and Jupyter for IPython notebooks. I recommend using [anaconda](https://docs.continuum.io/anaconda/index) to quickly get setup with clean python installs, jupyter and the relevant libraries. I love jetbrains products and am using PyCharm for any python work not done directly in IPython notebooks. Every example in the book is [already available](https://github.com/rasbt/python-machine-learning-book) in notebook form, but I will work through [in my own](https://github.com/krosaen/ml-study/tree/master/python-ml-book) notebooks anyways.
+
+### Chapter 1 notes
+
+ML field overview:
+- supervised learning: generalize from labeled data
+  - classification: predicting categorical class labels (e.g spam, not spam, or is this the digit "1")
+  - regression: predicting continuous value (e.g predicting house price). Note: from stats terminology, this would be predicting a quantitative "ratio" variable
+- unsupervised learning: discover structure from unlabeled data
+- reinforcement learning: improve performance in dynamic environment optimizing based on a reward signal
+
+Comparing terminology from stats and ML:
+
+- dataset aka feature matrix
+- observation aka instance aka sample aka row aka x superscript i
+- variable aka feature aka dimension aka attributes aka measurements aka column aka x subscript j
+
+Predictive modeling overview
+
+- preprocessing: feature extraction and scaling, feature selection, dimensionality reduction, sampling
+- learning:
+  - model selection (e.g deciding among SVM, logistic regression, random forests...)
+  - cross-validation: comparing performance on validation subset which is distinct from training subset to avoid overfitting and have a better shot at performing well in final evaluation stage
+  - choosing performance metrics (e.g classification accuracy)
+  - hyperparameter optimization: tuning the knobs of the model
+- evaluation: how well does the tuned model perform on unseen test set?
+- prediction: your model in the wild! applying tuned model to new data
+
+One thing that's interesting to think about is how the dataset is segmented for different stages of this process. You separate training and validation sets right off the bat as you evaluate models and tune parameters. This makes sure you are not just fitting to the model that was used to generate / tune the model (e.g the weights of the nodes in a neural net). However, to make sure that you haven't overfit to the evaluation set during the tuning and model selection stages, there's one final check in the evaluation stage where you apply your model and tuned algorithm to a test set that was removed from all prior stages of the process.
+
+It's also worth noting that hyperparameter tuning is tuning is not the same thing as optimizing the weights in whatever model you are training. From the book, "Intuitively, we can think of those hyperparameters as parameters that are not learned from the data but represent the knobs of a model that we can turn to improve its performance..."
+
+### Chapter 2 notes
+
+This chapter dives into implementing some basic learning algorithms based on a single perceptron. I spent a couple of hours running the same code as the book provides, but slowing down to grok it. I needed some background knowledge about numpy and pandas data structures including data frames and numpy's fast vectorized multi-dimensional arrays.
+
+---
+summary: Getting into Python Machine Learning Book

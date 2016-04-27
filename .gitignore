@@ -1,0 +1,8 @@
+.idea*
+.DS_Store
+*.pyc
+*.egg-info
+.cache
+packages/*/build
+packages/*/dist
+webpack/node_modules

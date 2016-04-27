@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block title %}Machine Learning Curriculum{% endblock %}
+{% block breadcrumbs %}
+    <ol class="breadcrumb">
+        <li class="active">ML Study</li>
+    </ol>
+{% endblock %}
+{% block body %}
+
+    <p>
+        I recently <a href="{{ '/learning-sabbatical' | url }}">embarked on a learning sabbatical</a>
+        focused on machine learning. Here are resources for you to follow along if you like.
+    </p>
+
+
+    <ul>
+        <li><a href="{{ '/ml/learning-log' }}">Learning Log</a>: day to day reflections as I work my way through the
+            curriculum
+        </li>
+        <li><a href="https://github.com/krosaen/ml-study">IPython Notebooks and Python code</a> that accompany my
+            learning log
+        </li>
+    </ul>
+
+    <h2>Curriculum</h2>
+
+    {{ this.body }}
+
+{% endblock %}

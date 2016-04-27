@@ -1,0 +1,12 @@
+[project]
+name = karlrosaen
+url_style = absolute
+
+[packages]
+lektor-webpack-support = 0.1
+lektor-s3 = 0.2.3
+
+[servers.s3]
+name = S3
+enabled = yes
+target = s3://karlrosaen.com
