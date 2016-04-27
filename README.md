@@ -1,7 +1,7 @@
 # my website
 
-This is the repository for my website at
-[karlrosaen.com](https://karlrosaen.com/).
+This is the repository for my website (built with [lektor](https://www.getlektor.com/)) at
+[karlrosaen.com](http://karlrosaen.com/).
 
 To run:
 
@@ -15,5 +15,3 @@ and then run it like this:
 ```
 $ lektor server -f webpack
 ```
-
-
