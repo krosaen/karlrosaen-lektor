@@ -9,10 +9,10 @@ body:
 My curriculum includes 3 areas:
 
 - Probability and Statistics fundamentals: [Stanford's Free online Probability and Statistics Course](https://lagunita.stanford.edu/courses/OLI/ProbStat/Open/about) and problem sets from the text [All of Statistics](http://www.amazon.com/All-Statistics-Statistical-Inference-Springer/dp/0387402721)
-- Applied ML techniques:  [Python Machine Learning](http://www.amazon.com/Python-Machine-Learning-Sebastian-Raschka/dp/1783555130) 
-- Capstone project 
+- Applied ML techniques:  [Python Machine Learning](http://www.amazon.com/Python-Machine-Learning-Sebastian-Raschka/dp/1783555130)
+- Capstone project
 
-I view this as attacking understanding and ability in machine learning from the bottom, the middle and the top. 
+I view this as attacking understanding and ability in machine learning from the bottom, the middle and the top.
 
 #### Probability and Statistics
 
@@ -39,7 +39,7 @@ Once I'm about halfway through the ML book, I want to start carving out time to 
 
 One great resource for this is [Kaggle](https://www.kaggle.com) which hosts data science competitions. There are many real world data sets and problems, and you are welcome to submit a model and see how you fare even after a competition closes. Winners of each competition often post their solutions. I view entering a Kaggle competition or two as a good fallback should my ideas prove unrealistic.
 
-### Exhaustive list of Resources 
+### Exhaustive list of Resources
 
 Here are the resources on my radar—let me know if there's anything not here that I should seriously consider or that might bump one of the choices made above.
 

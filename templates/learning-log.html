@@ -8,6 +8,7 @@
 {% from "macros/pagination.html" import render_pagination %}
 {% block body %}
     <h2>Learning Log</h2>
+
     <p>
         Day to day reflections as I work my way through the curriculum. Find related
         <a href="https://github.com/krosaen/ml-study">IPython notebooks and Python sourcecode here</a>.
@@ -15,7 +16,9 @@
     <ul class="ll-list">
         {% for note in this.pagination.items %}
             <li>
-                <h3><a href="{{ note|url }}"><span class="pub-date">{{ note.pub_date | dateformat('E, M/d') }}</span>—<span class="summary">{{ note.summary }}</span></a></h3>
+                <h3><a href="{{ note|url }}"><span
+                        class="pub-date">{{ note.pub_date | dateformat('E, M/d') }}</span>—<span
+                        class="summary">{{ note.summary }}</span></a></h3>
             </li>
         {% endfor %}
     </ul>
@@ -23,4 +26,12 @@
     {% if this.pagination.pages > 1 %}
         {{ render_pagination(this.pagination) }}
     {% endif %}
+
+    <p>
+        <a class='atom-link' href="{{ '@atom/learning-log'|url }}">
+            <img src="{{ '/static/feed-icon-28x28.png' | asseturl }}" width="14px">
+            Atom Feed
+        </a>
+    </p>
+
 {% endblock %}
