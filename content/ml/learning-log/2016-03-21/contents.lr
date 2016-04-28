@@ -75,7 +75,9 @@ When examining how a categorical variable affects a quantitative variable, it's 
 
 When I [compared the distribution of margin of victory](http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/basic-stats/nba-games-net-rating-boxplots/NbaTeamGameNetRatingsPlots.ipynb) across 9 NBA teams in the eastern conference, that could be viewed as examining two variables: team (categorical) and margin of victory (quantitative).
 
+<a href="http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/basic-stats/nba-games-net-rating-boxplots/NbaTeamGameNetRatingsPlots.ipynb">
 <img src="team-victory-margin.png" width=400>
+</a>
 
 ##### C->C
 
