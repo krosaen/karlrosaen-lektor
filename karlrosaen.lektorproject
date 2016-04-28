@@ -1,7 +1,7 @@
 [project]
 name = karlrosaen
 url_style = absolute
-url = https://karlrosaen.com/
+url = http://karlrosaen.com/
 
 [packages]
 lektor-webpack-support = 0.1
