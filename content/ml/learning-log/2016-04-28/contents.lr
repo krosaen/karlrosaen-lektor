@@ -23,15 +23,17 @@ We can determine probability in two ways:
 
 You can verify the theoretical probability by conducting trials; as the number of trials increases, the observed probability will converge towards the theoretical (e.g after flipping a coin 1000 times, the number of heads will be close to 50% but if you flip a coin 10 times, you may very well observe something further from 50%).
 
+That relative frequency approaches the theoretical probability is called **the law of large numbers**.
+
 ### Simulating the birthday problem
 
 This stuff is kind of boring, so breaking out into python for a bit helped: here's [a simulation of the birthday problem in a notebook](http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/basic-stats/birthday_problem.ipynb).
 
-<a href="http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/basic-stats/birthday_problem.ipynb">
+<a href="/ml/notebooks/birthday-problem">
 <img src="birthday-bar.png" width=500>
 <a/>
 
-<a href="http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/basic-stats/birthday_problem.ipynb">
+<a href="/ml/notebooks/birthday-problem">
 <img src="birthday-hist.png" width=500>
 <a/>
 

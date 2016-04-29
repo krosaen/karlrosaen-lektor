@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block title %}{{ this.title }} | ML Notebooks{% endblock %}
+{% block extra_styles %}
+{#    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">#}
+    <link rel="stylesheet" href="{{ '/static/notebook.css'|asseturl }}">
+{% endblock %}
+{% set notebook_fname = "" + this._id + ".ipynb" %}
+{% block breadcrumbs %}
+    <ol class="breadcrumb">
+        <li><a href="{{ '/ml' | url }}">ML Study</a></li>
+        <li><a href="{{ '/ml/notebooks' | url }}">Notebooks</a></li>
+        <li class="active">{{ notebook_fname }} | {{ this.pub_date }} (<a href="{{ notebook_fname }}">download</a>)</li>
+    </ol>
+{% endblock %}
+{% block body %}
+    {% set siblings = this.get_siblings() %}
+    {% set older = siblings.next_page %}
+    {% set newer = siblings.prev_page %}
+    {% if older or newer %}
+    <div class="prev-next">
+    {% if older %}
+        <div class="nav-prev">
+            <a href="{{ older|url }}">previous</a>
+        </div>
+    {% endif %}
+    {% if newer %}
+        <div class="nav-next">
+            <a href="{{ newer|url }}">next</a>
+        </div>
+    {% endif %}
+    <br>
+    </div>
+    {% endif %}
+
+    {% set notebook_rendered_template = "rendered-notebooks/" + this._id + ".html" %}
+    {% include notebook_rendered_template %}
+
+{% endblock %}

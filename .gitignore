@@ -6,3 +6,5 @@
 packages/*/build
 packages/*/dist
 webpack/node_modules
+.ipynb_checkpoints
+templates/rendered-notebooks
