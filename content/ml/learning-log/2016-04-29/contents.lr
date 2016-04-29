@@ -1,0 +1,57 @@
+pub_date: 2016-04-29
+---
+body:
+
+## Hosting notebooks
+
+Got side tracked for a bit figuring out [how to render notebooks for viewing on this site](https://github.com/krosaen/karlrosaen-lektor/commit/f81cbb6fccbb53305578f8842750f581710a5327#diff-7439bf55e0e2344680688af9a17877df) but I'm [pleased with the result](/ml/notebooks/birthday-problem/). It's nice to not have to point to nbviewer.jupyter.org, which seems to have quota issues from time to time. Aside from lektor specific issues, the best way to host a rendered notebook within an existing layout on your site is:
+
+1. Render the notebook using the [jupyter nbconvert](http://nbconvert.readthedocs.io/en/latest/usage.html) command, e.g `jupyter nbconvert --to html --template basic mynotebook.ipynb`
+2. Include a stylesheet to make the notebook look nice. I cribbed [the one from the nbviewer website](http://nbviewer.jupyter.org/static/build/notebook.css).
+
+In any case, I think notebooks will be a nice way build up some longer lasting resources that are more centered around concepts than day to day progress. On a related note, I just came across [Peter Norvig's Introduction to Probability iPython Notebook](http://nbviewer.jupyter.org/url/norvig.com/ipython/Probability.ipynb) and look forward to working through it and to perhaps produce similar notebooks as I learn different concepts.
+
+## Probability defined
+
+Continuing [here](https://lagunita.stanford.edu/courses/OLI/ProbStat/Open/courseware/probability_finding/_m2_finding_probability/) in stanford course, the section, "Finding probability of events".
+
+Note: this also overlaps some of the material from chapter 1 of "All of Statistics", I'm enumerating all terminology below.
+
+
+- &Omega;: Sample space
+- &omega;: outcome or point in &Omega;
+- A: an event, which is a subset of &Omega;, or a set of &omega;<sub>i</sub>s
+
+Example: tossing a coin three times.
+
+&Omega; = {HHH, THH, HTH, HHT, HTT, THT, TTH, TTT}
+
+Some example events within this sample space:
+- There are no heads: {TTT}
+- Getting exactly one head: {HTT, THT, TTH}
+- Getting at least one head: {HHH, THH, HTH, HHT, HTT, THT, TTH}
+
+### Probability of outcomes and events
+
+Assuming **equally likely outcomes**, the probability of an event is |A| / |&Omega;| or the number of outcomes in A divided by the total number of outcomes.
+
+So the probability of getting exactly one head is 3/8.
+
+It's not always easy (or can be tedious) to enumerate every outcome in a sample space; this is where counting methods can come in handy. For example, the number of outcomes in the sample space, "chose two cards from a deck" is equal to 52 * 51, since you have 52 choices the first time and 51 the second.
+
+Also, It's not always the case that outcomes are equally likely but there are some rules that are always true concerning events and probabilities.
+
+- the probability of any given outcome is between 0 and 1
+- the sum of the probability of the outcomes must add up to 1
+- the probability that an event will not occur is 1 - P(A)
+
+## Independent (disjoint) events
+
+Two events are disjoint if they do not share any outcomes.
+
+If two events are disjoint:
+
+- P(A&cup;B) = P(A) + P(B)
+- P(A&cap;B) = P(A) * P(B)
+---
+summary: Probability defined (and figuring out how to host IPython notebooks)
