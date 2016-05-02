@@ -4,7 +4,7 @@ body:
 
 ### Mathjax
 
-Following up with [Friday's fiddling to render notebooks](/ml/learning-log/2016-04-29/) and host them, I thought it could be useful to author learning log posts themselves as notebooks when appropriate. But what I realized for now is that I just want the nice looking math formatting, which, by convention, is provided by LaTeX and [mathjax](https://www.mathjax.org/) within IPython notebooks. So I've simply included the mathjax library on learning log posts for now and you can see some of the fancy formatting below.
+Following up with [Friday's fiddling to render notebooks](/ml/learning-log/2016-04-29/) and host them, I thought it could be useful to author learning log posts themselves as notebooks when appropriate. But what I realized for now is that I just want the nice looking math formatting, which, by convention, is provided by LaTeX and [mathjax](https://www.mathjax.org/) within IPython notebooks. So I've simply [included the mathjax library](https://github.com/krosaen/karlrosaen-lektor/commit/f5862b0f4d502264366de48b7a8c09fddf8bd495) on learning log posts for now and you can see some of the fancy formatting below.
 
 ## Random Variables
 
