@@ -27,7 +27,7 @@ That relative frequency approaches the theoretical probability is called **the l
 
 ### Simulating the birthday problem
 
-This stuff is kind of boring, so breaking out into python for a bit helped: here's [a simulation of the birthday problem in a notebook](http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/basic-stats/birthday_problem.ipynb).
+This stuff is kind of boring, so breaking out into python for a bit helped: here's [a simulation of the birthday problem in a notebook](/ml/notebooks/birthday-problem).
 
 <a href="/ml/notebooks/birthday-problem">
 <img src="birthday-bar.png" width=500>
