@@ -1,0 +1,80 @@
+pub_date: 2016-05-02
+---
+body:
+
+### Mathjax
+
+Following up with [Friday's fiddling to render notebooks](/ml/learning-log/2016-04-29/) and host them, I thought it could be useful to author learning log posts themselves as notebooks when appropriate. But what I realized for now is that I just want the nice looking math formatting, which, by convention, is provided by LaTeX and [mathjax](https://www.mathjax.org/) within IPython notebooks. So I've simply included the mathjax library on learning log posts for now and you can see some of the fancy formatting below.
+
+## Random Variables
+
+I struggled a bit with the definition of a random variable in how it relates to the definition of probability. Terminology so far:
+
+### Experiments
+
+- $\Omega$: Sample space: the set of all possible outcomes in an experiment
+- $\omega$: a single outcome or point in $\Omega$
+- $A$: an event, which is a subset of $\Omega$, or a set of $\omega_i$s
+
+### Probability
+
+A probability $P$ (aka probability distribution or probability measure) assigns a real number to every event $A$, and it is to describe the probability that a particular event occurs.
+
+First of all, why does it assign a real number to every *event* instead of *outcome*? If it were the latter, it would achieve the former. I think it doesn't matter much and is just jargon.
+
+### Random Variable
+
+A random variable is a mapping from each outcome to a real number.
+
+It sort of seems like a random variable could function as a probability measure; it would map a real number for each outcome, and that real number would be the probability that the outcome occurs.
+
+However, after grappling with this a bit, I've come to understand that the concept of a random variable is another layer of indirection when reasoning about experiments. It maps outcomes to real numbers, but those real numbers aren't themselves speaking to the probability that an outcome will occur; that's still left to a probability distribution.
+
+Many resources, including the All of Statistics book and the Stanford Course first introduce experiments and probabilities before getting to the concept of a random variable, but if we were to retroactively introduce the concept of a random variable to the earlier material, it would serve to assign *labels* to each discrete outcome, not to describe the probability.
+
+Let's look at the experiment, "roll a die once". This could be described as a random variable X that maps each die to the number on the die associated with the outcome of rolling it:
+
+- roll 1: 1
+- roll 2: 2
+- roll 3: 3
+- roll 4: 4
+- roll 5: 5
+- roll 6: 6
+
+And then a probability P aka probability mass function $f_X(x) = P(X=x)$ of this discrete random variable could be described as:
+
+$$
+f_X(x) =
+\begin{cases}
+ 1/6 & x = 1 \\\
+ 1/6 & x = 2 \\\
+ 1/6 & x = 3\\\
+ 1/6 & x = 4 \\\
+ 1/6 & x = 5 \\\
+ 1/6 & x = 6
+\end{cases}
+$$
+
+Good ol' Wikipedia came through to clarify this point for me on the [random variable page](https://en.wikipedia.org/wiki/Random_variable):
+
+> A random variable's possible values might represent the possible outcomes of a yet-to-be-performed experiment, or the possible outcomes of a past experiment whose already-existing value is uncertain (for example, due to imprecise measurements or quantum uncertainty)
+
+All of this might seem very pedantic, but I wonder if anyone else has had this brief struggle when first faced with the concept of a random variable? In any case, once you are introduced to "random variables" it's kind of like the new way of thinking about probabilities thereafter and the old way of just thinking about outcomes without the concept of a random variable was a brief stepping stone where it could be considered implicit.
+
+Beyond the basics of representing outcomes as we could consider them (e.g each roll of a pair of dice) a random variable can map to non-distinct values, really anything. For instance, for the experiment "roll two dice", a random variable could be "the sum of the dice". It could also be something completely arbitrary, like mapping 1, 2 and 3 to -45 and 4, 5 and 6 to 93939393. 
+
+### Cumulative distribution functions
+
+Another curveball in learning about random variables is the tendency to jump right into cumulative distribution functions, even before the more familiar probability mass function. A cumulative distribution function is the probability that a random variable has a value less than a particular value:
+
+$F_X(x) = P(X \leq x)$
+
+When graphing a CDF of a discrete random variable you get a step function that eventually reaches one when you've exhausted the range of possible values for x. 
+
+Why is thinking of probability in terms of its cumulative value useful, or at least why does it seem to be preferred to the probability mass function? At this point, who knows? :) One guess is that CDFs play more nicely with continuous random variables. You can't really reason about the probability of a single value—it's infinitesimally small so the probability is always zero—you have to look at the probability over a range of values ala area under the curve of the probability mass function. Speaking of which, the relationship between the probability function $f_x$ and the cumulative distribution function $F_x$ is the integral:
+
+$F\_X(x) = \int_{-\infty}^x f_x(t)dt$
+
+
+---
+summary: Mathjax in posts and resolving confusion about random variables vs probability functions
