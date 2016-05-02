@@ -1,12 +1,20 @@
 {% extends "layout.html" %}
 {% block title %}{{ this.pub_date }} | {{ this.summary }} | ML Learning Log{% endblock %}
-{% block breadcrumbs %}
-    <ol class="breadcrumb">
-        <li><a href="{{ '/ml' | url }}">ML Study</a></li>
-        <li><a href="{{ '/ml/learning-log' | url }}">Learning Log</a></li>
-        <li class="active">{{ this.pub_date }}</li>
-    </ol>
+{% set notebook_fname = "" + this._id + ".ipynb" %}
+{% set notebook_attachment = this.attachments.get(notebook_fname) %}
+
+{% block extra_styles %}
+    <link rel="stylesheet" href="{{ '/static/notebook.css'|asseturl }}">
 {% endblock %}
+{% if notebook_attachment %}
+    {% block breadcrumbs %}
+        <ol class="breadcrumb">
+            <li><a href="{{ '/ml' | url }}">ML Study</a></li>
+            <li><a href="{{ '/ml/learning-log' | url }}">Learning Log</a></li>
+            <li class="active">{{ this.pub_date }}</li>
+        </ol>
+    {% endblock %}
+{% endif %}
 {% block body %}
     {% set siblings = this.get_siblings() %}
     {% set older = siblings.next_page %}
@@ -28,5 +36,24 @@
 
     <p class="ll-summary">{{ this.summary }}</p>
     <h2>{{ this.title }}</h2>
-    {{ this.body }}
+    {% if notebook_attachment %}
+        {# This is an ipython notebook post #}
+        {% set notebook_rendered_template = "rendered-notebooks/" + this._id + ".html" %}
+        {% include notebook_rendered_template %}
+    {% else %}
+        {# Regular markdown post #}
+        {{ this.body }}
+    {% endif %}
+{% endblock %}
+
+{% block extra_scripts %}
+    <script type="text/x-mathjax-config">
+                    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+                                        tex2jax: { inlineMath: [ ["$", "$"], ["\\\\(","\\\\)"] ], displayMath: [ ["$$","$$"], ["\\[", "\\]"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno" },
+                                        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+                                        messageStyle: "none"
+                });
+
+    </script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
 {% endblock %}
