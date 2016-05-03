@@ -8,7 +8,7 @@ body:
 
 My curriculum includes 3 areas:
 
-- Probability and Statistics fundamentals: [Stanford's Free online Probability and Statistics Course](https://lagunita.stanford.edu/courses/OLI/ProbStat/Open/about) and problem sets from the text [All of Statistics](http://www.amazon.com/All-Statistics-Statistical-Inference-Springer/dp/0387402721). Bonus material: [Peter Norvig's Introduction to Probability iPython Notebook](http://nbviewer.jupyter.org/url/norvig.com/ipython/Probability.ipynb)
+- Probability and Statistics fundamentals: [Stanford's Free online Probability and Statistics Course](https://lagunita.stanford.edu/courses/OLI/ProbStat/Open/about) cross referencing with videos from [Khan Academy's videos on Probability and Statistics](https://www.khanacademy.org/math/probability?t=table-of-contents) and problem sets from the text [All of Statistics](http://www.amazon.com/All-Statistics-Statistical-Inference-Springer/dp/0387402721). Bonus material: [Peter Norvig's Introduction to Probability iPython Notebook](http://nbviewer.jupyter.org/url/norvig.com/ipython/Probability.ipynb)
 - Applied ML techniques:  [Python Machine Learning](http://www.amazon.com/Python-Machine-Learning-Sebastian-Raschka/dp/1783555130)
 - Capstone project
 
@@ -30,6 +30,7 @@ So my goal in this section is to start at the bottom and work my way through:
     - [HW2](https://www.dropbox.com/s/bj5ycpv2kghrgos/36700-2015-Fall-hw2.pdf?dl=0) and [Sols](https://www.dropbox.com/s/lkbdtbc7llx07t2/F15_700_2_Solutions.pdf?dl=0)
     - [HW3](https://www.dropbox.com/s/xfo202bpk0ci94w/36700-2015-Fall-hw3.pdf?dl=0) and [Sols](https://www.dropbox.com/s/6xaxppv63gws7e3/F15_700_3_Solutions.pdf?dl=0)
     - [HW4](https://www.dropbox.com/s/oj70ds99dllx2nx/36700-2015-Fall-hw4.pdf?dl=0) and [Sols](https://www.dropbox.com/s/xr0b6rd0q82x46l/F15_700_4_Solutions.pdf?dl=0)
+- [Khan Academy's videos and exercises on Probability and Statistics](https://www.khanacademy.org/math/probability?t=table-of-contents): really good material for the introductory stuff covered by Stanford's course. A good place to look for a second explanation, though I'm not working through these exhaustively.
 - [Peter Norvig's Introduction to Probability iPython Notebook](http://nbviewer.jupyter.org/url/norvig.com/ipython/Probability.ipynb)
 
 What I appreciate about the All of Statistics book compared to others I've looked at, including my text from college, is that it doesn't spend too much time on counting methods (knowing how many ways one can deal a full house with a deck of cards isn't particularly relevant) and is otherwise more comprehensive, getting into some techniques for statistical inference.
@@ -71,6 +72,7 @@ Some areas, like linear algebra, I've decided to skip completely for the time be
 - [CMU's Intermediate Statistics course with problem sets / solutions from book](http://www.stat.cmu.edu/~larry/=stat705/)
 - [Peter Norvig's Introduction to Probability iPython Notebook](http://nbviewer.jupyter.org/url/norvig.com/ipython/Probability.ipynb)
 - [Free Introduction to Probability Book from Dartmouth](http://www.dartmouth.edu/~chance/teaching_aids/books_articles/probability_book/pdf.html)
+- [Khan Academy's videos and exercises on Probability and Statistics](https://www.khanacademy.org/math/probability?t=table-of-contents)
 
 ### Linear Algebra
 
