@@ -23,6 +23,8 @@ With this in mind, if I want to have a deeper intuition for how many of these te
 So my goal in this section is to start at the bottom and work my way through:
 
 - [Stanford's Free online Probability and Statistics Course](https://lagunita.stanford.edu/courses/OLI/ProbStat/Open/about): a very basic introduction to statistics; it doesn't get to random variables until about half way through. While has seemed almost *too* basic at times, for instance reviewing the mean, median and mode, I'm already glad to have spent time on it and have spiced it up by applying some of the basics to data sets of interest to me (e.g [box plots of NBA teams' margin of victory](http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/basic-stats/nba-games-net-rating-boxplots/NbaTeamGameNetRatingsPlots.ipynb)).
+- [Khan Academy's videos and exercises on Probability and Statistics](https://www.khanacademy.org/math/probability?t=table-of-contents): really good material for the introductory stuff covered by Stanford's course. A good place to look for a second explanation, though I'm not working through these exhaustively.
+- [Peter Norvig's Introduction to Probability iPython Notebook](http://nbviewer.jupyter.org/url/norvig.com/ipython/Probability.ipynb)
 - [All of Statistics](http://www.amazon.com/All-Statistics-Statistical-Inference-Springer/dp/0387402721) book and problem sets from CMU's [course from the author of the](http://www.stat.cmu.edu/~larry/=stat705/) and its more introductory CS counterpart CS 36-700.
   - [CS 36-705 course website](http://www.stat.cmu.edu/~larry/=stat705/) with some problem sets and solutions available
   - CS 36-700 HW Files and solutions (note, the course website is no longer up, but links to problem sets and solutions are still live for now)
@@ -30,8 +32,6 @@ So my goal in this section is to start at the bottom and work my way through:
     - [HW2](https://www.dropbox.com/s/bj5ycpv2kghrgos/36700-2015-Fall-hw2.pdf?dl=0) and [Sols](https://www.dropbox.com/s/lkbdtbc7llx07t2/F15_700_2_Solutions.pdf?dl=0)
     - [HW3](https://www.dropbox.com/s/xfo202bpk0ci94w/36700-2015-Fall-hw3.pdf?dl=0) and [Sols](https://www.dropbox.com/s/6xaxppv63gws7e3/F15_700_3_Solutions.pdf?dl=0)
     - [HW4](https://www.dropbox.com/s/oj70ds99dllx2nx/36700-2015-Fall-hw4.pdf?dl=0) and [Sols](https://www.dropbox.com/s/xr0b6rd0q82x46l/F15_700_4_Solutions.pdf?dl=0)
-- [Khan Academy's videos and exercises on Probability and Statistics](https://www.khanacademy.org/math/probability?t=table-of-contents): really good material for the introductory stuff covered by Stanford's course. A good place to look for a second explanation, though I'm not working through these exhaustively.
-- [Peter Norvig's Introduction to Probability iPython Notebook](http://nbviewer.jupyter.org/url/norvig.com/ipython/Probability.ipynb)
 
 What I appreciate about the All of Statistics book compared to others I've looked at, including my text from college, is that it doesn't spend too much time on counting methods (knowing how many ways one can deal a full house with a deck of cards isn't particularly relevant) and is otherwise more comprehensive, getting into some techniques for statistical inference.
 
