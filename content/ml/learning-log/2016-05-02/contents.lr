@@ -71,9 +71,13 @@ $F_X(x) = P(X \leq x)$
 
 When graphing a CDF of a discrete random variable you get a step function that eventually reaches one when you've exhausted the range of possible values for x. 
 
-Why is thinking of probability in terms of its cumulative value useful, or at least why does it seem to be preferred to the probability mass function? At this point, who knows? :) One guess is that CDFs play more nicely with continuous random variables. You can't really reason about the probability of a single value—it's infinitesimally small so the probability is always zero—you have to look at the probability over a range of values ala area under the curve of the probability mass function. Speaking of which, the relationship between the probability function $f_x$ and the cumulative distribution function $F_x$ is the integral:
+Why is thinking of probability in terms of its cumulative value useful, or at least why does it seem to be preferred to the probability mass function? My understanding so far is that CDFs play more nicely with continuous random variables. You can't really reason about the probability of a single value—it's infinitesimally small so the probability is always zero—you have to look at the probability over a range of values ala area under the curve of the probability mass function. Speaking of which, the relationship between the probability function $f_x$ and the cumulative distribution function $F_x$ is the integral:
 
 $F\_X(x) = \int_{-\infty}^x f_x(t)dt$
+
+[Norvig's notebook](http://nbviewer.jupyter.org/url/norvig.com/ipython/Probability.ipynb#Appendix:-Continuous-Sample-Spaces) corroborates this intuition,
+
+> The principles (*of continuous samples spaces*) are the same (*as with discrete sample spaces*): probability is still the ratio of the favorable cases to all the cases, but now instead of counting cases, we have to (in general) compute integrals to compare the sizes of cases. Here we will cover a simple example, which we first solve approximately by simulation, and then exactly by calculation.
 
 
 ---

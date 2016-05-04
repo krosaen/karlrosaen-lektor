@@ -1,0 +1,38 @@
+pub_date: 2016-05-03
+---
+body:
+
+## Grokking Random Variables
+
+Continuing to get a handle on the purpose of random variables, [Khan Academy's video](https://www.khanacademy.org/math/probability/random-variables-topic/random_variables_prob_dist/v/random-variables) helps as well explaining,
+
+> What's so useful about defining random variables? It will become more apparent later on, but the simple way of thinking about it is that as soon as you start to quantify outcomes, you can start to do a little more math on the outcomes and you can start to use a little mathematical notation on the outcome.
+
+He goes on to explain that random variables serve as short hand for defining and reasoning about random processes (or experiments). So my grappling yesterday about this being the new way of describing things was on the right track. Thinking back, I think a better way of explaining random variables when first introducing them is to make very clear, "this is the new way of talking about experiments, before we just described the experiment in plain words, but now we are making explicit about the experiment we are dealing with by mapping every outcome to a number." 
+
+The all of statistics book motivates the need for random variables as well with,
+
+> Statistics and data mining are concerned with data. How do we link sample spaces and events to data? The link is provided by the concept of a random variable.
+
+Finally, [Norvig's notebook](http://nbviewer.jupyter.org/url/norvig.com/ipython/Probability.ipynb#The-Central-Limit-Theorem-/-Strength-in-Numbers-Theorem) explains how the concept of a random variable makes explicit the division of the event space into components that is otherwise done so implicitly when describing experiments.
+
+> So far, we have talked of an outcome as being a single state of the world. But it can be useful to break that state of the world down into components. We call these components random variables. For example, when we consider an experiment in which we roll two dice and observe their sum, we could model the situation with two random variables, one for each die. (Our representation of outcomes has been doing that implicitly all along, when we concatenate two parts of a string, but the concept of a random variable makes it official.)
+
+Ok, I think I get it now. Moving on.
+
+## Reviewing curriculum
+
+After getting a little further into random variables and distributions, I realized I had skipped the section in All of Statistics on conditional probability and Baye's theorem, only having covered the surface level stuff in the Stanford course. Bayes theorem is extremely relevant to ML, so I want to go back and fiddle around with Baye's theorem a bit; it's pretty easy to prove and I'd like to get to a point where I can do so without looking at the book.
+
+But I also had a bit of a crisis in making sure my curriculum is laid out and I have a clear path towards learning what will be most important. The Stanford course and Khan Academy's material on probability and statistics is easy to follow and working through it will get me somewhere, but they both are pretty surface level on distributions, density functions and distribution functions. Looking ahead in the All of Stats book I see it covers many things that are beyond the scope of the Stanford course and Khan Academy, including things like conditional distributions, multivariate distributions, marginal distributions, inequalities, convergence of random variables and more. These things are important and are what really start to bridge the gap between an intro to probability and statistical inference.
+
+So basically I'm worried that I'll end up going really deep and thorough into basic probability and stats and then not have the resources I need to really grok the more advanced stuff; the All of Stats book is very dense and I don't have any accompanying videos or lectures to help. Looking more closely at the homework assignments that I was planning on doing, they are very heavy on proofs, which I'm not opposed to in principal but wonder if it will be the best use of my time. To help, I spent some time writing up a comprehensive index of concepts that I'd like to learn and did an audit of the materials I've found and which cover each concept / topic. To bolster the more advanced concepts I found what seems to be [a really good set of videos on probability](https://www.youtube.com/playlist?list=PL17567A1A3F5DB5E4) from 'mathematicalmonk' on youtube, who's [a math professor at Duke](http://www2.stat.duke.edu/~jwm40/background.html)
+
+I continue to update the [ml curriculum page](/ml) and am piecing together a [probability and stats overview page as well](/ml/probstats). While it feels uncomfortable to be stalling like this, I think pausing to make sure my course / curriculum is most effective and that I can set out a pace that will strike the right balance of breadth/depth given my time frame as I go is smart overall, there are no brownie points for going through the motions.
+
+
+
+---
+_hidden: no
+---
+summary: Finally grokking random variables and going back to review curriculum of probability and stats.

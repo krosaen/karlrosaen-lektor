@@ -1,0 +1,35 @@
+pub_date: 2016-05-04
+---
+body:
+
+I noticed an aside in All of statistics that mentions the notion of a "measure", and also noticed that the Mathematical Monk's [probability playlist]((https://www.youtube.com/playlist?list=PL17567A1A3F5DB5E4) kicks off with several videos about measure theory. The Wikipedia article on probability also begins by defining a probability as a "measure". So in my compulsion to leave no rock unturned in surveying the field of probability, I spent some time making some sense of measure theory in how it relates to probability theory.
+
+Recall that a probability $P$ assigns a real number to each event $A$ within a sample space of outcomes $\Omega$. Each event $A$, in turn, is a set of outcomes $\omega_i$ within $A$.
+
+When thinking of sample spaces and assigning probability to outcomes and events, it technically is only possible to do this to sets that are measurable, and measure theory rigorously defines what this means. The result is that the only events or subsets within a sample space $\Omega$ that are measurable are sets within a $\sigma$-algebra or a $\sigma$-field which satisfies 3 key properties $\mathcal{A} \subset 2^\Omega$
+
+- $\emptyset \in \mathcal{A}$
+- $A \in \mathcal{A}$ implies that $A^c \in \mathcal{A}$ (closed under complement)
+- if $A\_1, A\_2, ... \in \mathcal{A}$ then $\cup_{i=1}^\infty A\_i \in \mathcal{A}$ (closed under countable unions)
+
+A *measure* is a function $\mu: \mathcal{A} \to [0, \infty]$ s.t:
+
+- $\mu(\emptyset) = 0$
+- $\mu(\cup_{i=1}^\infty E\_i)$
+- $\mu(\cup_{i=1}^\infty E\_i)$ = $\sum_{i=1}^{\infty} \mu(E\_i)$ for any pairwise disjoint sets $E\_1, E\_2, ... \in \mathcal{A}$
+
+From the standpoint of measure theory, a probability $P$ can be thought of as a *measure* on (the measurable $\sigma$-field of) an event space $\Omega$ (assigns a real number to all measurable subsets) where $P(\Omega) = 1$.
+
+So why the hell does any of this matter? Are there concrete examples of subsets of sample spaces that are not measurable? The [Wikipedia article on non-measureable sets](https://en.wikipedia.org/wiki/Non-measurable_set) says of the [Banach–Tarski paradox](https://en.wikipedia.org/wiki/Banach%E2%80%93Tarski_paradox), one of the more famous examples motivating the concept of a non-measurable set, "Obviously this construction has no meaning in the physical world." It also mentions that measurable sets are, "rich enough to include every conceivable definition of a set that arises in standard mathematics." So it seems like non-measurable sets are a mathematical construct invented to help resolve some paradoxes in math. 
+
+But after googling around, there are hints that eventually there will be interesting random variables that cannot be easily described by probability density functions and measure theory will be helpful then. There was another whiff that perhaps this will be useful when I get to thinking about the convergence of random variables. So perhaps getting caught up on thinking about non-measurable subsets within $\Omega$ misses the point.
+
+If nothing else, digging deeper into the underpinnings of probability theory has helped ingrain the basics more deeply in my head. 
+
+Resources:
+- [Why use measure theory for probability?](https://www.youtube.com/watch?v=RjPXfUT7Odo) and parts [2](https://www.youtube.com/watch?v=Q9KOeP-nrYQ) and [3](https://www.youtube.com/watch?v=rAYA2Mu51bw)
+- [Mathematicalmonk's probability primer kicks off with an overview of measure theory](https://www.youtube.com/playlist?list=PL17567A1A3F5DB5E4)
+- [Wikipedia article on measure theory](https://en.wikipedia.org/wiki/Measure_(mathematics))
+
+---
+summary: Probability through the lens of measure theory

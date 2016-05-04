@@ -1,0 +1,75 @@
+_model: page
+---
+title: Probability and Statistics Overview
+---
+body:
+
+## Basic Descriptive statistics and exploratory analysis
+
+### Defining data and variables
+
+### Exploring a single variable
+
+## Measures of center
+
+## Measures of spread
+
+### Examining relationships between two variables
+
+- role-type 
+- side by side box plots
+- 2-way tables
+- scatter plots
+- linear regression
+- correlation 
+
+## Sampling and study design
+
+## Basic Probability
+
+### Random processes, outcomes, events
+
+### (In)dependent events, Conditional probability and Baye's theorem
+
+### Counting methods 
+
+### Measure theory 
+
+## Random Variables and Distributions
+
+### Discrete and Continuous random variables
+
+### Probability density functions (PDFs) and Cumulative Distribution Functions (CDFs)
+
+### Important discrete random variables
+
+### Important continuous random variables
+
+### Bivariate distributions
+
+### Marginal distributions
+
+### Independent random variables
+
+### Conditional distributions
+
+### Multivariate distributions and IID Samples
+
+### Some important multivariate distributions
+
+### Transformation of random variables 
+
+### Transformations of several random variables
+
+## Expectation
+
+## Inequalities
+
+## Convergence of Random Variables
+
+# Statistical inference
+
+## 
+
+
+
