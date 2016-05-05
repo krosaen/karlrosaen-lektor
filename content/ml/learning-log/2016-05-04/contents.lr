@@ -15,7 +15,6 @@ When thinking of sample spaces and assigning probability to outcomes and events,
 A *measure* is a function $\mu: \mathcal{A} \to [0, \infty]$ s.t:
 
 - $\mu(\emptyset) = 0$
-- $\mu(\cup_{i=1}^\infty E\_i)$
 - $\mu(\cup_{i=1}^\infty E\_i)$ = $\sum_{i=1}^{\infty} \mu(E\_i)$ for any pairwise disjoint sets $E\_1, E\_2, ... \in \mathcal{A}$
 
 From the standpoint of measure theory, a probability $P$ can be thought of as a *measure* on (the measurable $\sigma$-field of) an event space $\Omega$ (assigns a real number to all measurable subsets) where $P(\Omega) = 1$.
@@ -25,6 +24,8 @@ So why the hell does any of this matter? Are there concrete examples of subsets 
 But after googling around, there are hints that eventually there will be interesting random variables that cannot be easily described by probability density functions and measure theory will be helpful then. There was another whiff that perhaps this will be useful when I get to thinking about the convergence of random variables. So perhaps getting caught up on thinking about non-measurable subsets within $\Omega$ misses the point.
 
 If nothing else, digging deeper into the underpinnings of probability theory has helped ingrain the basics more deeply in my head. 
+
+*update* I think it really comes down to measure theory is just a slightly more general mathematical construct that a probability; a probability is a measure with some additional constraints (e.g P($\Omega$) = 1). Thus, studying measure theory is studying probability theory as knowing theorems of measure theory means knowing theorems of probability theory.
 
 Resources:
 - [Why use measure theory for probability?](https://www.youtube.com/watch?v=RjPXfUT7Odo) and parts [2](https://www.youtube.com/watch?v=Q9KOeP-nrYQ) and [3](https://www.youtube.com/watch?v=rAYA2Mu51bw)
