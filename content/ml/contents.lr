@@ -65,6 +65,9 @@ Some areas, like linear algebra, I've decided to skip completely for the time be
 - [Elements of Statistical Learning](http://statweb.stanford.edu/~tibs/ElemStatLearn/)
 - [Data Science from Scratch](http://www.amazon.com/Data-Science-Scratch-Principles-Python/dp/149190142X): I bought this book and have enjoyed perusing.
 - [Mathematical Monk's ML YouTube playlist](https://www.youtube.com/playlist?list=PLD0F06AA0D2E8FFBA)
+- [Coursera course on Probabilistic Graphical Models](https://class.coursera.org/pgm/lecture/preview) 
+- [Text on Probabilistic Graphical Models for sale](http://www.amazon.com/Probabilistic-Graphical-Models-Principles-Computation/dp/0262013193) (and [for download](https://github.com/JimmyLin192/GraphicalModel/blob/master/Probabilistic%20Graphical%20Models%20Principles%20and%20Techniques.pdf))
+- [Tom Griffiths' reading list on Bayesian methods](http://cocosci.berkeley.edu/tom/bayes.html)
 
 ### Probability and statistics
 
@@ -75,6 +78,8 @@ Some areas, like linear algebra, I've decided to skip completely for the time be
 - [Free Introduction to Probability Book from Dartmouth](http://www.dartmouth.edu/~chance/teaching_aids/books_articles/probability_book/pdf.html)
 - [Khan Academy's videos and exercises on Probability and Statistics](https://www.khanacademy.org/math/probability?t=table-of-contents)
 - [Math Monk's YouTube playlist: Probability Primer](https://www.youtube.com/playlist?list=PL17567A1A3F5DB5E4)
+- [University of Michigan's SOCR probability & stats ebook](http://wiki.socr.umich.edu/index.php/EBook): worth cross referencing for comprehensive list of topics
+- Wikipedia's outlines of [Statistics](https://en.wikipedia.org/wiki/Outline_of_statistics) and [Probability](https://en.wikipedia.org/wiki/Outline_of_probability)
 
 ### Linear Algebra
 
