@@ -1,0 +1,34 @@
+pub_date: 2016-05-11
+---
+body:
+
+## Collaborative filtering via Matrix Factorization
+
+This morning's Talking Machine's warmup was Ryan's intro in [episode 8](http://www.thetalkingmachines.com/blog/2015/4/9/spinning-programming-plates-and-creative-algorithms) where he describes a popular approach to collaborative filtering a.k.a recommender systems.
+
+The approach is "probabilistic matrix factorization" and is similar to approaches used for principal component analysis, singular value decomposition and non-negative matrix factorization (I'm only vaguely familiar with these, but good to jot down for connecting the dots later; I know the python ML book covers principal component analysis).
+
+Using Netflix movie recommendations as an example, say you have a million by 25,000 matrix where each row is a user's ratings for the 25,000 movies available on Netflix. This is obviously a very sparse matrix as most people don't watch 25,000 movies. The approach is to assume this matrix is approximately low rank and be viewed as the product of:
+
+- 1,000,000 x 100 matrix 
+- 100 x 25,000 matrix
+
+The 100 dimensions in each matrix are latent properties of movies that are discovered automatically and might correspond to, say, "has explosions", "is foreign film", "romantic comedy", "Seth Rogan stoner buddy action" etc, and the first matrix assigns these properties to users and the 2nd to movies. Each predicted rating for a movie can be viewed as the inner product of a user vector and a movie vector.
+
+This approach apparently faired well in the Netflix prize competition and has other benefits such as being able to cluster similar movies together and in discovering topics that are more effective at categorizing movies than humans come up with by hand.
+
+Ryan draws parallels to this approach with topic modeling and observes that it's kind of an interesting mix between supervised and unsupervised learning as it is both discovering structure in an unsupervised manner and then training a dataset against that structure in a supervised way by using actual user ratings. I had a similar thought when I first learned about topic modeling: it's really cool that you get both a useful interpretable model and a predictive function out of the exercise.
+
+## Homework section on site
+
+I setup a [homework section](/ml/hw/) to index each problem I've worked through. I knocked out problem 5 and 6 from chapter 1 of all of statistics today, though I admittedly needed to peek at the solutions to get me oriented.
+
+## Getting started on chapter 3
+
+I got started on chapter 3 of python machine learning, starting off by redoing what we did by hand in [chapter 2](https://github.com/krosaen/ml-study/blob/master/python-ml-book/ch02/ch02.ipynb) with off the shelve stuff, and then getting into the theory behind logistic regression. Here's the the [WIP notebook.](https://github.com/krosaen/ml-study/blob/master/python-ml-book/ch03/ch03.ipynb).
+
+<a href="https://github.com/krosaen/ml-study/blob/master/python-ml-book/ch03/ch03.ipynb">
+<img src="petal-classes.png" width=450>
+</a>
+---
+summary: Collaborative filtering via Matrix Factorization, more probability homework, Skikit-learn version of perceptron
