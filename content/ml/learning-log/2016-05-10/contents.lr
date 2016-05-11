@@ -1,0 +1,54 @@
+pub_date: 2016-05-10
+---
+body:
+
+## Talking machines warmup: non-parametric models, the chinese restaurant and indian buffet processes
+
+Warmed up this morning by listening to another intro from [The Talking Machines Podcast](http://www.thetalkingmachines.com/), this time [Episode 7](http://www.thetalkingmachines.com/blog/2015/3/26/3mixrq61fb0tff4kn0mrkzsw2xma98) where Ryan summarizes a couple of random processes that are useful in constructing bayesian non-parametric models.
+
+The analogy for the Chinese restaurant process is a restaurant with an infinite number of tables. The first guest arrives and chooses a table. The next arrives and chooses either the existing table or a new one with some probability. New guests choose among existing tables in proportion to their probability, while still having a small chance of striking out on their own at a new table. The end result after N iterations is you have randomly partitioned the population, with the number of partitions not being predetermined.
+
+The analogy for the Indian buffet process is a buffet with an infinite number of dishes. The first guest chooses a random number of dishes. The next chooses a random number of dishes, some probability of choosing among already chosen dishes. Subsequent guests choose among chosen dishes according to their popularity, and may try new random ones as well. The end result after N iterations is you have randomly assigned features to a population, again the number of features not being predetermined.
+
+Both processes are clever ways of generating a finite projection of an infinite dimensional process, as you built it up with a finite data set as you go, and let’s you build up as much complexity in your model as you need.
+
+The [article linked to on hierarchical Chinese restaurant process](https://cocosci.berkeley.edu/tom/papers/ncrp.pdf) has some nice blurbs on ML and (non)parametric models:
+
+> Another important dichotomy in machine learning distinguishes between parametric
+and nonparametric models. A parametric model involves a fixed representation
+that does not grow structurally as more data are observed. Examples include
+linear regression and clustering methods in which the number of clusters is fixed
+a priori. A nonparametric model, on the other hand, is based on representations
+that are allowed to grow structurally as more data are observed.1 Nonparametric
+approaches are often adopted when the goal is to impose as few assumptions as
+possible and to "let the data speak."
+
+>  … In particular, modern classifiers such as decision trees, boosting and nearest
+neighbor methods are nonparametric, as are the class of supervised learning systems
+built on ìkernel methods,î including the support vector machine. (See Hastie
+et al. [2001] for a good review of these methods.) Theoretical developments in supervised
+learning have shown that as the number of data points grows, these methods
+can converge to the true labeling function underlying the data, even when the data
+lie in an uncountably infinite space and the labeling function is arbitrary [Devroye
+et al. 1996]. This would clearly not be possible for parametric classifiers
+
+The intro includes a lot of great summaries of related topics before getting to the meat:
+
+- parametric vs non-parametric models
+- graphical models
+- promise of non-parametric models for unsupervised learning
+- topic modeling
+
+Was nice to stumble upon this resource, will re-read later when I get into non-parametric models. Also: author of paper has [a mass market book](http://us.macmillan.com/algorithmstoliveby/brianchristian) on algorithms that looks interesting.
+
+## Another homework problem
+
+I worked through [another problem](/ml/hw/all-of-statistics-ch1-problem-4/) from the all of stats book, more reasoning about sets, proving that $(\bigcup\_{i \in I} A\_i)^c = \bigcap\_{i \in I} A\_i^c$ for arbitrary index set $I$.
+
+## Back to Python Machine Learning
+
+I'm aiming to do probability in the morning and ML in the afternoons for a bit. Today I finally wrapped up chapter 2 by implementing a [stochastic gradient descent variant](https://github.com/krosaen/ml-study/blob/master/python-ml-book/ch02/adeline_sgd.py) of the Adeline perceptron (e.g iterative weight update instead of batch). My [ch02 notebook](http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/python-ml-book/ch02/ch02.ipynb) has also updated.
+
+
+---
+summary: High level understanding of bayesian non-parametric models, more stats, and back to Python Machine Learning with stochastic gradient descent.

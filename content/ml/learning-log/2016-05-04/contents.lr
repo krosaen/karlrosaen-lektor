@@ -12,7 +12,7 @@ When thinking of sample spaces and assigning probability to outcomes and events,
 - $A \in \mathcal{A}$ implies that $A^c \in \mathcal{A}$ (closed under complement)
 - if $A\_1, A\_2, ... \in \mathcal{A}$ then $\cup_{i=1}^\infty A\_i \in \mathcal{A}$ (closed under countable unions)
 
-A *measure* is a function $\mu: \mathcal{A} \to [0, \infty]$ s.t:
+A *measure* is a function from a $\sigma$-algebra $\mathcal{A}$ to postive real numbers, $\mu: \mathcal{A} \to [0, \infty]$ s.t:
 
 - $\mu(\emptyset) = 0$
 - $\mu(\cup_{i=1}^\infty E\_i)$ = $\sum_{i=1}^{\infty} \mu(E\_i)$ for any pairwise disjoint sets $E\_1, E\_2, ... \in \mathcal{A}$

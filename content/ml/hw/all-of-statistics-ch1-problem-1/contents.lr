@@ -1,0 +1,155 @@
+_model: page
+---
+title: All of Statistics Ch1 Problem 1
+---
+body:
+
+## Problem
+
+Chapter 1 problem 1: fill in the details of the proof of Theorem 1.8. 
+
+Also prove the monotone decreasing case.
+
+Theorem 1.8 is "Continuity of Probabilities". If $A\_n \rightarrow A$ *then*
+
+$$ P(A\_n) \rightarrow P(A) $$
+
+as $n \rightarrow \infty$
+
+### Proof 
+
+Suppose that $A\_n$ is monotone increasing so that $A\_1 \subset A\_2 \subset ... $. 
+
+Let $A = lim\_{n \to \infty} A\_n = \bigcup\_{i=1}^{\infty} A\_i$
+
+Define 
+- $B\_1 = A\_1$
+- $B\_2 = \\{ \omega \in \Omega : \omega \in A\_2, \omega \notin A\_1 \\} $
+- $B\_3 = \\{ \omega \in \Omega : \omega \in A\_3, \omega \notin A\_2, \omega \notin A\_1 \\} $
+- etc
+
+It can be shown that: 
+
+- $B\_1, B\_2, ...$ are disjoint
+- $A\_n = \bigcup\_{i=1}^{n} A\_i = \bigcup\_{i=1}^{n} B\_i$ for each $n$ 
+- $\bigcup\_{i=1}^{\infty} B\_i = \bigcup\_{i=1}^{\infty} A\_i.$
+
+*this is what we need to do for this exercise*
+
+From Axiom 3 of probability measures: if $A\_1, A\_2, ...$ *are disjoint then* $P(\bigcup\_{i=1}^{\infty} A\_i) = \sum\_{i=1}^{\infty} P(A\_i)$
+
+we can show:
+
+$lim\_{n \to \infty} P(A\_n)$ 
+<br>= $ lim\_{n \to \infty} \sum\_{i=1}^{n} P(B\_i)$
+<br>= $ \sum\_{i=1}^{\infty} P(B\_i)$
+<br>= $ P(\bigcup\_{i=1}^{\infty} B\_i) $
+<br>= $ P(A) $
+
+## Solution
+
+### 1. Showing $B\_1, B\_2, ...$ are disjoint
+
+#### Attempt 1
+
+Disjoint means that there is null intersection.
+
+$B\_1 \cap B\_2$
+<br>= $\\{\omega \in \Omega: \omega \in B\_1 \text{ and } \omega \in B\_2\\}$
+<br>= $\\{\omega \in \Omega: \omega \in A\_1 \text{ and } \omega \in \\{ \omega' \in \Omega : \omega' \in A\_2, \omega' \notin A\_1 \\} \\}$
+<br>=$\emptyset$
+
+The last step is clear since $\omega$ can't both be in $A\_1$ and not be in $A\_1$ at the same time.
+
+This doesn't prove it for all cases though. Peeking at the solution, I got a hint.
+
+#### Attempt 2
+
+Hint: it suffices to prove $B\_j \cap B\_k = \emptyset, \forall j < k$ without loss of generality.
+
+$B\_k$ can be written as $A\_k \cap B\_{k-1}^{c}$
+
+$B\_k \cap B\_{k-1}$
+<br>= $(A\_k \cap B\_{k-1}^{c}) \cap B\_{k-1}$
+<br>= $A\_k \cap (B\_{k-1}^{c} \cap B\_{k-1})$
+<br>= $A\_k \cap \emptyset$
+<br>= $\emptyset$
+
+Damnit, this doesn't really show it for all j and k, had to look at the solution again:
+
+#### Attempt 3: solution walkthrough
+
+Note that I was mistaken, it's not that  $B\_k$ can be written as $A\_k \cap B\_{k-1}^{c}$ 
+
+It's that  $B\_k$ can be written as $A\_k \cap A\_{k-1}^{c}$
+
+Using this insight we can proceed:
+
+$B\_j \cap B\_k$
+<br>= $(A\_j \cap A\_{j-1}^{c}) \cap (A\_k \cap A\_{k-1}^{c})$
+
+If we just look at $A\_j \cap A\_{k-1}^c$
+
+we know that $A\_j \subseteq A\_{k-1}$ because $j \leq k$ so  $A\_j \cap A\_{k-1}^c = \emptyset$
+
+and if you throw an $\emptyset$ into a series of intersections you always have $\emptyset$.
+
+### 2. Showing $A\_n = \bigcup\_{i=1}^{n} A\_i = \bigcup\_{i=1}^{n} B\_i$ for each $n$ 
+
+Since $A$ is an increasing sequence, $\bigcup\_{i=1}^{n} A\_i = A\_n$.
+
+To show $\bigcup\_{i=1}^{n} A\_i = \bigcup\_{i=1}^{n} B\_i$ let's use *induction*.
+
+#### Base case
+
+For n = 1  $\bigcup\_{i=1}^{n} A\_i = A\_1 = B\_1 =  \bigcup\_{i=1}^{n} B\_i$
+
+#### Inductive step
+
+Given 
+
+$\bigcup\_{i=1}^{n} B\_i = \bigcup\_{i=1}^{n} A\_i$ 
+
+show
+
+$\bigcup\_{i=1}^{n+1} B\_i = \bigcup\_{i=1}^{n+1} A\_i$ 
+
+$\bigcup\_{i=1}^{n+1} B\_i$
+<br>=$B\_{n+1} \cup (\bigcup\_{i=1}^{n} B\_i)$
+<br>=$B\_{n+1} \cup (\bigcup\_{i=1}^{n} A\_i)$
+<br>=$(A\_{n+1} \cap A\_{n}^{c}) \cup (\bigcup\_{i=1}^{n} A\_i)$
+<br>=$(A\_{n+1} \cap A\_{n}^{c}) \cup A\_n$
+<br>=$(A\_{n+1} \cap A\_{n}^{c}) \cup (A\_n \cap A\_{n+1})$
+<br>=$A\_{n+1} \cap (A\_{n}^{c} \cup A\_n)$
+<br>=$A\_{n+1} \cap \Omega$
+<br>=$A\_{n+1}$
+<br>=$\bigcup\_{i=1}^{n+1} A\_i$
+
+
+### 3. Showing $\bigcup\_{i=1}^{\infty} B\_i = \bigcup\_{i=1}^{\infty} A\_i.$
+
+$\bigcup\_{i=1}^{\infty} B\_i$
+<br>= $\bigcup\_{n=1}^{\infty} (\bigcup_{i=1}^{n} B\_i)$
+<br>= $\bigcup\_{n=1}^{\infty} (\bigcup_{i=1}^{n} A\_i)$
+<br>= $\bigcup\_{n=1}^{\infty} A\_n$
+<br>= $\bigcup\_{i=1}^{\infty} A\_i$
+
+## Also prove the monotone decreasing case.
+
+Need to show that If $A\_n$ is a decreasing sequence converging to $A$ that $P(A_n) \rightarrow P(A)$
+
+The key trick here is to know that "convergence of set sequences is preserved under complement", so we can instead prove that:
+
+$ A_n^c \rightarrow A^c$ as n increases implies that $P(A_n^c) \rightarrow P(A^c)$
+
+$lim\_{n \to \infty} P(A\_n^c)$ 
+<br>= $ lim\_{n \to \infty} \sum\_{i=1}^{n} P(B\_i^c)$
+<br>= $ \sum\_{i=1}^{\infty} P(B\_i^c)$
+<br>= $ P(\bigcup\_{i=1}^{\infty} B\_i^c) $
+<br>= $ P(A^c) $
+
+and thus
+
+$ P(A\_n) = 1 - P(A\_n^c) \rightarrow 1 - P(A^c) \rightarrow P(A)$
+
+

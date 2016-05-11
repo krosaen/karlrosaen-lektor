@@ -1,0 +1,62 @@
+_model: page
+---
+title: All of statistics ch1 problem 4
+---
+body:
+
+## Problem
+
+Let $\\{A\_i \in I\\}$ be a collection of events where $I$ is an arbitrary index set.
+
+Show that
+
+$(\bigcup\_{i \in I} A\_i)^c = \bigcap\_{i \in I} A\_i^c$
+
+and
+
+$(\bigcap\_{i \in I} A\_i)^c = \bigcup\_{i \in I} A\_i^c$
+
+## Solution
+
+In the book, the hint is given: "first prove this for $I = \\{1, ..., n\\}$
+
+So working it out on my own I *think* I successfully did that via induction:
+
+**Base Case** $n=1$
+
+$(\bigcup\_{i=1}^n A\_i)^c$ with $n=1$ is $(A\_1)^c$ which clearly is the same as $A_1^C$
+
+ **Inductive step**
+
+Given that $(\bigcup\_{i=1}^n A\_i)^c = \bigcap\_{i=1}^n A\_i^c$ prove this for $n+1$.
+
+$(\bigcup\_{i=1}^{n+1} A\_i)^c$
+<br>=$(A\_{i+1} \cup \bigcup\_{i=1}^n A\_i)^c$
+<br>=$A\_{i+1}^c \cap (\bigcup\_{i=1}^n A\_i)^c$
+<br>=$A\_{i+1}^c \cap  \bigcap\_{i=1}^n A\_i^c$
+<br>=$\bigcap\_{i=1}^{n+1} A\_i^c$
+
+So I've shown this for one of the cases for $I = \\{1, ..., n\\}$. I think showing it for the other case would be similar, applying demorgan's law in the inductive step.
+
+How do we map this for an arbitrary index set? I can't figure out how to show this step by step, but I think it makes sense to say that for any arbitrary index set, you can arrange the indices in increasing order, and from there, why not use the same induction technique? None of the steps would not hold because subsequent indices are more than one step apart. But ¯\\\_(ツ)\_/¯.
+
+In the solution, the author took a different approach (apparently ignoring the hint from the problem description) of proving:
+
+$(\bigcup\_{i \in I} A\_i)^c = \bigcap\_{i \in I} A\_i^c$
+
+by showing both that
+
+1. $(\bigcup\_{i \in I} A\_i)^c \subseteq \bigcap\_{i \in I} A\_i^c$
+2. $\bigcap\_{i \in I} A\_i^c \subseteq (\bigcup\_{i \in I} A\_i)^c$
+
+using the definitions of $\subseteq$. For example, for (1):
+
+$(\bigcup\_{i \in I} A\_i)^c$ means that For any $x \in (\bigcup\_{i \in I}A\_i)^c$, then $x \notin \bigcup\_{i \in I}A\_i$.
+
+$x \notin \bigcup\_{i \in I}A\_i$ 
+<br> $\implies \nexists i \in I$ s.t $x \in A$ 
+<br> $\implies x \in A^c, \forall i \in I$
+<br> $\implies x \in \bigcap\_{i \in I} A\_i^c$
+
+
+

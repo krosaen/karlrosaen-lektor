@@ -1,0 +1,68 @@
+pub_date: 2016-05-05
+---
+body:
+
+## Moar Measure
+
+Following up on my study of measure theory, which in turn, is a study of probability theory because a probability is a measure, here are some properties of a measure $\mu$ (via the first few videos of [the mathematical monk's playlist on probability](https://www.youtube.com/playlist?list=PL17567A1A3F5DB5E4)):
+
+- Monotonicity: $A \subset B \implies \mu(A) \leq \mu(B)$
+- Subadditivity: $E\_1, E\_2, ... \in A \implies \mu(\bigcup_{i}E\_i) \leq \sum_{i}\mu(E\_i)$
+- Continuity from below: $E\_1, E\_2, ... \in A$ and $E\_1 \subset E\_2 \subset ... \implies \mu(\sum_{i=1}^{\infty}E\_i) = \lim_{i\to\infty} \mu(E\_i)$
+- Continuity from above: if $E\_1, E\_2, ... \in A$ and $E\_1 \supset E\_2 \supset ... $ and $\mu(E\_1) < \infty$ then $\mu(\bigcap_{i=1}^{\infty} E\_i) = \lim_{i\to\infty} \mu(E\_i)$
+
+The above are true of all measures, and thus all probability measures. Here are some more properties of probability measures.
+
+Let $(\Omega, \mathcal{A}, P)$ be a probability measure space with $E, F, E\_i \in \mathcal{A}$
+
+- $P(E \cup F) = P(E) + P(F)$ if $E \cap F = \emptyset$
+- $P(E \cup F) = P(E) + P(F) - P(E \cap F)$
+- $P(E) = 1 - P(E^C)$
+- $P(E \cap F^C) = P(E) - P(E \cap F)$
+
+The generalization of $P(E \cup F) = P(E) + P(F) - P(E \cap F)$ is called the [inclusion exclusion principal](https://en.wikipedia.org/wiki/Inclusion%E2%80%93exclusion_principle) and can be visualized with 3 sets:
+
+<a href="//upload.wikimedia.org/wikipedia/commons/4/42/Inclusion-exclusion.svg"><img alt="File:Inclusion-exclusion.svg" src="//upload.wikimedia.org/wikipedia/commons/thumb/4/42/Inclusion-exclusion.svg/500px-Inclusion-exclusion.svg.png" width="500" height="400" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/4/42/Inclusion-exclusion.svg/750px-Inclusion-exclusion.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/4/42/Inclusion-exclusion.svg/1000px-Inclusion-exclusion.svg.png 2x" data-file-width="500" data-file-height="400"></a>
+
+All of these are enumerated as properties of probability measures in the all of stats book, but I don't mind running through it again with my new found appreciation for measure theory. Most of this stuff can be visualized with venn diagrams.
+
+## Borel Probability measures and CDFs
+
+Let's consider a Borel measure on $\Bbb R$, which is a measure with $\Omega$ is $\Bbb R$, $\mathcal{A}$ is $\mathcal{B}(\Bbb R)$, e.g it is a measure on $(\Bbb R, \mathcal{B}(\Bbb R))$.
+
+$\mathcal{B}(\Bbb R))$ is the Borel $\sigma$-algebra which are all of the open sets of $\Bbb R$.
+
+Going back to cumulative distribution functions (CDFs), it turns out that every CDF implies a unique Borel probability measure and that a Borel probability measure implies a unique CDF. 
+
+More concretely, A CDF is defined as a function $F: \Bbb R \to \Bbb R$ s.t.
+
+- $x \leq y \implies F(x) \leq F(y)$ $(x,y \in \Bbb R)$ ($F$ is non-decreasing)
+- $lim_{x \searrow a} F(x) = F(a)$ ($F$ is right-continuous)
+- $lim_{x \to \infty} F(x) = 1$
+- $lim_{x \to -\infty} F(x) = 0$
+
+Theorem: $F(x) = P((-\infty, x])$ defines an equivalence between CDFs $F$ and Borel probability measures $P$.
+
+This is kind of interesting as it frames the scope of what kind of probability measures can be uniquely described with a CDF: those that are measures over the Borel $\sigma$-algebra, e.g those considering the open sets of real numbers $\Bbb R$.
+
+So this means we might in some cases be trying to reason about probability measures that are *not* on open sets of real numbers, and we'll need to use measure theory as a CDF won't cut it.
+
+## Mathematical monk's recommended resources
+
+In [this video](https://youtu.be/aJjB16jJQEQ?list=PL17567A1A3F5DB5E4) the teacher recommends some books, so I thought I'd take note in case I need even moar stuff to read / reference / study:
+
+- Rudin's principles of mathematical analysis
+- Jacod Protter probability essentials
+- [Real Analysis: Modern Techniques](http://www.amazon.com/Real-Analysis-Modern-Techniques-Applications/dp/0471317160) (advanced)
+
+all are googleable to find excerpts / problem sets.
+
+## Useful tool for looking up LaTeX symbols
+
+As I attempt to get more fluent in typing out TeX for Mathjax, being able to find a symbol quickly is important. [This tool](http://detexify.kirelabs.org/classify.html) rocks: it lets you draw the symbol and finds closely related symbols along with the needed TeX.
+
+## Starting on problem sets
+
+I'm finally diving into the All of Stats problem sets [from the course website](http://www.stat.cmu.edu/~larry/=stat705/), here's my [WIP for problem 1](/ml/hw/all-of-statistics-ch1-problem-1/).
+---
+summary: Measure theory as it relates to Cumulative distribution functions (CDFs), working on problem sets.
