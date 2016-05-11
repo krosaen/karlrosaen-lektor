@@ -2,19 +2,18 @@
 {% block title %}{{ this.pub_date }} | {{ this.summary }} | ML Learning Log{% endblock %}
 {% set notebook_fname = "" + this._id + ".ipynb" %}
 {% set notebook_attachment = this.attachments.get(notebook_fname) %}
-
 {% block extra_styles %}
-    <link rel="stylesheet" href="{{ '/static/notebook.css'|asseturl }}">
+    {% if notebook_attachment %}
+        <link rel="stylesheet" href="{{ '/static/notebook.css'|asseturl }}">
+    {% endif %}
 {% endblock %}
-{% if notebook_attachment %}
-    {% block breadcrumbs %}
-        <ol class="breadcrumb">
-            <li><a href="{{ '/ml' | url }}">ML Study</a></li>
-            <li><a href="{{ '/ml/learning-log' | url }}">Learning Log</a></li>
-            <li class="active">{{ this.pub_date }}</li>
-        </ol>
-    {% endblock %}
-{% endif %}
+{% block breadcrumbs %}
+    <ol class="breadcrumb">
+        <li><a href="{{ '/ml' | url }}">ML Study</a></li>
+        <li><a href="{{ '/ml/learning-log' | url }}">Learning Log</a></li>
+        <li class="active">{{ this.pub_date }}</li>
+    </ol>
+{% endblock %}
 {% block body %}
     {% set siblings = this.get_siblings() %}
     {% set older = siblings.next_page %}

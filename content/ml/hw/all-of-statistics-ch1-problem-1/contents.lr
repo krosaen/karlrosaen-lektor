@@ -1,12 +1,10 @@
-_model: page
----
 title: All of Statistics Ch1 Problem 1
 ---
 body:
 
 ## Problem
 
-Chapter 1 problem 1: fill in the details of the proof of Theorem 1.8. 
+Chapter 1 problem 1: fill in the details of the proof of Theorem 1.8.
 
 Also prove the monotone decreasing case.
 
@@ -16,22 +14,22 @@ $$ P(A\_n) \rightarrow P(A) $$
 
 as $n \rightarrow \infty$
 
-### Proof 
+### Proof
 
-Suppose that $A\_n$ is monotone increasing so that $A\_1 \subset A\_2 \subset ... $. 
+Suppose that $A\_n$ is monotone increasing so that $A\_1 \subset A\_2 \subset ... $.
 
 Let $A = lim\_{n \to \infty} A\_n = \bigcup\_{i=1}^{\infty} A\_i$
 
-Define 
+Define
 - $B\_1 = A\_1$
 - $B\_2 = \\{ \omega \in \Omega : \omega \in A\_2, \omega \notin A\_1 \\} $
 - $B\_3 = \\{ \omega \in \Omega : \omega \in A\_3, \omega \notin A\_2, \omega \notin A\_1 \\} $
 - etc
 
-It can be shown that: 
+It can be shown that:
 
 - $B\_1, B\_2, ...$ are disjoint
-- $A\_n = \bigcup\_{i=1}^{n} A\_i = \bigcup\_{i=1}^{n} B\_i$ for each $n$ 
+- $A\_n = \bigcup\_{i=1}^{n} A\_i = \bigcup\_{i=1}^{n} B\_i$ for each $n$
 - $\bigcup\_{i=1}^{\infty} B\_i = \bigcup\_{i=1}^{\infty} A\_i.$
 
 *this is what we need to do for this exercise*
@@ -40,7 +38,7 @@ From Axiom 3 of probability measures: if $A\_1, A\_2, ...$ *are disjoint then* $
 
 we can show:
 
-$lim\_{n \to \infty} P(A\_n)$ 
+$lim\_{n \to \infty} P(A\_n)$
 <br>= $ lim\_{n \to \infty} \sum\_{i=1}^{n} P(B\_i)$
 <br>= $ \sum\_{i=1}^{\infty} P(B\_i)$
 <br>= $ P(\bigcup\_{i=1}^{\infty} B\_i) $
@@ -79,7 +77,7 @@ Damnit, this doesn't really show it for all j and k, had to look at the solution
 
 #### Attempt 3: solution walkthrough
 
-Note that I was mistaken, it's not that  $B\_k$ can be written as $A\_k \cap B\_{k-1}^{c}$ 
+Note that I was mistaken, it's not that  $B\_k$ can be written as $A\_k \cap B\_{k-1}^{c}$
 
 It's that  $B\_k$ can be written as $A\_k \cap A\_{k-1}^{c}$
 
@@ -94,7 +92,7 @@ we know that $A\_j \subseteq A\_{k-1}$ because $j \leq k$ so  $A\_j \cap A\_{k-1
 
 and if you throw an $\emptyset$ into a series of intersections you always have $\emptyset$.
 
-### 2. Showing $A\_n = \bigcup\_{i=1}^{n} A\_i = \bigcup\_{i=1}^{n} B\_i$ for each $n$ 
+### 2. Showing $A\_n = \bigcup\_{i=1}^{n} A\_i = \bigcup\_{i=1}^{n} B\_i$ for each $n$
 
 Since $A$ is an increasing sequence, $\bigcup\_{i=1}^{n} A\_i = A\_n$.
 
@@ -106,13 +104,13 @@ For n = 1  $\bigcup\_{i=1}^{n} A\_i = A\_1 = B\_1 =  \bigcup\_{i=1}^{n} B\_i$
 
 #### Inductive step
 
-Given 
+Given
 
-$\bigcup\_{i=1}^{n} B\_i = \bigcup\_{i=1}^{n} A\_i$ 
+$\bigcup\_{i=1}^{n} B\_i = \bigcup\_{i=1}^{n} A\_i$
 
 show
 
-$\bigcup\_{i=1}^{n+1} B\_i = \bigcup\_{i=1}^{n+1} A\_i$ 
+$\bigcup\_{i=1}^{n+1} B\_i = \bigcup\_{i=1}^{n+1} A\_i$
 
 $\bigcup\_{i=1}^{n+1} B\_i$
 <br>=$B\_{n+1} \cup (\bigcup\_{i=1}^{n} B\_i)$
@@ -142,7 +140,7 @@ The key trick here is to know that "convergence of set sequences is preserved un
 
 $ A_n^c \rightarrow A^c$ as n increases implies that $P(A_n^c) \rightarrow P(A^c)$
 
-$lim\_{n \to \infty} P(A\_n^c)$ 
+$lim\_{n \to \infty} P(A\_n^c)$
 <br>= $ lim\_{n \to \infty} \sum\_{i=1}^{n} P(B\_i^c)$
 <br>= $ \sum\_{i=1}^{\infty} P(B\_i^c)$
 <br>= $ P(\bigcup\_{i=1}^{\infty} B\_i^c) $

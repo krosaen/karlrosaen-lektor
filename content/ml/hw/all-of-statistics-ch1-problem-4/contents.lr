@@ -1,6 +1,4 @@
-_model: page
----
-title: All of statistics ch1 problem 4
+title: All of Statistics Ch1 Problem 4
 ---
 body:
 
@@ -53,8 +51,8 @@ using the definitions of $\subseteq$. For example, for (1):
 
 $(\bigcup\_{i \in I} A\_i)^c$ means that For any $x \in (\bigcup\_{i \in I}A\_i)^c$, then $x \notin \bigcup\_{i \in I}A\_i$.
 
-$x \notin \bigcup\_{i \in I}A\_i$ 
-<br> $\implies \nexists i \in I$ s.t $x \in A$ 
+$x \notin \bigcup\_{i \in I}A\_i$
+<br> $\implies \nexists i \in I$ s.t $x \in A$
 <br> $\implies x \in A^c, \forall i \in I$
 <br> $\implies x \in \bigcap\_{i \in I} A\_i^c$
 

@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block title %}{{ this.title }}{% endblock %}
+{% block breadcrumbs %}
+    <ol class="breadcrumb">
+        <li><a href="{{ '/ml' | url }}">ML Study</a></li>
+        <li class="active">Homework</li>
+    </ol>
+{% endblock %}
+{% block body %}
+    {{ this.body }}
+{% endblock %}

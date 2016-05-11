@@ -1,0 +1,27 @@
+title: All of Statistics Ch1 Problem 5
+---
+body:
+
+## Problem
+
+Suppose you have a fair coin and toss it until you get example two heads.
+
+Describe the sample space $\Omega$.
+
+What is the probability that exactly $k$ tosses are required?
+
+## Solution
+
+$\Omega = \\{HH, HTH, THH, TTHH, THTH, ...\\}$
+
+To figure out the probability it takes exactly $k$ tosses, we need to count how many ways there are to get 2 heads in $k$ tosses and divide it by all the ways there are to toss coins in $k$ tosses.
+
+The denominator will be $2^n$.
+
+Consider the numerator. It will be something like:
+
+$1, 2, ..., k-1$ tosses where there is only 1 head followed by the $kth$ toss which will be the final head.
+
+How many ways are there to toss one head in $k-1$ tosses? $k-1 \choose 1$ which is just $k-1$.
+
+So $P(\text{2 heads in exactly k tosses}) = \dfrac {k-1} {2^k}$
