@@ -1,0 +1,32 @@
+pub_date: 2016-05-12
+---
+body:
+
+## Homework
+
+This morning I solved [problem 7 from All of Statistics](/ml/hw/all-of-statistics-ch1-problem-7/). It was tough for me, taking about an hour and a half, and I needed to peek at the solution to get over one minor hump, but I was proud to have nearly gotten it, including thinking to use induction to prove the 2nd part on my own.
+
+The part that got me was this step:
+
+$(A\_{n+1} \cap (\bigcup\_{i=1}^{n} A\_i)^c) \cup \bigcup\_{i=1}^{n} A\_i$
+<br>= $[\bigcup\_{i=1}^{n} A\_i \cup A\_{n+1}] \cap [\bigcup\_{i=1}^{n} A\_i \cup (\bigcup\_{i=1}^{n} A\_i)^c]$ 
+
+because I didn't remember / know that union distributes over intersection in set theory! I won't forget it now that I spent 20 minutes stumped on it :)
+
+It's also interesting that this problem uses a similar trick to [problem 1](/ml/hw/all-of-statistics-ch1-problem-1/) in crafting an intermediate variable that can be proven to be disjoint so that you can add up the probabilities. 
+
+## Back to Python ML
+
+### Making sense of the odds ratio
+
+In the Python ML book it goes through how the cost function is derived for logistic regression using the odds ratio, which is $\frac{p}{(1 - p)}$. I was left unsatisfied with this being presented as matter of fact so went googling around to get a bit more of a sense of why this ratio would be used instead of the direct probability.
+
+[this article](http://www.theanalysisfactor.com/why-use-odds-ratios/) was helpful:
+
+> ... there is no way to express in one number how X affects Y in terms of probability. The effect of X on the probability of Y has different values depending on the value of X. So while we would love to use probabilities because they’re intuitive, you’re just not going to be able to describe that effect in a single number. 
+
+
+---
+_hidden: no
+---
+summary: More probability HW, making sense of the odds ratio underlying logistic regression
