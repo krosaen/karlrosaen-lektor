@@ -1,0 +1,62 @@
+title: All of Statistics Ch1 Problem 7
+---
+body:
+
+## Problem
+
+Let $A_1, A_2, ...$ be events. Show that:
+
+$P(\bigcup\_{n=1}^{\infty} A\_n) \leq \sum\_{n=1}^{\infty} P(A\_n)$
+
+Hint: define $B_n = A\_n - \bigcup\_{i=1}^{n-1}A\_i$ and show:
+
+- $B\_n$ are disjoint
+- $\bigcup\_{n=1}^{\infty} A\_n = \bigcup\_{n=1}^{\infty} B\_n$
+
+## Solution
+
+### Showing $B\_n$ are disjoint
+
+To show that $B\_n$ are disjoint, we can show that $B\_j \cap B\_k = \emptyset \forall (j,k) \in \mathbb{N}$. We can assume $j < k$ without loss of generality.
+
+$B\_j \cap B\_k$
+<br>= $(A\_j - \bigcup\_{i=1}^{j-1} A\_i) \cap (A\_k - \bigcup\_{i=1}^{k-1} A\_i)$
+<br>= $A\_j \cap (\bigcup\_{i=1}^{j-1} A\_i)^c \cap A\_k \cap  (\bigcup\_{i=1}^{k-1} A\_i)^c$
+<br>= $A\_j \cap (\bigcup\_{i=1}^{j-1} A\_i)^c \cap A\_k \cap  \bigcap\_{i=1}^{k-1} A\_i^c$
+
+Note that we can pull out a $A\_j^c$ from $\bigcap\_{i=1}^{k-1} A\_i^c$ 
+
+= $A\_j \cap A\_j^c \cap (\bigcup\_{i=1}^{j-1} A\_i)^c \cap A\_k \cap  \bigcap\_{i=1}^{k-1} A\_i^c$
+<br>= $\emptyset \cap (\bigcup\_{i=1}^{j-1} A\_i)^c \cap A\_k \cap  \bigcap\_{i=1}^{k-1} A\_i^c$
+<br>= $\emptyset$
+
+### Showing $\bigcup\_{n=1}^{\infty} A\_n = \bigcup\_{n=1}^{\infty} B\_n$
+
+We can prove that $\bigcup\_{i=1}^{n} A\_i = \bigcup\_{i=1}^{n} B\_i \forall n \in \mathbb{N}$ using induction.
+
+#### Base case: $n=1$
+
+$\bigcup\_{i=1}^{1} B\_i$
+<br>= $B\_1$
+<br>= $A\_1$
+<br>= $\bigcup\_{i=1}^{1} A\_i$
+
+#### Inductive step
+
+Assuming that $\bigcup\_{i=1}^{n} A\_i = \bigcup\_{i=1}^{n} B\_i$ and show that $\bigcup\_{i=1}^{n+1} A\_i = \bigcup\_{i=1}^{n+1} B\_i$ holds true.
+
+$\bigcup\_{i=1}^{n+1} B\_i$
+<br>= $B\_{n+1} \cup \bigcup\_{i=1}^{n} B\_i$
+<br>= $B\_{n+1} \cup \bigcup\_{i=1}^{n} A\_i$ (by inductive assumption)
+<br>= $(A\_{n+1} \cap (\bigcup\_{i=1}^{n} A\_i)^c) \cup \bigcup\_{i=1}^{n} A\_i$
+<br>= $[\bigcup\_{i=1}^{n} A\_i \cup A\_{n+1}] \cap [\bigcup\_{i=1}^{n} A\_i \cup (\bigcup\_{i=1}^{n} A\_i)^c]$ (union distributes over intersection!)
+<br>= $\bigcup\_{i=1}^{n+1} A\_i \cap \Omega$
+<br>= $\bigcup\_{i=1}^{n+1} A\_i$
+
+### Putting it all together
+
+$P(\bigcup\_{n=1}^{\infty} A\_n)$
+<br>= $P(\bigcup\_{n=1}^{\infty} B\_n)$ 
+<br> = $\sum\_{n=1}^{\infty} P(B\_n)$ (since $B\_n$ are disjoint)
+<br> = $\sum\_{n=1}^{\infty} P(A\_n - \bigcup\_{i=1}^{n-1}A\_i) \leq \sum\_{n=1}^{\infty} P(A\_n)$
+

@@ -16,7 +16,7 @@ First, let's review the axioms of probability
 2. $P(\Omega) = 1$
 3. If $P\_1, P\_2, ... P\_n$ are disjoint, then $\sum\_{i=1}^{n} P\_i = 1$
 
-$P(\Omega) = 1 = \bigcup\_{i=0}^{\infty} \\{i\\} = \sum\_{i=0}^{\infty} \\{i\\} = \sum\_{i=0}^{\infty} c$
+If $P$ is a uniform distribution, $P(\Omega) = 1 = \bigcup\_{i=0}^{\infty} \\{i\\} = \sum\_{i=0}^{\infty} \\{i\\} = \sum\_{i=0}^{\infty} c$
 
 for some $c$. If $c=0$ then $P(\Omega) = 0$, and if $c>=$ then $P(\Omega) = \infty$, both breaking axiom #2.
 
