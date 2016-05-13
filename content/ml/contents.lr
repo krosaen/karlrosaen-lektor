@@ -4,7 +4,7 @@ _template: ml.html
 ---
 _discoverable: no
 ---
-body:
+curriculum:
 
 My curriculum includes 3 areas:
 
@@ -70,7 +70,7 @@ Some areas, like linear algebra, I've decided to skip completely for the time be
 - [Elements of Statistical Learning](http://statweb.stanford.edu/~tibs/ElemStatLearn/)
 - [Data Science from Scratch](http://www.amazon.com/Data-Science-Scratch-Principles-Python/dp/149190142X): I bought this book and have enjoyed perusing.
 - [Mathematical Monk's ML YouTube playlist](https://www.youtube.com/playlist?list=PLD0F06AA0D2E8FFBA)
-- [Coursera course on Probabilistic Graphical Models](https://class.coursera.org/pgm/lecture/preview) 
+- [Coursera course on Probabilistic Graphical Models](https://class.coursera.org/pgm/lecture/preview)
 - [Text on Probabilistic Graphical Models for sale](http://www.amazon.com/Probabilistic-Graphical-Models-Principles-Computation/dp/0262013193) (and [for download](https://github.com/JimmyLin192/GraphicalModel/blob/master/Probabilistic%20Graphical%20Models%20Principles%20and%20Techniques.pdf))
 - [Tom Griffiths' reading list on Bayesian methods](http://cocosci.berkeley.edu/tom/bayes.html)
 
@@ -122,4 +122,10 @@ This is not an original idea and there are some great posts & resources out ther
 ### Starting Point
 
 I'm not starting from scratch: I've written software professionally for many years in everything from C/C++ and Java to Python and Ruby and have a masters degree in computer engineering, which included a general engineering education with lot's of calculus courses. I've also dabbled with different ML tools and perused books over the years. So my curriculum doesn't include things like learning Python or how to slurp data from websites and clean things up and you may wish to consult other guides for good resources on the fastest way to get up to speed on programming as it most relates to ML / data science.
+
+---
+intro:
+
+I recently [embarked on a learning sabbatical](/learning-sabbatical) focused on machine learning. Here are resources for you to follow along if you like.
+
 
