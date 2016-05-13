@@ -16,7 +16,7 @@ and then run it like this:
 $ lektor server -f webpack
 ```
 
-If you want to view the rendered notebooks, you need `jupyter` installed 
+If you want to view the rendered notebooks, you need `jupyter` [installed](http://jupyter.readthedocs.io/en/latest/install.html)
 and then run:
 
 ```
