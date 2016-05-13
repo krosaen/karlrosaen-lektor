@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="{{ '/static/notebook.css'|asseturl }}">
     <style type="text/css">
         .section-inner {
-            max-width:1100px;
+            max-width: 1000px;
         }
     </style>
 {% endblock %}
@@ -13,28 +13,42 @@
     <ol class="breadcrumb">
         <li><a href="{{ '/ml' | url }}">ML Study</a></li>
         <li><a href="{{ '/ml/notebooks' | url }}">Notebooks</a></li>
-        <li class="active">{{ notebook_fname }} | {{ this.pub_date }} (<a href="{{ notebook_fname }}">download</a>)</li>
+        <li class="active">{{ this.title }} | {{ this.pub_date }} (<a href="{{ notebook_fname }}">download</a>)</li>
     </ol>
 {% endblock %}
 {% block body %}
-    {% set siblings = this.get_siblings() %}
-    {% set older = siblings.next_page %}
-    {% set newer = siblings.prev_page %}
-    {% if older or newer %}
-    <div class="prev-next">
-    {% if older %}
-        <div class="nav-prev">
-            <a href="{{ older|url }}">previous</a>
+
+    {# Mimic markup of rendered notebook so header lines up #}
+    <div class="cell border-box-sizing text_cell rendered">
+        <div class="prompt input_prompt"></div>
+        <div class="inner_cell">
+
+            {% set siblings = this.get_siblings() %}
+            {% set older = siblings.next_page %}
+            {% set newer = siblings.prev_page %}
+            {% if older or newer %}
+                <div class="prev-next">
+                    {% if older %}
+                        <div class="nav-prev">
+                            <a href="{{ older|url }}">previous notebook</a>
+                        </div>
+                    {% endif %}
+                    {% if newer %}
+                        <div class="nav-next">
+                            <a href="{{ newer|url }}">next notebook</a>
+                        </div>
+                    {% endif %}
+                    <br>
+                </div>
+            {% endif %}
+
+{#            <div class="text_cell_render border-box-sizing rendered_html">#}
+{#                <h1>{{ this.title }}</h1>#}
+{##}
+{##}
+{#            </div>#}
         </div>
-    {% endif %}
-    {% if newer %}
-        <div class="nav-next">
-            <a href="{{ newer|url }}">next</a>
-        </div>
-    {% endif %}
-    <br>
     </div>
-    {% endif %}
 
     {% set notebook_rendered_template = "rendered-notebooks/" + this._id + ".html" %}
     {% include notebook_rendered_template %}

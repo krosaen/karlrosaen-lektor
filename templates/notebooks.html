@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block title %}{{ this.title }}{% endblock %}
+{% block breadcrumbs %}
+    <ol class="breadcrumb">
+        <li><a href="{{ '/ml' | url }}">ML Study</a></li>
+        <li class="active">Notebooks</li>
+    </ol>
+{% endblock %}
+{% block body %}
+    {{ this.intro }}
+
+    <ul class="ll-list">
+        {% for note in this.pagination.items %}
+            <li>
+                <h3><a href="{{ note|url }}">
+                    <span class="pub-date">{{ note.title }}</span>
+                    (<span class="summary">{{ note.pub_date | dateformat('E, M/d') }}</span>)
+                    </a>
+                </h3>
+            </li>
+        {% endfor %}
+    </ul>
+
+    {% if this.pagination.pages > 1 %}
+        {{ render_pagination(this.pagination) }}
+    {% endif %}
+
+{% endblock %}
