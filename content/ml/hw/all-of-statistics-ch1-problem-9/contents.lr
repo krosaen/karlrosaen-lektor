@@ -1,1 +1,61 @@
 title: All of Statistics Ch1 Problem 9
+---
+body:
+
+## Problem
+
+For a fixed $B$ with $P(B) > 0$ , show that $P(\cdot | B)$ is a probability.
+
+## Solution
+
+We need to show that $P(\cdot | B)$ satisfies the axioms of probability
+
+1. $P(A) \geq 0$ for every $A \subseteq \Omega$
+2. $P(\Omega) = 1$
+3. If $P\_1, P\_2, ... P\_n$ are disjoint, then $P(\bigcup\_{i=1}^{\infty} A\_i) = \sum\_{i=1}^{\infty} P(A\_i) $
+
+### 1. $P(\cdot | B) \geq 0$
+
+For a given $A$, $P(A | B) = \dfrac{P(A \cap B)}{P(B)}$.
+
+We know that $P(B) > 0$ and that $P(A) \geq 0$
+
+Consider $P(A \cap B)$. Either $A \cap B = \emptyset$ in which case $P(A \cap B) = 0$ or $A \cap B \in \Omega $, in which case $P(A \cap B) \geq 0$.
+
+Therefore $P(A \cap B) \geq 0$ and $\dfrac{P(A \cap B)}{P(B)} \geq 0$
+
+### 2. $P(\Omega | B) = 1$
+
+$P(\Omega | B) = \dfrac{P(\Omega \cap B)}{P(B)} = \dfrac{P(B)}{P(B)} = 1$
+
+### 3.  $P(\bigcup\_{i=1}^{\infty} A\_i | B) = \sum\_{i=1}^{\infty} P(A\_i | B) $
+
+$P(\bigcup\_{i=1}^{\infty} A\_i | B)$
+<br>=$\frac{P((\bigcup\_{i=1}^{\infty} A\_i) \cap B)}{P(B)}$
+
+So this boils down to showing that, for disjoint $A\_i$, $[\bigcup\_{i=1}^{\infty} A\_i] \cap B = \bigcup\_{i=1}^{\infty} A\_i \cap B$
+
+because given that
+
+$\frac{P((\bigcup\_{i=1}^{\infty} A\_i) \cap B)}{P(B)}$
+<br>=$\frac{P(\bigcup\_{i=1}^{\infty} A\_i \cap B)}{P(B)}$
+<br>=$\frac{\sum\_{i=1}^{\infty} P(A\_i \cap B))}{P(B)}$
+<br>=$\sum\_{i=1}^{\infty} \frac{P(A\_i \cap B)}{P(B)}$
+<br>=$\sum\_{i=1}^{\infty} P(A\_i | B)$
+
+Note that there is an assumption in there that if $A\_is$ are disjoint, then $A\_is \cap B$ are disjoint, and this makes sense because $A\_i \cap A\_k = \emptyset$ then $(A\_i \cap B) \cap (A\_k \cap B) = A\_i \cap A\_k \cap B  \cap B = \emptyset \cap B = \emptyset$ 
+
+Ok, we still need to show that, for disjoint $A\_i$, $[\bigcup\_{i=1}^{\infty} A\_i] \cap B = \bigcup\_{i=1}^{\infty} A\_i \cap B$. To do this, we will show that each contains the other.
+
+#### Step 1
+
+$[\bigcup\_{i=1}^{\infty} A\_i] \cap B \subseteq \bigcup\_{i=1}^{\infty} A\_i \cap B$
+
+Suppose an outcome $w \in [\bigcup\_{i=1}^{\infty} A\_i] \cap B$. That means there exists an $i$ so that $w \in A\_i$ and $w \in B$. For that $i$, $w \in A\_i \cap B$ and must also be in $\bigcup\_{i=1}^{\infty} A\_i \cap B$.
+
+#### Step 2
+
+$ \bigcup\_{i=1}^{\infty} A\_i \cap B \subseteq [\bigcup\_{i=1}^{\infty} A\_i] \cap B $
+
+Suppose $w \in \bigcup\_{i=1}^{\infty} A\_i \cap B$. That means there exists an $i$ such that $w \in A\_i \cap B$, and therefore $w \in A\_i$ and $w \in B$. If $w \in A\_i$, then $w \in \bigcup\_{i=1}^{\infty} A\_i$, so $w \in [\bigcup\_{i=1}^{\infty} A\_i] \cap B$.
+
