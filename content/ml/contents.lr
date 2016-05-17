@@ -96,12 +96,11 @@ Some areas, like linear algebra, I've decided to skip completely for the time be
 
 - [Introduction to Proofs, an Inquiry-Based approach](http://joshua.smcvt.edu/proofs/)
 - "Everything You Always Wanted To Know About Mathematics (But didn’t even know to ask)"—the text for [CMU's Concepts of Mathematics course](https://www.andrew.cmu.edu/course/21-127/) by [Brendan Sullivan](http://math.cmu.edu/~bwsulliv/): he apparently wrote this book for [his PHD thesis](http://math.cmu.edu/~bwsulliv/defense.pdf). The book doesn't seem to be available for purchase or download online, but the author was kind enough to send me a copy when I emailed and asked: how cool!
+- [Jeremy Kun's "methods of proof" primers](https://jeremykun.com/primers/)
 
-I have a sense that if I were comfortable proving, or at least following the proofs of important theorems in statistics, deeper insights would stick. I think that's the problem I've had in the past with stats coursework: it's so easy to glaze over 3 pages of dense text that includes 4-5 theorems without understanding much more than how to plug and chug. One theorem I've already spent some time with proving and re-proving is Bayes'.
+I have a sense that if I were comfortable proving, or at least following the proofs of important theorems in statistics, deeper insights would stick. I think that's the problem I've had in the past with stats coursework: it's so easy to glaze over 3 pages of dense text that includes 4-5 theorems without understanding much more than how to plug and chug. One theorem I've already spent some time with proving and re-proving is Bayes', and many of the [problem sets](/ml/hw/) I've worked through have required some basic proofs.
 
-In support of this, I've found that time spent on fundamentals of computing have never been wasted; I've probably taken a run at [SICP](https://mitpress.mit.edu/sicp/) 3 different times, making it further and learning new things each time, and believe it's made me a much better programmer.
-
-However, this idea that I will become a master mathematician along the way is quixotic and I want to make sure I keep my eye on the ball; I've so far done little more than peruse Brendan's book to give myself a big picture reminder of fundamental techniques and terminology that could be relevant when staring at a new theorem or formula. If nothing else it's a nice reminder of some of what makes up the foundations of math: sets, logic, induction, relations, functions.
+However, the idea that I will become a master mathematician along the way is quixotic and I want to make sure I keep my eye on the ball, so I view these as nice reference material more than material I would like to plan on working through comprehensively.
 
 ### Getting inspired
 
