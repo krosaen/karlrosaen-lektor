@@ -1,0 +1,11 @@
+pub_date: 2016-05-16
+---
+body:
+
+Got off to a good start this morning on some probability hw, showing that for a fixed $B$ with $P(B) > 0$ , that $P(\cdot | B)$ is a probability (see [solution](/ml/hw/all-of-statistics-ch1-problem-9/)).
+
+I also spent more time exploring the Sigmoid function resulting in [this IPython notebook](/ml/notebooks/logistic-regression-why-sigmoid/) that attempts to explain why it is used in logistic regression. While I was at it I setup a [notebooks section](/ml/notebooks/) on the site to house the 3 notebooks so far. The sigmoid exploration was really a diversion / deep dive as part of [my work on chapter 3](http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/python-ml-book/ch03/ch03.ipynb) of the python machine learning book, which briefly covers logistic regression in its tour of classification algorithms, but it seemed like a stand alone topic that could be of interest to others and for me to come back to later.
+
+<img src="sigmoid.png" width=425>
+---
+summary: A notebook exploring why a sigmoid function is used in logistic regression and conditional probability HW
