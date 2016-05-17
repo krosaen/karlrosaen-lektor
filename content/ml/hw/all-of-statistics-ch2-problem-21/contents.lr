@@ -1,0 +1,11 @@
+title: All of Statistics Ch2 Problem 21
+---
+body:
+
+## Problem
+
+Let $X\_1, ..., X\_n \sim Exp(\beta)$ be IID. Let $Y = max\\{X\_1, ..., X\_n\\}.$ Find the PDF of $Y$.
+
+Hint: $Y \leq y$ if and only if $X\_i \leq y$ for $i = 1, .., n$.
+
+## Solution

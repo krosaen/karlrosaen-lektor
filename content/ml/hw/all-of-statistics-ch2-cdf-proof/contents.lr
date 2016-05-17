@@ -1,0 +1,13 @@
+title: All of Statistics Chapter 2 CDF Proof
+---
+body:
+
+## Problem
+
+Prove this theorem:
+
+Let $F$ be a cdf, and $U$ a random variable uniformly distributed on $[0, 1]$. Then $F^{-1}(U)$ is a random variable with cdf $F$.
+
+Note: the usefulness of this result is that we can view $[0, 1]$ as the original sample space, equipped with uniform probability, and the random variable $X = F^{-1}(U)$ is a mapping from the sample space to the real line, and has cdf $F$. This applies to both continuous and discrete random variables.
+
+## Solution

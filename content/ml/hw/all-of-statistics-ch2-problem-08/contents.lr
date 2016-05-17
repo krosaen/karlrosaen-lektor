@@ -1,0 +1,9 @@
+title: All of Statistics Ch2 Problem 8
+---
+body:
+
+## Problem
+
+Let $X$ have a CDF $F$. Find the CDF of $X^+ = \text{max}\\{0,X\\}$.
+
+## Solution

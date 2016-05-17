@@ -1,0 +1,9 @@
+title: All of Statistics Chapter 2 Uniform X, Y Problem
+---
+body:
+
+## Problem
+
+Let $(X, Y)$ have the uniform distribution on $[0, 1] × [0, 1]$. Find the probability of $X+Y \geq 1/2$.
+
+## Solution
