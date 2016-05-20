@@ -1,0 +1,19 @@
+pub_date: 2016-05-17
+---
+body:
+
+I submitted [my notebook about the sigmoid function](/ml/notebooks/logistic-regression-why-sigmoid/) to [hacker news](https://news.ycombinator.com/item?id=11712573) this morning and was pleasantly surprised to see it picked up and make the front page. The feedback in the comments was mixed, but after getting past some nerd snark, there were a few nuggets I could learn from including [this comment](https://news.ycombinator.com/item?id=11714884) about how applying the log odds function to Bayes' theorem can be useful, will need to dig in a bit to fully grok. I was also pleased [by this comment](https://news.ycombinator.com/item?id=11713778) which pointed out that the intuitive justification for logistic regression presented is similar to that provided in the excellent [Advanced Data Analysis from an Elementary Point of View](http://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/) (and more direct link to [chapter on logistic regression](http://www.stat.cmu.edu/~cshalizi/uADA/12/lectures/ch12.pdf)).
+
+<img src="logistic-thought-process.png" width=500>
+
+On a related not, I am back into the Python ML book and am taking some time to implement logistic regression from scratch. The book presents some theory behind the cost function that is optimized,
+
+> To explain how we can derive the cost function for logistic regression, let's first derive the likelihood L that we want to maximize when we build a logistic regression model, assuming that the individual samples in our dataset are independent of one another.
+
+And presents a hairy formula without further explanation. Thankfully that same chapter from the Advanced Data Analysis book mentioned above goes into a bit more detail. 
+
+The implementation should only require some modest updates to the cost function that I used in my [adeline implementation](https://github.com/krosaen/ml-study/blob/master/python-ml-book/ch02/adeline.py) from chapter 2. The author has also provided [a bonus notebook](https://github.com/rasbt/python-machine-learning-book/blob/master/code/bonus/logistic_regression.ipynb) on github implementing logistic regression that I will avoid peeking at until I get mine to work.
+
+ 
+---
+summary: HN coverage of my sigmoid function notebook, working on a logistic regression implementation

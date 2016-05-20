@@ -1,0 +1,54 @@
+title: Math Monk Independence Problem
+---
+body:
+
+The problem was posed in [video PP 2.3](https://youtu.be/RMS-WglZP-c?t=10m14s) of Math Monk's probability primer.
+
+## Problem
+
+$\Omega = \\{1, 2, 3, 4\\}$, $P(k) = \frac{1}{4} \forall k \in \Omega$
+
+$A = \\{1, 2\\}$, $B = \\{1, 3\\}$, $C = \\{2, 3\\}$
+
+Are $A$ and $B$ independant?
+
+Are $A, B, C$ mutually independent? Pairwise independent?
+
+Are $A, B$ conditionally independent given $C$?
+
+## Solution
+
+#### $A$ and $B$ independant?
+
+$P(A) = \frac{1}{2}$, $P(B) = \frac{1}{2}$, $P(A \cap B) = P(\\{1\\}) = \frac{1}{4} = P(A)*P(B)$
+
+So yes, $A$ and $B$ are independent.
+
+#### $A, B, C$ mutually independent?
+
+$P(A) = P(B) = P(C) = \frac{1}{2}$
+
+$A \cap B \cap C = \emptyset$
+
+So $P(A \cap B \cap C) = 0 \neq P(A)P(B)P(C) = \frac{1}{8}$
+
+And thus they are not independent.
+
+#### $A, B, C$ pairwise independent?
+
+Yes, each pair shares one element and are independent for the same reason $A$ and $B$ are independent.
+
+#### $A, B$ conditionally independent given $C$?
+
+This asks whether $P(A \cap B \mid C) = P(A \mid C)P(B \mid C)$
+
+$P(A \mid C) = \frac{P(A \cap C)}{P(C)} = \frac{1/4}{1/2} = \frac{1}{2}$
+
+Similarly, $P(B \mid C) = \frac{1}{2}$
+
+$P(A \cap B \mid C) = \frac{P(A \cap B)}{P(C)} = \frac{1/4}{1/2} = 1/2$
+
+So $P(A \cap B \mid C) = 1/2 \neq 1/4 = 1/2 * 1/2 = P(A \mid C)P(B \mid C)$
+
+and thus no, $A$ and $B$ are not conditionally independent given $C$.
+
