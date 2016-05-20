@@ -29,7 +29,7 @@ So my goal in this section is to start at the bottom and work my way through:
     - [HW2](https://www.dropbox.com/s/bj5ycpv2kghrgos/36700-2015-Fall-hw2.pdf?dl=0) and [Sols](https://www.dropbox.com/s/lkbdtbc7llx07t2/F15_700_2_Solutions.pdf?dl=0)
     - [HW3](https://www.dropbox.com/s/xfo202bpk0ci94w/36700-2015-Fall-hw3.pdf?dl=0) and [Sols](https://www.dropbox.com/s/6xaxppv63gws7e3/F15_700_3_Solutions.pdf?dl=0)
     - [HW4](https://www.dropbox.com/s/oj70ds99dllx2nx/36700-2015-Fall-hw4.pdf?dl=0) and [Sols](https://www.dropbox.com/s/xr0b6rd0q82x46l/F15_700_4_Solutions.pdf?dl=0)
-- [Mathematical Monk's Probability Primer](https://www.youtube.com/playlist?list=PL17567A1A3F5DB5E4)
+- [Mathematical Monk's Probability Primer](https://www.youtube.com/playlist?list=PL17567A1A3F5DB5E4): excellent video series with the same level of mathematical rigor as the All of Statistics book.
 - [Stanford's Free online Probability and Statistics Course](https://lagunita.stanford.edu/courses/OLI/ProbStat/Open/about): a very basic introduction to statistics; it doesn't get to random variables until about half way through. While has seemed almost *too* basic at times, for instance reviewing the mean, median and mode, I'm already glad to have spent time on it and have spiced it up by applying some of the basics to data sets of interest to me (e.g [box plots of NBA teams' margin of victory](http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/basic-stats/nba-games-net-rating-boxplots/NbaTeamGameNetRatingsPlots.ipynb)).
 - [Khan Academy's videos and exercises on Probability and Statistics](https://www.khanacademy.org/math/probability?t=table-of-contents): really good material for the introductory stuff covered by Stanford's course. A good place to look for a second explanation, though I'm not working through these exhaustively.
 
@@ -61,18 +61,19 @@ Some areas, like linear algebra, I've decided to skip completely for the time be
 ### ML
 
 - [Andrew NG's ML course](https://www.coursera.org/learn/machine-learning)
-- http://statweb.stanford.edu/~tibs/ElemStatLearn/
+- [The Elements of 
+Statistical Learning](http://statweb.stanford.edu/~tibs/ElemStatLearn/)
 - [Advanced Data Analysis from an Elementary Point of View](http://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/)
 - [Machine Learning for Hackers](http://xyclade.github.io/MachineLearning/)
-- [Probabilistic Programming & Bayesian Methods for Hackers](http://camdavidsonpilon.github.io/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/)
 - [The Deep Learning Book](http://www.deeplearningbook.org/contents/graphical_models.html)
   - this has a great [overview of graphical models](http://www.deeplearningbook.org/contents/graphical_models.html)
-- [Elements of Statistical Learning](http://statweb.stanford.edu/~tibs/ElemStatLearn/)
 - [Data Science from Scratch](http://www.amazon.com/Data-Science-Scratch-Principles-Python/dp/149190142X): I bought this book and have enjoyed perusing.
 - [Mathematical Monk's ML YouTube playlist](https://www.youtube.com/playlist?list=PLD0F06AA0D2E8FFBA)
 - [Coursera course on Probabilistic Graphical Models](https://class.coursera.org/pgm/lecture/preview)
+- [Probabilistic Programming & Bayesian Methods for Hackers](http://camdavidsonpilon.github.io/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/)
 - [Text on Probabilistic Graphical Models for sale](http://www.amazon.com/Probabilistic-Graphical-Models-Principles-Computation/dp/0262013193) (and [for download](https://github.com/JimmyLin192/GraphicalModel/blob/master/Probabilistic%20Graphical%20Models%20Principles%20and%20Techniques.pdf))
 - [Tom Griffiths' reading list on Bayesian methods](http://cocosci.berkeley.edu/tom/bayes.html)
+- [Doing Bayesian Data Analysis](http://www.indiana.edu/~kruschke/DoingBayesianDataAnalysis/) and examples ported to [Python and PyMC3](https://github.com/aloctavodia/Doing_bayesian_data_analysis) and [iPython notebook](http://nbviewer.jupyter.org/github/aloctavodia/Doing_bayesian_data_analysis/blob/master/IPython/Kruschkes_Doing_Bayesian_Data_Analysis_in_PyMC3.ipynb)
 
 ### Probability and statistics
 
@@ -117,6 +118,7 @@ This is not an original idea and there are some great posts & resources out ther
 - [The Open Source Data Science Masters](http://datasciencemasters.org): another person who laid out a curriculum and worked through it.
 - [Quora thread: How do I learn Machine Learning?](https://www.quora.com/Machine-Learning/How-do-I-learn-machine-learning-1)
 - [Recommended ML Curriculum](http://sebastianraschka.com/faq/docs/ml-curriculum.html) from Sebastian Raschka, the author of the Python Machine Learning book that I'm working through
+- [Metacademy Roadmaps](https://www.metacademy.org/roadmaps/): guides to learning ML and how to learn on your own in general
 
 ### Starting Point
 
