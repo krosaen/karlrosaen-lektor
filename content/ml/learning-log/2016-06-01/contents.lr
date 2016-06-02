@@ -30,7 +30,13 @@ For preprocessing features, here is the approach:
 - All quantitative features are scaled to center at mean 0 with standard deviation 1 so that the values take the form of a normal distribution
 - All categorical features (now mapped to binary) are pushed to -1 or 1 
  
-[The](http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/kaggle/titanic/titanic.ipynb) [notebooks](http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/kaggle/titanic2/titanic2.ipynb) have all the details.
+An important point emphasized by the Python ML book:
+
+> Again, it is also important to highlight that we fit the StandardScaler only once on the training data and use those parameters to transform the test set or any new data point.
+
+The [preprocessing higher order function](https://github.com/krosaen/ml-study/blob/master/kaggle/titanic2/titanic.py) I wrote takes this into account by capturing a `StandardScaler` fit to the training set that is used by the preprocessing function it returns, which can then be reused to preprocess other datasets.
+
+See [the](http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/kaggle/titanic/titanic.ipynb) [notebooks](http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/kaggle/titanic2/titanic2.ipynb) for all the details.
 
 ## Pandas
 [Pandas](http://pandas.pydata.org/) is quite helpful for most data processing needs mentioned above. I'm finding it's worth taking time to understand the two key [data structures](http://pandas.pydata.org/pandas-docs/stable/dsintro.html) provided: [Series](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html) and [DataFrames](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html). The book [Python for Data Analysis](http://www.amazon.com/Python-Data-Analysis-Wrangling-IPython/dp/1449319793) by the author of Pandas and is worth picking up too.
@@ -43,4 +49,4 @@ I'm loving [Kaggle](kaggle.com). Having real datasets to work with and a sense v
 
 The [Python Machine Learning](http://www.amazon.com/Python-Machine-Learning-Sebastian-Raschka/dp/1783555130) book is the perfect way to get ramped up to feeling comfortable attempting competitions. If you are in a rush, reading chapters 1, 3 and 4 should be plenty to get you going.
 ---
-summary: Second attempt at Kaggle's Titanic data set, accuracy up to 78%
+summary: Second attempt at Kaggle's Titanic data set, accuracy up to 78%, notes on preprocessing and Pandas
