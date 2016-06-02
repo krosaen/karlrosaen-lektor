@@ -77,15 +77,16 @@ Statistical Learning](http://statweb.stanford.edu/~tibs/ElemStatLearn/)
 
 ### Probability and statistics
 
-- [Stanford's online intro to Probability and Statistics](https://lagunita.stanford.edu/courses/OLI/ProbStat/Open/about)
 - [All of Statistics - A Concise Course in Statistical Inference](http://www.stat.cmu.edu/~larry/all-of-statistics/)
 - [CMU's Intermediate Statistics course with problem sets / solutions from book](http://www.stat.cmu.edu/~larry/=stat705/)
-- [Peter Norvig's Introduction to Probability iPython Notebook](http://nbviewer.jupyter.org/url/norvig.com/ipython/Probability.ipynb)
-- [Free Introduction to Probability Book from Dartmouth](http://www.dartmouth.edu/~chance/teaching_aids/books_articles/probability_book/pdf.html)
-- [Khan Academy's videos and exercises on Probability and Statistics](https://www.khanacademy.org/math/probability?t=table-of-contents)
 - [Math Monk's YouTube playlist: Probability Primer](https://www.youtube.com/playlist?list=PL17567A1A3F5DB5E4)
+- [On Probability Axioms and Sigma Algebras](http://ee.usc.edu/stochastic-nets/docs/probability-axioms-sigma-algebras.pdf): a nice complement to all of stats and Math Monk videos for grokking when measure theory is important to probabiltiy axioms
+- [Khan Academy's videos and exercises on Probability and Statistics](https://www.khanacademy.org/math/probability?t=table-of-contents)
+- [Stanford's online intro to Probability and Statistics](https://lagunita.stanford.edu/courses/OLI/ProbStat/Open/about)
+- [Peter Norvig's Introduction to Probability iPython Notebook](http://nbviewer.jupyter.org/url/norvig.com/ipython/Probability.ipynb)
 - [University of Michigan's SOCR probability & stats ebook](http://wiki.socr.umich.edu/index.php/EBook): worth cross referencing for comprehensive list of topics
 - Wikipedia's outlines of [Statistics](https://en.wikipedia.org/wiki/Outline_of_statistics) and [Probability](https://en.wikipedia.org/wiki/Outline_of_probability)
+- [Free Introduction to Probability Book from Dartmouth](http://www.dartmouth.edu/~chance/teaching_aids/books_articles/probability_book/pdf.html)
 
 ### Linear Algebra
 
@@ -98,6 +99,7 @@ Statistical Learning](http://statweb.stanford.edu/~tibs/ElemStatLearn/)
 - [Introduction to Proofs, an Inquiry-Based approach](http://joshua.smcvt.edu/proofs/)
 - "Everything You Always Wanted To Know About Mathematics (But didn’t even know to ask)"—the text for [CMU's Concepts of Mathematics course](https://www.andrew.cmu.edu/course/21-127/) by [Brendan Sullivan](http://math.cmu.edu/~bwsulliv/): he apparently wrote this book for [his PHD thesis](http://math.cmu.edu/~bwsulliv/defense.pdf). The book doesn't seem to be available for purchase or download online, but the author was kind enough to send me a copy when I emailed and asked: how cool!
 - [Jeremy Kun's "methods of proof" primers](https://jeremykun.com/primers/)
+- [Introduction to higher mathematics playlist](https://www.youtube.com/playlist?list=PLZzHxk_TPOStgPtqRZ6KzmkUQBQ8TSWVX)
 
 I have a sense that if I were comfortable proving, or at least following the proofs of important theorems in statistics, deeper insights would stick. I think that's the problem I've had in the past with stats coursework: it's so easy to glaze over 3 pages of dense text that includes 4-5 theorems without understanding much more than how to plug and chug. One theorem I've already spent some time with proving and re-proving is Bayes', and many of the [problem sets](/ml/hw/) I've worked through have required some basic proofs.
 
