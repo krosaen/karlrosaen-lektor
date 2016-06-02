@@ -27,10 +27,16 @@ If nothing else, digging deeper into the underpinnings of probability theory has
 
 *update* I think it really comes down to measure theory is just a slightly more general mathematical construct that a probability; a probability is a measure with some additional constraints (e.g P($\Omega$) = 1). Thus, studying measure theory is studying probability theory as knowing theorems of measure theory means knowing theorems of probability theory.
 
+*update 2* I found a helpful quote from [this probability axioms overview](http://ee.usc.edu/stochastic-nets/docs/probability-axioms-sigma-algebras.pdf) further illuminating when considering the measurable collection of subsets of $\Omega$ is necessary:
+
+> there is no reason to talk about sigma algebras at all unless we consider sample spaces S that are uncountably
+infinite.
+
 Resources:
 - [Why use measure theory for probability?](https://www.youtube.com/watch?v=RjPXfUT7Odo) and parts [2](https://www.youtube.com/watch?v=Q9KOeP-nrYQ) and [3](https://www.youtube.com/watch?v=rAYA2Mu51bw)
 - [Mathematicalmonk's probability primer kicks off with an overview of measure theory](https://www.youtube.com/playlist?list=PL17567A1A3F5DB5E4)
-- [Wikipedia article on measure theory](https://en.wikipedia.org/wiki/Measure_(mathematics))
+- [Wikipedia article on measure theory](https://en.wikipedia.org/wiki/Measure_(mathematics)
+- [Probability Axioms and Sigma Algebras](http://ee.usc.edu/stochastic-nets/docs/probability-axioms-sigma-algebras.pdf)
 
 ---
 summary: Probability through the lens of measure theory

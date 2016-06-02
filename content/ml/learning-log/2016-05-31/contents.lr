@@ -1,0 +1,30 @@
+pub_date: 2016-05-31
+---
+body:
+
+Over the holiday weekend I wrapped up [my first attempt](http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/kaggle/titanic/titanic.ipynb) at [kaggle's competition](https://www.kaggle.com/c/titanic) that asks you to predict survivorship of titanic passengers. It's a perfect starter project as it has a mix of categorical and quantitative variables and a single binary output. There are a couple of hurdles in preprocessing the data (missing values, mapping categorical variables, etc) so making it most of the way through chapter 4 of Python Machine Learning was timely.
+
+My solution was relatively quick and dirty; I simply dropped a couple of the variables that were mildly inconvenient to work with and didn't bother with any exploratory analysis, as I wanted to get to a working solution ASAP. So I tried out logistic regression, linear and non-linear SVM, decision tree and random forest models on my cleaned data and they all performed nearly the same. I split the provided training dataset into a 70/30 training/test split so that I could do some basic checks on overfitting; the tree based models indeed performed better on the training set than the test, but no worse on the test than logistic regression. I then made two solutions by using the trained logistic regression and random forest models and preprocessing function on the provided test dataset.
+
+Random forest:
+
+<a href="https://www.kaggle.com/krosaen/results">
+<img src="kaggle-submission-random-forest.png" width=600>
+</a>
+
+Logistic regression:
+
+<a href="https://www.kaggle.com/krosaen/results">
+<img src="kaggle-submission-logistic-regression.png" width=600>
+</a>
+
+I now [rank 3931st out of 4287](https://www.kaggle.com/krosaen/results) submissions to that competition—I think I can consider my ML sabbatical mission accomplished!
+
+It has been fun though to get my feet wet. From [reading around](https://www.quora.com/How-does-one-solve-the-titanic-problem-in-Kaggle) (but not peeking!) it seems that it should be possible to get closer to 80%, and many suspect that those who score much higher are cheating and looking at the full dataset. 
+
+I've gotten started on a follow up attempt where I hope to get into the high 70s.
+
+
+
+---
+summary: First attempt at Kaggle's starter competition classifying Titanic passenger survivorship

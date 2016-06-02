@@ -1,0 +1,49 @@
+pub_date: 2016-05-25
+---
+body:
+
+## Discrete and continuous random variable review
+
+### When do continuous random variables have a density?
+
+In Math Monk's [video on types of random variables](https://youtu.be/ZylsGiWH4Jk?list=PL17567A1A3F5DB5E4) an interesting factoid is brought up: a continuous random variable, that is, from a measure theory perspective, a random variable that is represented by a continuous function, may not have a continuous probability density. So when people say "continuous random variables" they usually mean "continuous random variable that has a density". The classic counter-example of a continuous function without a density is the [cantor function](https://en.wikipedia.org/wiki/Cantor_function) which is some strange continuous stair casey kind of function that is continuous but doesn't have a well defined derivative. 
+
+Backing up a bit, random variables have a cumulative distribution function $F\_x$ who's derivative is a probability density function $f\_x$ (that is, $F\_x = \int\_{-\infty}^{x} f(u)du$), so it sort of makes sense that if you can imagine a continuous function that doesn't have a well defined derivative, then you could not come up with a density and thus the random variable would not "have a density".
+
+As for why this matters, ¯\\\_(ツ)\_/¯, but I suppose it's worth remembering that there exist continuous random variables that do not have a density.
+
+### Density vs mass
+
+In reviewing discrete and continuous random variables (with mass) again, I was reminded of the difference between a probability mass function, which applies to discrete random variables, and a probability density function, which applies to continuous random variables. 
+
+With discrete random variables, the probability mass function is $f\_X(x) = P(X=x)$. There exists a probability that $X$ has each discrete value.
+
+With continuous random variables, the probability density $f\_X(x)$ such that $P(a < X < B) = \int\_a^b f\_X(x)dx$. Note that you can't really think about this of being the probability that $X$ is equal to $x$, as $P(X=x)$ is always zero in the continuous case.
+
+Math Monk's videos use different notation for the mass and density functions, and the all of stats book just uses $f\_X$ in both cases.
+
+Both discrete and continuous random variables have cumulative distribution functions of $F\_X(x) = P(X \leq x)$.
+
+### Important random variables
+
+Both the All of Statistics book and math monk's playlist do a quick review of popular discrete and continuous random variables, e.g Binomial, Bernoulli, Gaussian / normal, Exponential, Beta.
+
+I found [a notebook exploring some of these distributions](http://nbviewer.jupyter.org/urls/gist.github.com/mattions/6113437/raw/c5468ea930d6960225d83e112d7f3d00d9c13398/Exploring+different+distribution.ipynb) that is a nice complement. It's also nice to see that [scipy has a ton of random variables](http://docs.scipy.org/doc/scipy/reference/stats.html#module-scipy.stats) ready to use. 
+
+## Down the math rabbit hole
+
+When reviewing probability theory I occasionally find myself down a rabbit hole looking for a ground truth of sorts, and this afternoon was one of those times. I landed on [this introduction to higher mathematics playlist](https://www.youtube.com/playlist?list=PLZzHxk_TPOStgPtqRZ6KzmkUQBQ8TSWVX) and have added it to the "math & proof fundamentals" section of the [ml curriculum page](/ml). The first two videos are a nice "what the hell is math" and "what does it mean to know or prove something" review.
+
+First, this reminds me that reflecting back to much of the math curriculum of high school and college, I'm disappointed in the habit most of the courses had of avoiding proofs and instead jumping to the "here's the formula to plug stuff into" and "practice taking word problems and figuring out how to apply some combination of formulas to get the right answer" pairing. These were supposedly advanced courses, but I guess in being part of an engineering curriculum, they necessarily exchanged rigor for breadth. But I wonder if I had instead taken math major focused courses where proofs were the bread and butter I wouldn't be in a much stronger position right now as I work towards being fluent in the language of probability theory and bayesian statistics. 
+
+All is not lost however, the years of engineering focused math still honed problem solving skills, and ultimately, even the art of rigorous proofs boil town to problem solving. One nice thing about the study of algorithms that has been a continuous part of programming is that looking at working code that implements an algorithm is a sort of formal definition in itself. And I've been able to use probability theory as a nice test case of really mastering the fundamental axioms of a field and seeing how the theorems build upon each other all the way up. The end goal is to have a deeper understanding of some of the more advanced bayesian ML techniques without only being able to take an off the shelve package and load data into it (though I want to do that too).
+
+The trick will be to not get too caught up in studying every layer of mathematics beneath probability theory, e.g real analysis and measure theory (and topologies and ...). Dipping beneath the surface every now and again is fine, and I enjoy thinking about the fundamentals of math in terms of methods of proofs and how to think mathematically, but if I'm not careful, this may turn into a decade long sabbatical :)
+
+
+
+
+
+
+---
+summary: Discrete and continuous random variable review, and down the math rabbit hole

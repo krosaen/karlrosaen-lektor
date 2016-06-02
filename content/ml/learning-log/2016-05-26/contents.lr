@@ -1,0 +1,23 @@
+pub_date: 2016-05-26
+---
+body:
+
+## K-nearest neighbors algorithm
+
+Wrapped up chapter 3 of Python Machine learning by applying the K-nearest neighbor algorithm.
+
+<a href="http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/python-ml-book/ch03/ch03.ipynb#K-nearest-neighbors">
+<img src="knn.png" width=450>
+</a>
+
+KNN is clever, it just indexes the training data so that predicting a new value is finding the k closest data points and using them to vote on the class membership. It can learn on the fly as new known data points can be added to the training set at any time. The disadvantage is the space needed to keep the model on hand, and that the live lookup cost is proportional to the size of the training set (either linear or logarithmic depending on how the storage / indexing is optimized). It also apparently performs poorly in high dimensional space where being "close" becomes less meaningful and where sparseness can also mean there isn't really anything close to a new data point we wish to classify. However, we'll learn in the coming chapters about dimensionality reduction.
+
+## Data preprocessing
+
+Got started on chapter 4 which is all about data preprocessing. There are some standard techniques for dealing with missing data, including filtering out, and filling in values with something sensible like the mean (e.g for any missing 'height' value just fill in the average height). [My WIP](http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/python-ml-book/ch04/ch04.ipynb).
+
+## My first Kaggle 
+
+Per [recommendations](https://www.quora.com/What-Kaggle-competitions-should-a-beginner-start-with-1) I chose this [starter kaggle competition](https://www.kaggle.com/c/titanic) that asks you to build a model to predict survivorship as my first Kaggle competition. I feel like I've learned just enough scikit-learn to tackle this so I don't want to delay any further, even if the data preprocessing know-how is arriving just in time. I just got far enough to load in the data and sketch out a preprocessing strategy. [My WIP](http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/kaggle/titanic/titanic.ipynb).
+---
+summary: K-nearest neighbors, getting started with ch04 (data preprocessing) and Kaggle's Titanic data set
