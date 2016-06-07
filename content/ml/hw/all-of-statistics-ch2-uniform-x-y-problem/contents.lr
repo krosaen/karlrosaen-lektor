@@ -7,3 +7,32 @@ body:
 Let $(X, Y)$ have the uniform distribution on $[0, 1] × [0, 1]$. Find the probability of $X+Y \geq 1/2$.
 
 ## Solution
+
+The boundary separating $X+Y$ can be plotted at $Y=1/2 - X$
+
+The region we're after:
+
+<a href="https://www.wolframalpha.com/input/?i=plot+x+%2B+y+%3E+1%2F2+with+0+%3C%3D+x+%3C%3D+1+and+0+%3C%3D+y+%3C%3D+1">
+<img src="ineq-region.png" width=320>
+</a>
+
+This can be viewed as the unit square minus the triangle beneath $Y=1/2 - X$.
+
+$P(X + Y) \geq 1/2 = 1 - P(X+Y) < 1/2$
+
+or 1 minus the area beneath the line. It's pretty easy to see visually that the area of this triangle will be $\frac{1}{2} \times \frac{1}{2} \times \frac{1}{2}= \frac{1}{8}$ making the probability we're after $1- \frac{1}{8} = \frac{7}{8}$.
+
+We can also compute this with an integral by setting the bounds appropriately:
+
+$\int\_0^{1/2} \int\_0^{1/2 - X} f\_{X,Y} dy dx$
+
+where $f\_{X,Y} = 1$
+
+$\int\_0^{1/2} \int\_0^{1/2 - x} 1 dy dx$
+<br>=$\int\_0^{1/2} 1/2 - x dx$
+<br>=$\frac{x}{2} - \frac{x^2}{2} \rvert\_{0}^{1/2}$
+<br>=$\frac{1}{4} - \frac{1}{8}$
+<br>=$\frac{1}{8}$
+
+And again, we subtract this from 1 to get the answer $\frac{7}{8}$.
+

@@ -8,4 +8,39 @@ Let $(X, Y)$ have the uniform distribution on the triangle area with vertices (0
 
 ## Solution
 
+The region of the uniform distribution is the region beneath the function $Y = 1 - X$:
+
+<a href="https://www.wolframalpha.com/input/?i=plot+y+%3C%3D+1+-+x+with+0+%3C%3D+x+%3C%3D+1+and+0+%3C%3D+y+%3C%3D+1">
+<img src="distribution-region.png" width=320>
+</a>
+
+We can describe the joint density function:
+
+$f\_{X,Y}(x,y) = 
+\begin{cases}
+c & 0 \leq x \leq 1, 0 \leq y \leq 1-x \\\
+0 & \text{otherwise}
+\end{cases}
+$
+
+To solve $c$ we need to ensure that integrating over the entire density gets us 1:
+
+$\int\_0^{1} \int\_0^{1 - x} c dy dx = 1$
+<br>$\int\_0^{1} c(1 - x) dx = 1$
+<br>$c(x - \frac{x^2}{2}) \rvert\_{0}^{1} = 1$
+<br>$c(1 - \frac{1}{2}) = 1$
+<br>$\frac{c}{2} = 1$
+<br>$c = 2$
+
+making our PDF:
+
+$f\_{X,Y}(x,y) = 
+\begin{cases}
+2 & 0 \leq x \leq 1, 0 \leq y \leq 1-x \\\
+0 & \text{otherwise}
+\end{cases}
+$
+
+
+
 

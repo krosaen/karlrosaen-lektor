@@ -8,6 +8,27 @@ Prove this theorem:
 
 Let $F$ be a cdf, and $U$ a random variable uniformly distributed on $[0, 1]$. Then $F^{-1}(U)$ is a random variable with cdf $F$.
 
-Note: the usefulness of this result is that we can view $[0, 1]$ as the original sample space, equipped with uniform probability, and the random variable $X = F^{-1}(U)$ is a mapping from the sample space to the real line, and has cdf $F$. This applies to both continuous and discrete random variables.
-
 ## Solution
+
+The solution comes from applying the technique of "transformation of random variables" where we plug the transformation function into the definition of a CDF. The transformation function in this case is $F^{-1}(U)$.
+
+$ F\_X(x) = P(X \leq x) = P(F^{-1}(U) \leq x) = P(U \leq F(x)) = F\_U(F(x))$
+
+$F\_U(F(x)) =
+\begin{cases}
+0 & F(x) < 0 \\\
+F(x) & 0 \leq F(x) \leq 1 \\\
+1 & F(x) > 1
+\end{cases}
+$
+
+Note that $F(x)$, being a CDF, can only take ranges from 0 to 1, so this collapses to just:
+
+$F\_X(x) = F\_U(F(x)) = F(x)$ wherever $F(x)$ is defined, so $X \sim F$.
+
+## Why this is cool
+
+According to the lecture notes from stats 705, the usefulness of this result is that we can view $[0, 1]$ as the original sample space, equipped with uniform probability, and the random variable $X = F^{-1}(U)$ is a mapping from the sample space to the real line, and has cdf $F$. This applies to both continuous and discrete random variables.
+
+
+

@@ -7,3 +7,17 @@ body:
 Let $X$ have a CDF $F$. Find the CDF of $X^+ = \text{max}\\{0,X\\}$.
 
 ## Solution
+
+$F\_{X^+}(x) = P(X^+ \leq x) = P(max(0, X) \leq x)$
+
+When $x$ is less than 0, the probability is 0, and when it is greater or equal to zero, this is just $P(X \leq x) = F(x)$
+
+So 
+
+$F\_{X^+}(x) =
+\begin{cases}
+0 & x < 0 \\\
+F(x) & x \geq 0
+\end{cases}
+$
+

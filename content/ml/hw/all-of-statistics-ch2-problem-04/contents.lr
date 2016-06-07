@@ -41,9 +41,7 @@ $$
 
 ### (b)
 
-To express $f_Y(y)$ in terms of $X$, we need a way to express either $f_Y(y)$ in terms of $f_X(x)$ or $F_Y(y)$ in terms of $F_X(x)$.
-
-Let's start with $F_Y(y)$.
+To express $f_Y(y)$ in terms of $X$, we need a way to express $F_Y(y)$ in terms of $F_X(x)$ and then differentiate it back to get $f_Y(y)$.
 
 $F_Y(y) = P(Y \leq y)$ = $P(\frac{1}{X} \leq y)$ = $P(\frac{1}{y} < X)$ = $1 - P(X \leq \frac{1}{y})$ 
 <br>= $1 - F_X(\frac{1}{y})$.
