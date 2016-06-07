@@ -1,0 +1,73 @@
+pub_date: 2016-06-06
+---
+body:
+
+## HW on transformation of random variables and joint density functions
+
+I've been catching up on [probability homework](/ml/hw) from chapter 2.
+
+In [this problem](/ml/hw/all-of-statistics-ch2-cdf-proof/) I had to prove this theorem:
+
+> Let $F$ be a cdf, and $U$ a random variable uniformly distributed on $[0, 1]$. Then $F^{-1}(U)$ is a random variable with cdf $F$.
+
+After looking carefully at the definitions of inverse (or quantile) CDFs and reviewing the techniques for how to transform a random variable by applying a function to it, I finally (mostly) got it right before checking with the solution. I wasn't precise in thinking where the resulting random variable was defined, but got the main point. Was a good review of working carefully with the definitions of random variables and cumulative distribution functions.
+
+[This problem](/ml/hw/all-of-statistics-ch2-problem-08/):
+
+> Let $X$ have a CDF $F$. Find the CDF of $X^+ = \text{max}\\{0,X\\}$.
+
+was more straight forward and again reviewed the technique of transforming a random variable.
+
+[These](/ml/hw/all-of-statistics-ch2-uniform-x-y-problem/) [two](/ml/hw/all-of-statistics-ch2-uniform-triangle-problem/) problems both concerned joint density functions. In both cases, thinking clearly about how to integrate over 2d regions was the key.
+
+## Marginal Distributions
+
+I read about marginal distributions: you can integrate out a random variable from the joint distribution to get back to a distribution without that variable.
+
+For joint density function $f\_{X,Y}$ the marginal density $f\_X(x) = \int f(x,y)dy$
+
+In the discrete case, you sum over all values of the variable you are marginalizing. 
+
+$f\_X(x) = P(X=x) = \sum\_y P(X = x, Y = y) = \sum\_y f(x,y)$
+
+## Studying Expectation
+
+I began reading ahead into chapter 3 and watching math monk probability videos on expectation. The formulas are pretty straight forward for both the discrete and continuous cases. Some tidbits that were new to me:
+
+- A random variable may not have a well defined expectation
+- A random variable may have a well defined infinite expectation
+### Well defined
+
+In order to determine whether a distribution is well defined, break it up into $ > 0$ and $< 0$ cases (negative and positive parts) and so long as one of them is finite, then the entire summation / integral is "well defined". 
+
+An [example](https://www.youtube.com/watch?v=t_ZlG_WDudk&index=21&list=PL17567A1A3F5DB5E4) of a continuous random variable $X$ with an undefined expectation is The Cauchy distribution.
+
+$ f(x) = \frac {1}{\pi(1 + x^2)}$
+
+$ E(X) = \int\_{-\infty}^{\infty}  \frac {x}{\pi(1 + x^2)} $
+
+It can be shown that both $\int\_{-\infty}^{0}  \frac {x}{\pi(1 + x^2)} $ and $\int\_{0}^{\infty}  \frac {x}{\pi(1 + x^2)} $ are infinite, making the sum of the two undefined. This is a bit hand wavy (see [Wikipedia](https://en.wikipedia.org/wiki/Cauchy_distribution#Mean) for a more rigorous description), but gives the intuition behind why this integral is undefined.
+
+These details aside, what's interesting to me about this is that not all random variables have a well defined expected value.
+
+### Expectation rule aka The Rule of the Lazy Statistician)
+
+Another interesting property concerns how to compute the expectation of a function of a random variable.
+
+What if we know $E(X)$ for some density function $f_x(x)$ and for some function $g(x)$ wish to know $E(g(x))$, but don't know $g_x(x)$?
+
+The [rule of the Lazy Statistician](https://en.wikipedia.org/wiki/Law_of_the_unconscious_statistician) says we can plug $g(x)$ in for $x$ as follows:
+
+$E(g(x)) = \sum\_x g(x) f\_X(x)$
+
+and for the continuous case:
+
+$E(g(x)) = \int\_{-\infty}^{\infty} g(x) f\_X(x) dx$
+
+This seems pretty handy; we know the expected value of uniform distributions, normal distributions and a host of others, so if we would like to find the expected value of a random variable $Y$ with a PDF $f\_Y(x)$ that can be re-written as a function of a random variable's PDF that we already know the expected value for, we can go that route without having to compute the integral $\int\_{-\infty}^{\infty} x g\_X(x) dx$
+
+
+---
+_hidden: no
+---
+summary: Transforming random variables, joint and marginal distributions, and The Rule of the Lazy Statistician
