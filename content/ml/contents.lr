@@ -16,7 +16,7 @@ I view this as attacking understanding and ability in machine learning from the 
 
 #### Probability and Statistics
 
-Another name for machine learning is statistical inference. I get the sense that the machine learning community is a bit more willing to use whatever tools empirically work than the applied stats community, which prefers to have stronger theoretical underpinnings for how/why a particular statistical model can be predictive under certain circumstances (the [Talking Machines Podcast](http://www.thetalkingmachines.com) as well as [The Master Algorithm](http://www.amazon.com/The-Master-Algorithm-Ultimate-Learning/dp/0465065708) book are both great for getting this overview). But the two fields are very tightly related and the more I read the more it seems like it's often a tomato / tomahto situation, for instance, [this paper](http://www.robots.ox.ac.uk/~szheng/papers/CRFasRNN.pdf) showing how conditional random fields, a probabilistic graphical model (the fanciest kind of statistical model as far as I can tell) can be modeled as a recurrent neural network. The [section on graphical models in The Deep Learning book](http://www.deeplearningbook.org/contents/graphical_models.html) also gives a nod to the relationship between the two fields.
+Much of machine learning can be viewed as statistical inference. I get the sense that the machine learning community is a bit more willing to use whatever tools empirically work than the applied stats community, which prefers to have stronger theoretical underpinnings for how/why a particular statistical model can be predictive under certain circumstances (the [Talking Machines Podcast](http://www.thetalkingmachines.com) as well as [The Master Algorithm](http://www.amazon.com/The-Master-Algorithm-Ultimate-Learning/dp/0465065708) book are both great for getting this overview). But the two fields are very tightly related and the more I read the more it seems like it's often a tomato / tomahto situation, for instance, [this paper](http://www.robots.ox.ac.uk/~szheng/papers/CRFasRNN.pdf) showing how conditional random fields, a probabilistic graphical model (the fanciest kind of statistical model as far as I can tell) can be modeled as a recurrent neural network. The [section on graphical models in The Deep Learning book](http://www.deeplearningbook.org/contents/graphical_models.html) also gives a nod to the relationship between the two fields.
 
 With this in mind, if I want to have a deeper intuition for how many of these techniques work, I really need to understand probability and statistics deeply. And it's not easy to just dive right into conditional random fields if you don't know the basics about random variables, probability distributions and the like cold. I think it's also important to understand bread and butter techniques like linear and logistic regression as they should be the first thing attempted on most datasets before fancier models are deemed necessary.
 
@@ -24,7 +24,7 @@ So my goal in this section is to start at the bottom and work my way through:
 
 - [All of Statistics](http://www.amazon.com/All-Statistics-Statistical-Inference-Springer/dp/0387402721) book and problem sets from CMU's [course from the author of the](http://www.stat.cmu.edu/~larry/=stat705/) and its more introductory CS counterpart CS 36-700.
   - [CS 36-705 course website](http://www.stat.cmu.edu/~larry/=stat705/) with some problem sets and solutions available
-  - CS 36-700 HW Files and solutions (note, the course website is no longer up, but links to problem sets and solutions are still live for now)
+  - [CS 36-700](https://web.archive.org/web/20151110005906/http://www.stat.cmu.edu/~jinglei/Fall15.shtml) HW Files and solutions (also posting direct links to hw and sols below)
     - [HW1](https://www.dropbox.com/s/eqvpnay5qeucped/36700-2015-Fall-hw1.pdf?dl=0) and [Sols](https://www.dropbox.com/s/dsfloozhxqxm87a/F15_700_1_Solutions.pdf?dl=0)
     - [HW2](https://www.dropbox.com/s/bj5ycpv2kghrgos/36700-2015-Fall-hw2.pdf?dl=0) and [Sols](https://www.dropbox.com/s/lkbdtbc7llx07t2/F15_700_2_Solutions.pdf?dl=0)
     - [HW3](https://www.dropbox.com/s/xfo202bpk0ci94w/36700-2015-Fall-hw3.pdf?dl=0) and [Sols](https://www.dropbox.com/s/6xaxppv63gws7e3/F15_700_3_Solutions.pdf?dl=0)
@@ -32,7 +32,6 @@ So my goal in this section is to start at the bottom and work my way through:
 - [Mathematical Monk's Probability Primer](https://www.youtube.com/playlist?list=PL17567A1A3F5DB5E4): excellent video series with the same level of mathematical rigor as the All of Statistics book.
 - [Stanford's Free online Probability and Statistics Course](https://lagunita.stanford.edu/courses/OLI/ProbStat/Open/about): a very basic introduction to statistics; it doesn't get to random variables until about half way through. While has seemed almost *too* basic at times, for instance reviewing the mean, median and mode, I'm already glad to have spent time on it and have spiced it up by applying some of the basics to data sets of interest to me (e.g [box plots of NBA teams' margin of victory](http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/basic-stats/nba-games-net-rating-boxplots/NbaTeamGameNetRatingsPlots.ipynb)).
 - [Khan Academy's videos and exercises on Probability and Statistics](https://www.khanacademy.org/math/probability?t=table-of-contents): really good material for the introductory stuff covered by Stanford's course. A good place to look for a second explanation, though I'm not working through these exhaustively.
-
 
 What I appreciate about the All of Statistics book compared to others I've looked at, including my text from college, is that it doesn't spend too much time on counting methods (knowing how many ways one can deal a full house with a deck of cards isn't particularly relevant) and is otherwise more comprehensive, getting into some techniques for statistical inference.
 
@@ -121,6 +120,8 @@ This is not an original idea and there are some great posts & resources out ther
 - [Quora thread: How do I learn Machine Learning?](https://www.quora.com/Machine-Learning/How-do-I-learn-machine-learning-1)
 - [Recommended ML Curriculum](http://sebastianraschka.com/faq/docs/ml-curriculum.html) from Sebastian Raschka, the author of the Python Machine Learning book that I'm working through
 - [Metacademy Roadmaps](https://www.metacademy.org/roadmaps/): guides to learning ML and how to learn on your own in general
+- [Dive into Machine Learning](https://github.com/hangtwenty/dive-into-machine-learning): a good guide if you wish to get your hands dirty ASAP
+- 
 
 ### Starting Point
 
