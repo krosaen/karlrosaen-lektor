@@ -46,9 +46,7 @@ $ f(x) = \frac {1}{\pi(1 + x^2)}$
 
 $ E(X) = \int\_{-\infty}^{\infty}  \frac {x}{\pi(1 + x^2)} $
 
-It can be shown that both $\int\_{-\infty}^{0}  \frac {x}{\pi(1 + x^2)} $ and $\int\_{0}^{\infty}  \frac {x}{\pi(1 + x^2)} $ are infinite, making the sum of the two undefined. This is a bit hand wavy (see [Wikipedia](https://en.wikipedia.org/wiki/Cauchy_distribution#Mean) for a more rigorous description), but gives the intuition behind why this integral is undefined.
-
-These details aside, what's interesting to me about this is that not all random variables have a well defined expected value.
+It can be shown that both $\int\_{-\infty}^{0}  \frac {x}{\pi(1 + x^2)} $ and $\int\_{0}^{\infty}  \frac {x}{\pi(1 + x^2)} $ are infinite, making the sum of the two undefined. This is a bit hand wavy (see [Wikipedia](https://en.wikipedia.org/wiki/Cauchy_distribution#Mean) for a more rigorous description), but gives the intuition behind why this integral is undefined: you can't add negative infinity and positive infinity together and have a well defined value.
 
 ### Expectation rule aka The Rule of the Lazy Statistician)
 
