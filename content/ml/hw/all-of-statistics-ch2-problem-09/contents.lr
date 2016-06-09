@@ -7,3 +7,24 @@ body:
 Let $X \sim Exp(\beta)$. Find $F(x)$ and $F^{-1}(q)$.
 
 ## Solution
+
+For $X \sim Exp(\beta)$ 
+
+we have
+
+$f(x) = \frac{1}{\beta}e^{\frac{-x}{\beta}}, x>0$
+
+To find $F(x)$ we integrate $f(x)$.
+
+$F(x) = \int\_0^x \frac{1}{\beta}e^{\frac{-x}{\beta}}dx = -e^{\frac{-x}{\beta}} \bigg|\_0^x = 1 - e^{\frac{-x}{\beta}}, x > 0$
+
+To find $F^{-1}(q)$:
+
+$q = 1 - e^{\frac{-x}{\beta}}$
+$e^{\frac{-x}{\beta}} = 1 - q$
+$\frac{-x}{\beta} = ln(1-q)$
+$x = -\beta ln(1-q)$
+
+This is defined from $0 \leq q < 1$, as the solution set notes:
+
+> Since $F$ is continuous, boundary conditions provided by the quantile function's definition are irrelevant, except for the fact that no point on the support line lies above all the density's mass, and thus, the quantile function is not defined at q=1.
