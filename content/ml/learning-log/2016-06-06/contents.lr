@@ -36,6 +36,7 @@ I began reading ahead into chapter 3 and watching math monk probability videos o
 
 - A random variable may not have a well defined expectation
 - A random variable may have a well defined infinite expectation
+
 ### Well defined
 
 In order to determine whether a distribution is well defined, break it up into $ > 0$ and $< 0$ cases (negative and positive parts) and so long as one of them is finite, then the entire summation / integral is "well defined". 
