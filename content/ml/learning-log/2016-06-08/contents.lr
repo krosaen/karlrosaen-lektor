@@ -1,0 +1,87 @@
+pub_date: 2016-06-08
+---
+body:
+
+I spent much of today working through all parts of chapter 2 that I haven't carefully covered yet. I've realized that the way to do it is to set down with the book, paper and pencil and attempt *every* example provided. It helps solidify the concepts, and is a quick mini problem set to attempt, making the the problem sets easier to tackle later as well.
+
+All of Statistics is really a fantastic book, you just really need to take it one page, one example at a time. There's no fluff, no time spent re-explaining. But if you carefully work through the examples, much of it sticks.
+
+## Independent random variables
+
+Independence with random variables is a similar concept as studied earlier with random events. The definition is less interesting to me than the theorem concerning their joint distribution function: 
+
+> $X$ and $Y$ are independent if and only if $f\_{X,Y}(x, y) = f\_X(x)f\_Y(y)$ for all values $x$ and $y$.
+
+The book has a couple of examples using joint distributions of two discrete random variables where you can exhaustively check every x,y pair and verify that $f(x,y) = f(x)f(y)$.
+
+The other examples show how, if you know or assume two random variables are independent, you can derive the joint distribution function $f\_{X,Y}(x, y)$ by multiplying their density functions together.
+
+Finally, there's a useful theorem that if you can break a joint density function of two random variables that have a range of a (possibly infinite) rectangle into the product of two functions (any function, not necessarily the density functions), then the variables are independent. So, for instance, if we have 
+
+$f\_{X,Y}(x,y) = e^{x+y}$ 
+
+over a rectangular region (say for $0 \leq x \leq 2, 0 \leq y \leq \infty$), we know $X$ and $Y$ are independent because we can express  $f\_{X,Y}(x,y)$ as the product: $e^xe^y$. And again, note that this does *not* mean than $f\_x(x) = e^x$.
+
+## Conditional distributions
+
+Conditional probability generalizes to random variables, distributions and relates back to marginal distributions:
+
+$f\_{X \mid Y} (x \mid y) = \frac{f\_{X,Y}(x,y)}{f\_Y(y)}$
+
+so given a joint density function, we can compute the marginal distribution and use them together to compute conditional probability. 
+
+For discrete distributions we can plug in the values directly. For the continuous case, we need to integrate over the area where X is defined (as when computing probabilities using probability density functions).
+
+## Random Vectors and IID Samples
+
+Beyond joint distributions, we can generalize to random vectors. A random vector $X = (X_1, ..., X_n)$ and has PDF $f(x_1, ..., x_n)$. We can define marginal and conditional distributions in a similar way in the bivariate distributions (e.g a random vector of length 2 generalizes to length $n$).
+
+The book briefly describes [IID Samples](https://en.wikipedia.org/wiki/Independent_and_identically_distributed_random_variables): 
+
+> If $X_1, ..., X_n$ are independent and each has the same marginal distribution with CDF $F$ we say $X_1, ..., X_n$ are IID (independent and identically distributed) and write $X_1, ..., X_n \sim F$. If $F$ has density $f$ we may also write $X_1, ..., X_n \sim f$. We call $X_1, ..., X_n$ a **random sample of size** n **from** $F$.
+
+This seems like it will be a very important concept when I finally get to the inference part of the book and I'm finally feeling like the probability theory is getting closer to connecting to the ML topics.
+
+## Transformation of several random variables
+
+The techniques covered before to transform a random variable using some function still apply, but the example provided is confusing. It seems that the most challenging part is reasoning about how the bounds of the new random variable should be crafted.
+
+Example 2.48, we are asked to find the density of $Y = X_1 + X_2$ where the joint density of $(X_1, X_2)$ is Uniform(0, 1):
+
+$f_x(x_1, x_2) = 
+\begin{cases}
+1 & 0 < x_1 < 1, 0 < x_2 < 1 \\\
+0 & otherwise
+\end{cases}
+$
+
+The solution is found by first finding the CDF:
+
+$F_Y(y) = 
+\begin{cases}
+0 & y < 0 \\\
+\frac{y^2}{2} & 0 \leq y < 1 \\\
+1 - \frac{(2 - y)^2}{2} & 1 \leq y < 2 \\\
+1 & y \geq 2
+\end{cases}
+$
+
+and then differentiating to get the PDF:
+
+$f_y(y) =
+\begin{cases}
+y & 0 \leq y \leq 1 \\\
+2 - y & 1 \leq y \leq 2 \\\
+0 & otherwise
+\end{cases}
+$
+
+To find the CDF the author describes:
+
+> Suppose that $0 < y \leq 1$. Then $A_y$ (the region where the transformed function is defined) is the trinagle with vertices (0,0), (y,0) and (0,y). The area of this triangle is $y^2 / 2$. If $1 < y < 2$ then $A_y$ is everything in the unit square except the triangle with vertices (1, y-1), (1,1), (y - 1, 1). This set has area $1 - (2-y)^2 / 2$.
+
+I will come back to this example with a fresh brain later and see if I can get it to click—I'll need to understand this if I hope to [tackle this problem](/ml/hw/all-of-statistics-ch2-problem-20/) in my homework TODO list.
+
+
+---
+summary: Working with multiple random variables: conditionals, marginals, transformations and IID samples
