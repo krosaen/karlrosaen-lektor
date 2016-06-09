@@ -1,0 +1,17 @@
+pub_date: 2016-06-09
+---
+body:
+
+## Inverse Transform Sampling
+
+In continuing to study the transformation of random variables, I had a bit of an aha moment in understanding the significance of a result I proved in [this homework problem](/ml/hw/all-of-statistics-ch2-cdf-proof/)
+
+> Let $F$ be a CDF, and $U$ a random variable uniformly distributed on $[0, 1]$. Then $F^{-1}(U)$ is a random variable with CDF $F$.
+
+The implication is that we can use the inverse CDF function of any random variable and combine it with a (uniform) random number generator to make a random number generator that adheres to its distribution. This is known as "inverse transform sampling". I wrote up [a notebook](/ml/notebooks/simulating-random-variables/) attempting to tie together the math with some code to make the concept stick.
+
+<a href="/ml/notebooks/simulating-random-variables">
+<img src="exponential-samples.png" width=370>
+</a>
+---
+summary: A notebook on inverse transform sampling
