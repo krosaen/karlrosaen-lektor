@@ -45,7 +45,7 @@ Pandas suffers from a bit of a kitchen sink OO API for my taste compared to the 
 
 ## Kaggle
 
-I'm loving [Kaggle](kaggle.com). Having real datasets to work with and a sense via the leaderboards as to whether you are doing a competitive job is great, and the forums have plenty of tips if you are looking for hints. One key decision they made product wise that I appreciate is to allow you to submit and receive a score for competitions after they have closed so every competition can continue to serve as a training ground, so perhaps more important that recognizing ML skills, they are building up a database of challenges / tutorials.
+I'm loving [Kaggle](http://kaggle.com). Having real datasets to work with and a sense via the leaderboards as to whether you are doing a competitive job is great, and the forums have plenty of tips if you are looking for hints. One key decision they made product wise that I appreciate is to allow you to submit and receive a score for competitions after they have closed so every competition can continue to serve as a training ground, so perhaps more important that recognizing ML skills, they are building up a database of challenges / tutorials.
 
 The [Python Machine Learning](http://www.amazon.com/Python-Machine-Learning-Sebastian-Raschka/dp/1783555130) book is the perfect way to get ramped up to feeling comfortable attempting competitions. If you are in a rush, reading chapters 1, 3 and 4 should be plenty to get you going.
 ---
