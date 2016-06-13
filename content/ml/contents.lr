@@ -73,6 +73,7 @@ Statistical Learning](http://statweb.stanford.edu/~tibs/ElemStatLearn/)
 - [Text on Probabilistic Graphical Models for sale](http://www.amazon.com/Probabilistic-Graphical-Models-Principles-Computation/dp/0262013193) (and [for download](https://github.com/JimmyLin192/GraphicalModel/blob/master/Probabilistic%20Graphical%20Models%20Principles%20and%20Techniques.pdf))
 - [Tom Griffiths' reading list on Bayesian methods](http://cocosci.berkeley.edu/tom/bayes.html)
 - [Doing Bayesian Data Analysis](http://www.indiana.edu/~kruschke/DoingBayesianDataAnalysis/) and examples ported to [Python and PyMC3](https://github.com/aloctavodia/Doing_bayesian_data_analysis) and [iPython notebook](http://nbviewer.jupyter.org/github/aloctavodia/Doing_bayesian_data_analysis/blob/master/IPython/Kruschkes_Doing_Bayesian_Data_Analysis_in_PyMC3.ipynb)
+- [Notebook Lectures from University of Michigan EECS 545: Machine Learning](https://github.com/thejakeyboy/umich-eecs545-lectures)
 
 ### Probability and statistics
 
