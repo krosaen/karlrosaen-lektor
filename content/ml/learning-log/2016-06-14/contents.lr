@@ -1,0 +1,91 @@
+pub_date: 2016-06-14
+---
+body:
+
+I made my [first few attempts](http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/kaggle/forest-cover-type-prediction/forest-cover-type-prediction.ipynb) at the [Forest Cover Type Prediction Kaggle Competition](https://www.kaggle.com/c/forest-cover-type-prediction), one of the [recommended starter projects](https://www.quora.com/What-Kaggle-competitions-should-a-beginner-start-with-1).
+
+My broader goal for this week is to use this as training ground for some of the additional techniques I've been reading about in the Python ML book, including more sophisticated validation methods, hyperparameter tuning, and ensemble  learning methods like bagging, but I haven't gotten that far.
+
+A few things make this competition more interesting than the [Titanic: Machine Learning from Disaster](https://www.kaggle.com/c/titanic):
+- Much larger datasets: 15k training samples / 565k to predict vs merely hundreds
+- 55 features vs ~15
+- multi-class prediction instead of binary
+- Non-linear models perform significantly better (with Titanic logistic regression performed nearly as well as anything)
+
+On the other hand, there doesn't seem to be much need or opportunity for feature engineering, e.g there is no fuzzier features that could be further broken down as was the case in the Titanic competition where, for instance, I extracted a 'cabin deck' feature out of the raw cabin feature, and others have done stuff with surnames.
+
+Today was a nice review of the basic initial attack to a competition like this:
+- build a function to preprocess the data handling any missing data, encoding categorical features appropriately, and scaling quantitative features
+- evaluate a few models examining training / test accuracy
+- submit
+
+The initial results:
+
+<table>
+<tr>
+    <th>alg</th>
+    <th>70/30 training fit</th>
+    <th>70/30 test accuracy</th>
+    <th>training time</th>
+    <th>prediction time</th>
+    <th>full training fit</th>
+    <th>full test accuracy (kaggle submission)</th>
+</tr>
+<tr>
+    <td>Logistic Regression</td>
+    <td>0.68</td>
+    <td>0.67</td>
+    <td>3.07</td>
+    <td>0.01</td>
+    <td>0.60</td>
+    <td>0.55999</td>
+</tr>
+<tr>
+    <td>Decision Tree Depth 6</td>
+    <td>0.70</td>
+    <td>0.68</td>
+    <td>0.06</td>
+    <td>0.00</td>
+    <td>0.69</td>
+    <td>0.57956</td>
+</tr>
+<tr>
+    <td>Random Forest Depth 10</td>
+    <td>0.99</td>
+    <td>0.82</td>
+    <td>0.23</td>
+    <td>0.04</td>
+    <td>0.99</td>
+    <td>0.71758</td>
+</tr>
+<tr>
+    <td>Kernel SVM</td>
+    <td>0.91</td>
+    <td>0.82</td>
+    <td>3.44</td>
+    <td>6.2</td>
+    <td>0.90</td>
+    <td>0.72143</td>
+</tr>
+<tr>
+    <td>Kernel SVM on PCA reduced data</td>
+    <td>0.90</td>
+    <td>0.82</td>
+    <td>2.27</td>
+    <td>3.26</td>
+    <td></td>
+    <td></td>
+</tr>
+</table>
+
+Note that runtime became a significant factor this time. I became acquainted with the fact that SVM *prediction* times are [slow](http://stackoverflow.com/a/16195403/231589) compared to logistic regression, decision trees and random forests. It's one thing for the *training* to take a while, but when the *prediction* is also slow that makes SVMs quite a bit less appealing, especially when they don't perform much better than random forest models. What makes SVMs slow for prediction is that the prediction time is proportional to the number of support vectors of the model, which in turn, are proportional to the number of training samples (assuming the decision boundaries are tricky).
+
+One of the benefits of reducing the dimensions of the dataset with PCA is to improve the performance of training / prediction, so after seeing that with 25 out of the 55 features, 95% variance was retained, I tried running all of the methods on the reduced dataset. Kernel SVM performed just as well and ran almost 50% faster.
+
+A last hope for kernel SVM performing the best by a larger margin is to explore tuning its parameters a bit, I read that SVMs tend to need this.
+
+Oh, another thing I was curious about is whether applying tree based methods (trees or random forests) to scaled data makes any difference. One property of tree based methods is that you don't *have* to scale the parameters to be centered around zero as is required by many other classifiers, but, having already scaled the data, I used it with each algorithm out of laziness. But I followed up and re-trained a random forest on the unscaled dataset and the performance was identical.
+
+In any case, with a best submission score of ~72% which isn't particularly impressive on [the leaderboard](https://www.kaggle.com/c/titanic/leaderboard) I'm hoping either tuning or applying ensemble learning techniques can get me up into the 80s.
+---
+summary: First attempt at Kaggle's Forest Cover Type competition, learning how slow SVMs can be
