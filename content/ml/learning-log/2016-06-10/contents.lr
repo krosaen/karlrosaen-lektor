@@ -6,7 +6,7 @@ I'm onto the topics related to data compression and dimensionality reduction in 
  
 ## PCA
 
-Principal components analysis works by finding the eigenvectors of the feature matrix and projecting the data onto a reduced subset of the eigenvectors. I found [this post](https://georgemdallas.wordpress.com/2013/10/30/principal-component-analysis-4-dummies-eigenvectors-eigenvalues-and-dimension-reduction/) helpful for getting some intuition for how it works and to review the concept of eigenvectors.
+Principal components analysis works by finding the eigenvectors of the covariance matrix and projecting the data onto a reduced subset of the eigenvectors. I found [this post](https://georgemdallas.wordpress.com/2013/10/30/principal-component-analysis-4-dummies-eigenvectors-eigenvalues-and-dimension-reduction/) helpful for getting some intuition for how it works and to review the concept of eigenvectors.
 
 One thing that has struck me about PCA is how eigenvectors/values themselves can provide insight during initial exploration of a dataset, and this reminded me of a segment from the [Talking Machines podcast during q&a about first steps with a dataset](http://www.thetalkingmachines.com/blog/2016/3/24/software-and-statistics-for-machine-learning) starting at 6:55. Ryan describes how, after looking at things like histograms of each dimensions and a scatter matrix, applying PCA and looking at the eigenvalues of the covariance matrix in decreasing order can give you an idea of how much structure there is in the dataset; if it falls off quickly after a few eigenvalues, you will have an easier time. This kind of graph should prove useful in exploring a dataset even if you don't choose to apply the transformation:
 
@@ -29,7 +29,7 @@ Later in chapter 5 we cover another supervised technique with linear discriminan
 With Principal Components Analysis we're projecting n-dimensional data into a lower k-dimensional space. 
 
 <a href="https://www.coursera.org/learn/machine-learning">
-<img src="pca-NG-formulation.png" width=550>
+<img src="pca-ng-formulation.png" width=550>
 </a>
 
 In doing so we need to minimize this expression:
@@ -46,13 +46,13 @@ which is squared distance between each point and the location it gets projected.
 NG points out that PCA not linear regression despite cosmetic similarity in 2-d -> 1-d case. 
 
 <a href="https://www.coursera.org/learn/machine-learning">
-<img src="pca-NG-not-linear-regression.png" width=550>
+<img src="pca-ng-not-linear-regression.png" width=550>
 </a>
 
 Every feature has equal importance, no output or special variable as with linear regression. This becomes more apparent when looking at the 3d case:
 
 <a href="https://www.coursera.org/learn/machine-learning">
-<img src="pca-NG-not-linear-regression2.png" width=550>
+<img src="pca-ng-not-linear-regression2.png" width=550>
 </a>
 
 I also found some of the animations from [this stats.stack exchange answer](http://stats.stackexchange.com/a/140579/117284) very interesting. First, the visualizing the possible vectors that the data could be projected to, noting that PCA finds the line that minimizes the squared projection distance from the points to this line:
