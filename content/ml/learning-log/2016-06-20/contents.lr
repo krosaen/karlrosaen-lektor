@@ -49,13 +49,15 @@ Pipeline's are very cool but can still be a little clunky to work with. I found 
 
 ## Hyperparameter tuning
 
-Having each model I wanted to test all rolled up into tidy pipelines, I was ready to make use of some other cool stuff in scikit-learn, including [hyperparemter tuning with grid search](http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/kaggle/forest-cover-type-prediction2/forest-cover-type-prediction2.ipynb#Tuning-3-models'-hyperparameters), which will evaluate the performance of a model with varying parameter values using k-fold cross validation along the way.
+Having each model I wanted to test all rolled up into tidy pipelines, I was ready to make use of some other cool stuff in scikit-learn, including [hyperparemter tuning with grid search](http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/kaggle/forest-cover-type-prediction2/forest-cover-type-prediction2.ipynb#Tuning-3-models'-hyperparameters), which will evaluate the performance of a model with varying parameter values using k-fold cross validation along the way. Note: "hyperparameter" is just a fancy name for the parameters used to tune the models themselves. For instance, the maximum depth you allow a decision tree to grow to is a hyperparameter.
 
 Here is a graph of how model performance varied across the tested parameters for Logistic regression:
 
 <a href="http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/kaggle/forest-cover-type-prediction2/forest-cover-type-prediction2.ipynb#Tuning-Logistic-Regression">
 <img src="lr-tuning.png" width=400>
 </a>
+
+Note that `C` is the *inverse* regularization parameter, so increasing it reduces the dampening of parameter values, allowing the weights of the trained model vary as much as they like to fit the data. In this case, LR was not going to overfit and it was best to essentially remove all regularization.
 
 Kernel SVM:
 
