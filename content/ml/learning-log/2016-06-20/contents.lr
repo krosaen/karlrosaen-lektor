@@ -1,0 +1,120 @@
+pub_date: 2016-06-20
+---
+body:
+
+I spent the past few days exploring the topics from chapter 6 of Python Machine Learning, "Learning Best Practices for Model Evaluation and Hyperparameter Tuning". Instead of working through the exact same examples as [the author](http://nbviewer.jupyter.org/github/rasbt/python-machine-learning-book/blob/master/code/ch06/ch06.ipynb) I applied the learnings to another take at [Kaggle's Forest Cover Type Dataset](https://www.kaggle.com/c/forest-cover-type-prediction) in [a follow up notebook](http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/kaggle/forest-cover-type-prediction2/forest-cover-type-prediction2.ipynb) to my [first attempt](http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/kaggle/forest-cover-type-prediction/forest-cover-type-prediction.ipynb).
+
+## K-fold cross-validation
+
+One of the first things you learn about in applying ML is the importance of cross-validation: evaluating the performance of your model on a portion of your dataset separate from what you used to train your model. The easiest way is to holdout a test set and compare performance using that:
+- train your model on 70% of your labeled data
+- evaluate the trained model on the remaining 30%
+
+K-fold cross-validation improves on this by letting you do this multiple times so you can see whether the test performance varies based on which samples you used to train / test.
+
+<a href="http://nbviewer.jupyter.org/github/rasbt/python-machine-learning-book/blob/master/code/ch06/ch06.ipynb#K-fold-cross-validation">
+<img src="k-fold-diagram.png" width=550>
+</a>
+
+By running through the train/test comparison several times you can get a better estimate of model performance, and sanity check that the model is not performing wildly differently after being trained on different segments of your labeled data, which in itself would tell you you are suffering from overfitting / high variance.
+
+## The need for Pipelines
+
+As soon as you start doing k-fold cross validation it becomes very handy to make use of scikit-learn helper methods to do this grunt work for you. While hand rolling a 70/30 split isn't so bad, iterating over k different folds, tallying up the performances etc feels more like busy work.
+
+But the question is, how can you package up something that represents all of the steps for use over and over again? This is where scikit-learn pipelines come in very handy.
+
+The key point to me is that you can't just preprocess your entire labeled dataset once and then slice and dice it for cross-validation thereafter; preprocessing and dimensionality reduction make use of the training set too, so it is important that they only have access to whatever training set you are using during the k-fold process, otherwise you are granting some of your data processing steps access to "unseen" data and aren't really testing how it will fair in the wild with new unseen data.
+
+So if I need to pass along something that will fit / transform / predict, I need to construct a pipeline, which is a [composite](https://en.wikipedia.org/wiki/Composite_pattern) that implements the same interface as all of the learning models:
+- fit: given samples, tune some internal parameters 
+- transform: return some transformation of samples, possibly making use of anything you tuned while fitting
+
+In addition to any number of fit/transform steps, pipeline's implement a `predict` method that use the last item in the pipeline, which it expects to be a model.
+
+<a href="http://nbviewer.jupyter.org/github/rasbt/python-machine-learning-book/blob/master/code/ch06/ch06.ipynb#Combining-transformers-and-estimators-in-a-pipeline">
+<img src="pipeline-diagram.png" width=500>
+</a> 
+
+So in order to participate in this I needed refactor my [hand rolled preprocessing function](https://github.com/krosaen/ml-study/blob/master/kaggle/forest-cover-type-prediction/preprocess.py) into [one that constructs a pipeline](http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/kaggle/forest-cover-type-prediction2/forest-cover-type-prediction2.ipynb#Pipelines-FTW).
+
+[This post](http://zacstewart.com/2014/08/05/pipelines-of-featureunions-of-pipelines.html) was very handy in finding the [FeatureUnion](http://scikit-learn.org/stable/modules/generated/sklearn.pipeline.FeatureUnion.html) pipeline that can help you break down your preprocessing and recombine it again. So you can combine two pipelines:
+- one that extracts categorical variables and applies one hot encoding, and then scales the outputs to -1 / 1
+- one that extracts quantitative variables, imputes missing values with each variable's mean and then applies mean scaling
+into one and have a little pipeline that is ready to preprocess your data. This can then be further combined in a larger pipeline with other steps like PCA followed by your classifier.
+
+### Pipeline gotchas
+
+Pipeline's are very cool but can still be a little clunky to work with. I found that when parallelization happens behind the scenes, any hand-rolled Pipeline step needs to extend [BaseEstimator](http://scikit-learn.org/stable/modules/generated/sklearn.base.BaseEstimator.html) to inherit some magic parameter serialization logic and that you need to be careful to have anything that needs to persist between `fit` and `transform` to be declared a parameter in the `_init_` method of the class in order to work. This isn't really documented anywhere outside of blog posts and stack overflow questions.
+
+## Hyperparameter tuning
+
+Having each model I wanted to test all rolled up into tidy pipelines, I was ready to make use of some other cool stuff in scikit-learn, including [hyperparemter tuning with grid search](http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/kaggle/forest-cover-type-prediction2/forest-cover-type-prediction2.ipynb#Tuning-3-models'-hyperparameters), which will evaluate the performance of a model with varying parameter values using k-fold cross validation along the way.
+
+Here is a graph of how model performance varied across the tested parameters for Logistic regression:
+
+<a href="http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/kaggle/forest-cover-type-prediction2/forest-cover-type-prediction2.ipynb#Tuning-Logistic-Regression">
+<img src="lr-tuning.png" width=400>
+</a>
+
+Kernel SVM:
+
+<a href="http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/kaggle/forest-cover-type-prediction2/forest-cover-type-prediction2.ipynb#Tuning-Kernel-SVM">
+<img src="svm-tuning.png" width=400>
+</a>
+
+and Random Forest:
+
+<a href="http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/kaggle/forest-cover-type-prediction2/forest-cover-type-prediction2.ipynb#Tuning-Random-Forest">
+<img src="rf-tuning.png" width=400>
+</a>
+
+for once, these graphs were produced via original work, not copy/paste from Python ML examples :) What strikes me is that: yes these parameters matter, and also that in these cases, the performance across parameter space is convex, making me wonder whether it could be worth applying something smarter than exhaustive search? As [this post notes](http://blog.dato.com/how-to-evaluate-machine-learning-models-part-4-hyperparameter-tuning) most people don't bother as it makes it harder to parallelize the search across parameters, and instead recommends [randomized search](http://scikit-learn.org/stable/modules/grid_search.html#randomized-parameter-optimization).
+
+> Conceptually, hyperparameter tuning is an optimization task, just like model training... Smarter tuning methods are available. Unlike the “dumb” alternatives of grid search and random search, smart hyperparameter tuning are much less parallelizable. Instead of generating all the candidate points upfront and evaluating the batch in parallel, smart tuning techniques pick a few hyperparameter settings, evaluate their quality, then decide where to sample next. This is an inherently iterative and sequential process. It is not very parallelizable. The goal is to make fewer evaluations overall and save on the overall computation time. If wall clock time is your goal, and you can afford multiple machines, then I suggest sticking to random search.
+
+### Parallelization gotchas
+
+In evaluating many possible parameters across k folds, you can easily ramp up to 60+ train/fit runs on a given model, which can be really slow, especially on SVM models. Scikit-learn let's you run all of this across multiple cores to speed things up via the `njobs` param, and this worked well until I ran it during the hyperparameter tuning of random forest classifiers; running multiple 100 tree models in parallel crashed the scikit-learn cell and I had to just kind of guess that this was what was happening and finding that for that case, setting `njobs=1` worked, I just needed to let it run for about 15 minutes to complete and find the optimal parameters.
+
+## Improving performance on Kaggle
+
+After all of this futzing around, how did the improved parameters fair? The adjustments [were enough to get me a 1-3% boost](http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/kaggle/forest-cover-type-prediction2/forest-cover-type-prediction2.ipynb#Final-comparison). 
+
+While this is kind of underwhelming, it was nice to see *something* concrete and this process can always help you if you happen to have guessed a really bad parameter value: the graphs above show that there were much worse values I could have chosen in the LR and SVM models.
+
+<table>
+<tr>
+<th>Model</th>
+<th>Untuned Test Accuracy</th>
+<th>Tuned Test Accuracy
+<th>Untuned Kaggle Score</th>
+<th>Kaggle Score</th>
+</tr>
+<tr>
+<td>Logistic Regression</td>
+<td>0.658</td>
+<td>0.658</td>
+<td>0.56</td>
+<td></td>
+</tr>
+<tr>
+<td>Kernel SVM</td>
+<td>0.815</td>
+<td>0.825</td>
+<td>0.72143</td>
+<td>0.73570</td>
+</tr>
+<tr>
+<td>Random Forest</td>
+<td>0.82</td>
+<td>0.85</td>
+<td>0.71758</td>
+<td>0.74463</td>
+</tr>
+</table>
+
+
+
+---
+summary: scikit-learn Pipeline gotchas, k-fold cross-validation, hyperparameter tuning and improving my score on Kaggle's Forest Cover Type Competition
