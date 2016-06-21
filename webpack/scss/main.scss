@@ -127,15 +127,17 @@ a.atom-link {
     img {
       text-align: center;
     }
+  }
+
     table {
       border-collapse: collapse;
     }
-    td {
+    th,td {
       border: 1px solid #AAA;
       padding: 5px;
       margin:0;
     }
-  }
+
 }
 
 ul.ll-list {
