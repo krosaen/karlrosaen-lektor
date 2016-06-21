@@ -1,4 +1,4 @@
-title: All of Statistics Ch2 Problem 20
+title: All of Statistics Ch2 Problem 20: PDF of X-Y and X/Y
 ---
 body:
 
@@ -7,3 +7,63 @@ body:
 Let $X, Y \sim Uniform(0, 1)$ be independent. Find the PDF for $X - Y$ and $X / Y$.
 
 ## Solution
+
+### Part 1: PDF of $X - Y$
+
+$X, Y \sim Uniform(0,1)$ means
+
+$f\_{X,Y}(x,y) = 
+\begin{cases}
+1 & 0 \leq x \leq 1, 0 \leq y \leq 1 \\\
+0 & \text{otherwise}
+\end{cases}$
+
+our transformation function $g(x, y) = x - y$.
+
+$F\_Z(z) = P(Z \leq z) = P(g(x,y) \leq z) = P(\\{x,y\\}: g(x,y) \leq z)$
+
+Let's call $P(\\{x,y\\}: g(x,y) \leq z)$ the region $A\_z$.
+
+$F\_Z(z) = \int\int\_{A\_z} f(x,y) dy,dx$
+
+We can see that $x$ and $y$ go from 0 to 1, $z$ will range from -1 to 1, but how to we reason about $A_z$? A diagram helps:
+
+<a href="https://www.wolframalpha.com/input/?i=plot+z+%3D+x+-+y+for+0+%3C+x+%3C+1+and+0+%3C+y+%3C+1">
+<img src="diagram.png" width=330>
+</a>
+
+as $x$ and $y$ go from 0 to 1, we can imagine $z$ sweeping down from the upper left to the bottom right. There are two regions we need to consider: $-1 \leq z < 0$ in the top left and $0 \leq z < 1$ in the bottom right.
+
+For $-1 \leq z < 0$ $A_z$ is the triangle with vertices $(0, -z), (0, 1), (z+1, 1)$ with area $\frac{1}{2}(z+1)^2$
+
+For $0 \leq z < 1$ $A_z$ is everything in the unit square minus triangle with vertices $(z, 0), (1, 0), (1, 1-z)$ with area $1 - \frac{1}{2}(1-z)^2$
+
+(it really helps to draw this out)
+
+So 
+
+$F\_Z(z) = 
+\begin{cases}
+0 & z < -1 \\\
+\frac{1}{2}(z+1)^2 & -1 \leq z < 0 \\\
+1 - \frac{1}{2}(1-z)^2 & 0 < z \leq 1 \\\
+0 & z \geq 1
+\end{cases}
+$
+
+differentiating we get:
+
+$f\_Z(z)=
+\begin{cases}
+1 + z & -1 \leq z < 0 \\\
+1 - z & 0 < z \leq 1 \\\
+0 & \text{otherwise}
+\end{cases}
+$
+
+This PDF is known as the *triangle* distribution:
+
+<a href="https://www.wolframalpha.com/input/?i=Plot%5BPiecewise%5B%7B%7B1%2Bx,+-1+%3C+x+%3C+0%7D,+%7B1+-+x,+0+%3C+x+%3C+1%7D%7D%5D,+%7Bx,+-1,+1%7D%5D">
+<img src="triangle-dist.png" width=300>
+</a>
+
