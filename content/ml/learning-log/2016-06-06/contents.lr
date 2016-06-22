@@ -49,7 +49,7 @@ $ E(X) = \int\_{-\infty}^{\infty}  \frac {x}{\pi(1 + x^2)} $
 
 It can be shown that both $\int\_{-\infty}^{0}  \frac {x}{\pi(1 + x^2)} $ and $\int\_{0}^{\infty}  \frac {x}{\pi(1 + x^2)} $ are infinite, making the sum of the two undefined. This is a bit hand wavy (see [Wikipedia](https://en.wikipedia.org/wiki/Cauchy_distribution#Mean) for a more rigorous description), but gives the intuition behind why this integral is undefined: you can't add negative infinity and positive infinity together and have a well defined value.
 
-### Expectation rule aka The Rule of the Lazy Statistician)
+### Expectation rule aka The Rule of the Lazy Statistician
 
 Another interesting property concerns how to compute the expectation of a function of a random variable.
 

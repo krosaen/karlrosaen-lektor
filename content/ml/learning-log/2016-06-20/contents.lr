@@ -16,7 +16,7 @@ K-fold cross-validation improves on this by letting you do this multiple times s
 <img src="k-fold-diagram.png" width=550>
 </a>
 
-By running through the train/test comparison several times you can get a better estimate of model performance, and sanity check that the model is not performing wildly differently after being trained on different segments of your labeled data, which in itself would tell you you are suffering from overfitting / high variance.
+By running through the train/test comparison several times you can get a better estimate of model performance, and sanity check that the model is not performing wildly differently after being trained on different segments of your labeled data, which in itself could indicate instability in your model or too small a sample set.
 
 ## The need for Pipelines
 
