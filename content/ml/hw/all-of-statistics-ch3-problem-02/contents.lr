@@ -1,0 +1,27 @@
+title: All of Statistics Ch3 Problem 2
+---
+body:
+
+## Problem
+
+Show that $V(X) =0$ if and only if there is a constanct $c$ such that $P(X = c) = 1$.
+
+## Solution
+
+First, let's note that since we are talking about a discrete $P(X=c)$, $X$ is a discrete r.v. Let's assign these two conditions.
+- a: $V(X) = 0$
+- b: $P(X=c) = 1$
+
+### Part 1: show $b \implies a$
+
+$P(X=c) = 1$ aka $f_X(c) = 1$. Recall that from the basics of probability distributions $\sum\_i f_X(i) = 1$ and that every $f\_X(i) \geq 0$. If there exists a $c$ such that $f\_X(c) = 1$ then every other $f\_X(i)$ must be 0.
+
+$E(X) = \mu = f\_X(c)c = 1 \times c = c$
+
+$E(X^2) = \sum\_i x^2 f\_X(x) = c^2 f\_x(c) = c^2$
+
+So $V(X) = E(X^2) - \mu^2 = c^2 - c^2 = 0$.
+
+### Part 2 (TODO): show $a \implies b$
+
+I got stumped by this only to find that the solution used Chebyshev's inequality, which isn't covered until chapter 4. Screw this!

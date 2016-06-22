@@ -1,0 +1,59 @@
+pub_date: 2016-06-22
+---
+body:
+
+## Transformation of Random Variables and Expectation
+
+I resumed probability study in earnest starting from the beginning of chapter 3 of All of Statistics which covers expectation of random variables. 
+
+One cool thing that struck me was how the transformation of random variables comes into play. I found this topic quite challenging when studying chapter 2, but feel pretty good about it now, I even managed to reason about a transformation of multiple random variables [in this homework problem](/ml/hw/all-of-statistics-ch2-problem-20/)! 
+
+The way transformation comes up again is with the rule of The Rule of the Lazy Statistician:
+
+$E(r(x)) = \sum\_x r(x) f\_X(x)$
+
+and for the continuous case:
+
+$E(r(x)) = \int\_{-\infty}^{\infty} r(x) f\_X(x) dx$
+
+This means that we can side step the challenge of finding the PDF of the transformed variable and plug the function in directly; one of the examples shows how you can compute $E(Y)$ where $X \sim \text{Uniform}(0,1)$ and $Y = r(x) = e^X$ by both using the Lazy Statistician rule and by going through the work to derive $f\_y(y)$:
+
+$E(Y) = E(r(x)) = \int r(x) f\_X(x) dx = \int\_0^1 e^x dx = e - 1$
+
+vs deriving $f\_Y(y)$ which turns out to be $\frac{1}{y}$ for $1 < y < e$ and computing
+
+$E(Y) = \int\_1^e y \frac{1}{y} = e - 1$
+
+### Framing a problem in terms of R.V transformation
+
+It also means that the skills of reasoning about transformed random variables comes in handy in framing / solving problems like, what is the expected value of this random variable? Example 3.8 was interesting to me:
+
+> Take a stick of unit length and break it at random. Let $Y$ be the length of the longer piece. What is the mean of $Y$? 
+
+We can solve this once we frame it as a transformation of $X \sim \text{Uniform}(0,1)$ via $r(x) = max(X, 1-X)$ and note that 
+
+$r(x) = 
+\begin{cases}
+1 - x & 0 < x < 0.5 \\\
+x &  0.5 \leq x \leq 1
+\end{cases}
+$
+
+making $E(Y) = E(r(X)) = \int r(x) f\_X(x)dx = \int r(x) \times 1 dx = \int\_0^{0.5} (1-x)dx + \int\_{0.5}^1 xdx = \frac{3}{4}$.
+
+## Moments and Variance
+
+The *<a href="https://en.wikipedia.org/wiki/Moment_(mathematics)">kth moment</a>* of a random variable is defined as $E(X^k)$. Applying The Rule of the Lazy Statistician, this means the kth moment is also equal to $\int x^k f_X(x)$.
+
+The kth *central moment* is $E(x - \mu)^k = \int (x - \mu)^k f_X(x) dx$
+
+*Variance* is the 2nd central moment. $V(x) = \sigma^2 = E(X - \mu)^2 = \int (x - \mu)^2 f\_X(x) dx$
+
+$\newcommand{\abs}[1]{\lvert#1\rvert}$Variance is the most common *measure of spread* of a random variable. Why not just use the 1st central moment instead? Because $E(X - \mu) = E(X) - \mu = \mu - \mu = 0$. That said, we *can*  use $E\abs{X - \mu}$, it's just not as common.
+
+## Homework
+
+I managed to solve one direction in the proof for [this homework problem](/ml/hw/all-of-statistics-ch3-problem-02/), showing that for a discrete random variable, the probability of a single item is equal to 1, the variance must be 0. This is because the sum of all probabilities must add up to 1, leaving the probability of all other values 0, implying you have a point mass distribution, which has variance 0. It also makes some intuitive sense: if you have only one value of your random variable that has probability = 1 and everything else has probability 0, there is no measure of spread to speak of; every sample will have the same value.
+
+---
+summary: Understanding Expectation, Moments and Variance with help from the transformation of random variables
