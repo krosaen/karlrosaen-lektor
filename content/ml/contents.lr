@@ -39,7 +39,7 @@ What I appreciate about the All of Statistics book compared to others I've looke
 
 The goal of this area is to have confidence actually applying machine learning techniques to real data sets and includes many practical considerations such as cleaning up and normalizing data, choosing the right model, cross validating to avoid overfitting, evaluating performance and things like that. I already worked through about half of Andrew NG's course (now [on Coursera](https://www.coursera.org/learn/machine-learning/)) years ago, and am tempted to start over, but I recently came across a book, [Python Machine Learning](http://www.amazon.com/Python-Machine-Learning-Sebastian-Raschka/dp/1783555130) that is just fantastic. Similar to NG's course, it mixes theoretical background, hand implemented algorithms and use of off the shelf tools, and I prefer to work through examples in Python and IPython notebooks, and it will be nice to get familiar with [Scikit-learn](http://scikit-learn.org/). It's also great that the author has made the source code for all notebooks related to the book [available on github](https://github.com/rasbt/python-machine-learning-book).
 
-So far [I've begun worked through the book example by example](http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/python-ml-book/ch02/ch02.ipynb) myself, avoiding looking at his solutions if at all possible.
+So far [I've begun worked through the book example by example](http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/python-ml-book/) myself, avoiding looking at his solutions if at all possible.
 
 #### Capstone Project
 
@@ -88,6 +88,7 @@ Statistical Learning](http://statweb.stanford.edu/~tibs/ElemStatLearn/)
 - [University of Michigan's SOCR probability & stats ebook](http://wiki.socr.umich.edu/index.php/EBook): worth cross referencing for comprehensive list of topics
 - Wikipedia's outlines of [Statistics](https://en.wikipedia.org/wiki/Outline_of_statistics) and [Probability](https://en.wikipedia.org/wiki/Outline_of_probability)
 - [Free Introduction to Probability Book from Dartmouth](http://www.dartmouth.edu/~chance/teaching_aids/books_articles/probability_book/pdf.html)
+- [Random: Probability, Mathematical Statistics, Stochastic Processes](http://www.math.uah.edu/stat/): another good resource to cross reference when you'd like another take
 
 ### Linear Algebra
 
@@ -124,6 +125,7 @@ This is not an original idea and there are some great posts & resources out ther
 - [Metacademy Roadmaps](https://www.metacademy.org/roadmaps/): guides to learning ML and how to learn on your own in general
 - [Dive into Machine Learning](https://github.com/hangtwenty/dive-into-machine-learning): a good guide if you wish to get your hands dirty ASAP
 - [Metromap diagram to becoming a data scientist](http://nirvacana.com/thoughts/becoming-a-data-scientist/): cool way to visualize suggested curriculum across subfields
+- [How to Start Learning Deep Learning](http://ofir.io/How-to-Start-Learning-Deep-Learning/): nice roundup of recent material on deep learning
 
 ### Starting Point
 
