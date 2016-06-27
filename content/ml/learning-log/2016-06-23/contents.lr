@@ -1,0 +1,62 @@
+pub_date: 2016-06-23
+---
+body:
+
+## Can't wait to catch up with the Deep Learning cool kids
+
+Today I couldn't hold out any longer: I jumped ahead and got started on chapter 12 of Python Machine Learning on Artificial Neural Networks. The chapters I've skipped wholesale to get here include:
+- 8: Applying Machine Learning to Sentiment Analysis
+- 9: Embedding a Machine Learning Model into a Web Application
+- 10: Predicting Continuous Target Variables with Regression Analysis
+- 11: Working with Unlabeled Data – Clustering Analysis
+
+I definitely plan on coming back to all but the web app chapter, probably in the order of 10, 11, 8. 
+
+### Side projects
+
+Part of the reason I couldn't hold out any longer in jumping into neural nets is that deep learning / tensorflow and the like are all the rage and I'm just excited to get into it. The other reason is that I'm trying to figure out which side-project idea I'd like to embark on and one of them: building a "shazam" for bird calls, may benefit from neural networks for the audio classification work. (The other leading candidate: a data science starter tool that takes a csv and spits out an iPython notebook that preprocesses, explores and classifies the data according to the kind of input / output variables at play: lmk if you have any thoughts on either of the ideas!)
+
+### Deep learning defined
+
+In the beginning of chapter 12, Sebastian notes
+
+> During the previous decade, many more major breakthroughs resulted in what we now call deep learning algorithms, which can be used to create feature detectors from unlabeled data to pre-train deep neural networks—neural networks that are composed of many layers.
+
+and
+
+> ... the error gradients that we will calculate later via backpropagation would become increasingly small as more layers are added to a network. This vanishing gradient problem makes the model learning more challenging. Therefore, special algorithms have been developed to pretrain such deep neural network structures, which is called deep learning.
+
+I knew that having many layers is the big thing with deep learning, but hadn't read before that pretraining was a key part of it. However, in googling around about this, I came across [this SO answer](http://stats.stackexchange.com/questions/163600/pre-training-in-deep-convolutional-neural-network/186168#186168) that claims pretraining is the wave of the past and using different activation functions (rectified linear units or ReLUs)  is really the key:
+
+> the reason you don't see people pretraining (I mean this in an unsupervised pretraining sense) conv nets is because there have been various innovations in purely supervised training that have rendered unsupervised pretraining unnecessary... So as of now, a lot of the top performing conv nets seem to be of a purely supervised nature. That's not to say that unsupervised pretraining or using unsupervised techniques may not be important in the future. But some incredibly deep conv nets have been trained, have matched or surpassed human level performance on very rich datasets, just using supervised training.
+
+¯\\\_(ツ)\_/¯
+
+Whatever the bleeding edge may be, working my way through backprop and image classification tasks will be worthwhile.
+
+## Classifying digits with tree based methods
+
+Chapter12 works with the [MINST hand written digits dataset](http://yann.lecun.com/exdb/mnist/) (the same one used in Andrew NG's coursera class). 
+
+<a href="http://yann.lecun.com/exdb/mnist/">
+<img src="digits.png" width=420>
+</a>
+
+My assumption was that this is used as an example for neural networks because the other models we studied so far  can't handle this task. However, in trying out a couple of tree and forest models, [I found they perform quite well](http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/python-ml-book/ch12/ch12.ipynb?flush_cache=true#Classifying-with-tree-based-models)—the random forest with 100 classifiers performs even better than the reported accuracy of the neural net from the book!
+
+```
+decision tree depth 10 training fit: 0.912
+decision tree depth 10 test accuracy: 0.872
+decision tree depth 100 training fit: 1.000
+decision tree depth 100 test accuracy: 0.886
+random forest 10 estimators training fit: 0.999
+random forest 10 estimators test accuracy: 0.946
+random forest 100 estimators training fit: 1.000
+random forest 100 estimators test accuracy: 0.969
+```
+
+Eventually it would be nice to take on a task that really was uniquely suited for neural nets.
+
+
+---
+summary: Getting started with artificial neural nets and image classification, side project ideas
