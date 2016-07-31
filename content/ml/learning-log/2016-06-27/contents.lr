@@ -1,0 +1,90 @@
+pub_date: 2016-06-27
+---
+body:
+
+## Sample Mean and Variance
+
+All of statistics chapter 3 briefly covers the sample mean and variance defined as follows:
+
+If $X_1, ..., X_n$ are random variables then we define the **sample mean** to be 
+
+$$\overline{X}\_n = \frac{1}{n}\sum\_{i=1}^{n} X\_i$$
+
+and the **sample variance** to be
+
+$$S^2\_n = \frac{1}{n-1} \sum\_{i=1}^{n}(X\_i - \overline{X}\_n)^2$$
+
+and it shouldn't be surprising that if $X_1, ..., X_n$ are IID (independent and identically distributed) with $\mu = E(X_i)$ and $\sigma^2 = V(X_i)$ then
+
+$$E(\overline{X}\_n) = \mu, V(\overline{X}\_n) = \frac{\sigma^2}{n} \text{ and } E(S^2\_n) = \sigma^2$$
+
+that is, the average value of the sample mean and sample variance are equal to those of the distributions they are drawn from.
+
+### Samples are random variables
+
+A question I've grappled with is how to map the concept of random variables over to day to day work with data sets. Are random variables the columns or the rows? I think the answer is: both. 
+
+Let's consider a dataset with the age and height of a 1000 people surveyed from Ann Arbor, MI. You've got 2 columns and 100 rows. I imagined we have 2 random variables, one for age and one for height, and, with each, an associated probability distribution over the entire population. But as the book continues to mention, "a sequence or random variables $X_1, ... X_n$" and IID samples, it's clear it is talking about the rows, so what's the deal?
+
+Cross referencing back with [Stanford's Free online Probability and Statistics Course](https://lagunita.stanford.edu/courses/OLI/ProbStat/Open/about) section on sampling distributions helped here:
+
+> In our study of Probability and Random Variables, we discussed the long-run behavior of a variable, considering the population of all possible values taken by that variable. For example, we talked about the distribution of blood types among all U.S. adults and the distribution of the random variable X, representing a male's height. In this module, we focus directly on the relationship between the values of a variable for a sample and its values for the entire population from which the sample was taken. This ... is the bridge between probability and our ultimate goal of the course, statistical inference.
+
+and
+
+> Statistics vary from sample to sample due to sampling variability, and therefore can be regarded as random variables whose distribution we call sampling distribution.
+
+(Side note: it's annoying how often free MOOCs keep their content behind a login wall, would have loved to link to the section directly.)
+
+So if we have a dataset that covered *the entire* population, each row would just be a data point, not a random variable, but in practice, we are usually working with a sample from a population, and thus need to consider the variation of the samples themselves, e.g, what is the expected mean and variance of a sample from a distribution, which itself also has a mean and variance? Also note: in practice we often don't have access to some master dataset of the entire population.
+
+Back to the example I posed with 1000 rows of age and height: the random variables at play are:
+- $A$: the age of the population of Ann Arbor
+- $H$: the height of the population of Ann Arbor
+- $A\_1, ... A\_{1000}$ a sequnce of IID random variables representing the age column of my dataset, each distributed according to $A$
+- $H\_1, ... H\_{1000}$: a sequence of IID random variables representing the height column of my dataset, each distributed according to $H$
+
+To me, this is exciting, as probability theory and stats/ml are finally starting to come together. Soon I'll get to the inference part where, given a sample, how do we infer parameters about the random variable of the entire population?
+
+### Parameter vs Statistic
+
+As defined in the Stanford class:
+
+> A parameter is a number that describes the population; a statistic is a number that is computed from the sample.
+
+So if we assume that the height of a population follows a Normal distribution, the population's mean height $\mu$ is a parameter, and the sample mean $\overline{X}\_n$ is a statistic.
+
+### Unbiased sample variance: why divide by n-1
+
+The formula for sample variance divides by n-1 instead of n, why is this? Cross referencing with [Khan Academy](https://www.khanacademy.org/math/probability/descriptive-statistics/variance-std-deviation/v/review-and-intuition-why-we-divide-by-n-1-for-the-unbiased-sample-variance) helped here. 
+
+It first helps to know that the formula using n instead of n-1:
+
+$$ \frac{1}{n} \sum\_{i=1}^{n}(X\_i - \overline{X}\_n)^2 $$
+
+is known as the *biased* sample variance. Intuitively, dividing by $n$ is biased towards underestimating the population variance because it could be that population mean lies outside of the sample altogether. Dividing by n-1 accounts for this. Or as this [SO answer](http://stats.stackexchange.com/a/3934/117284) puts it,
+
+> Because the observed values fall, on average, closer to the sample mean than to the population mean, the standard deviation which is calculated using deviations from the sample mean underestimates the desired standard deviation of the population.
+
+However, this isn't just some fudge factor where someone said, "well, we should just divide by n-1 instead to make it a little larger", it's also so that when we calculate the expected value of the sample variance, it ends up equaling the variance of the population. That is, this theorem: 
+
+$$E(S^2\_n) = \sigma^2$$
+
+can [be](https://www.youtube.com/watch?v=D1hgiAla3KI) [proven](http://pascencio.cos.ucf.edu/classes/Methods/Proof%20that%20Sample%20Variance%20is%20Unbiased.pdf) when we define the sample variance dividing by n-1.
+
+## Automatic data science
+
+I mentioned in passing [last week](/ml/learning-log/2016-06-23/) an idea I've been tossing around that would help one get started with a dataset by producing an iPython notebook automatically based on the dataset, inferring the variable types, what clean up and scaling are necessary, doing appropriate exploratory analysis and the first steps towards trying out a couple of models. 
+
+This was born from observing (as [other have](https://www.quora.com/What-is-the-hardest-aspect-of-solving-Kaggle-competitions/answer/Giuliano-Janson)), after working through Python Machine Learning and attempting a couple of Kaggle competitions, that many of the steps are pretty routine.
+
+It turns out there are already a few other tools of note related to this, under the umbrella term [automatic data science](http://www.kdnuggets.com/2016/03/automated-data-science.html) that I spent some time looking at today:
+- [auto-sklearn](http://automl.github.io/auto-sklearn/stable/): a single model that fits the fit/predict API of [sklearn](http://scikit-learn.org/stable/) and handles a bunch of stuff for you under the hood
+- [TPOT](http://rhiever.github.io/tpot/): "will automate the most tedious part of machine learning by intelligently exploring thousands of possible pipelines to find the best one for your data". I found the tutorial with the [titanic dataset](https://github.com/rhiever/tpot/blob/master/tutorials/Titanic_Kaggle.ipynb) underwhelming as all of the data munging still needed to be done by hand.
+- [Data Robot](https://www.datarobot.com/): commercial tool that helps find / tune the right model, deploys it to cloud as an API
+
+As for my potential side project: I still think I could add some value in producing something that is explanatory. The goal would not be to replace what a data scientist does, but to get you started. You go from data set to notebook and run with it, further tweaking, trying out feature engineering and testing as you see fit.
+
+But side project viability aside, I think the field of automatic data science is an exciting one. Data science is so data driven and functional by its nature that pipelines of routine operations fall out quite naturally, and automating much of this promises to provide even more leverage to those who can think creatively at the top level about how / where to apply ML in the first place. It also is a bit daunting as it likely means that it will be increasingly unlikely one can make a great living simply figuring out how to come up with a model and deploy it for a routine classification task.
+---
+summary: Samples as Random Variables, Sample Mean and Variance and Automatic Data Science

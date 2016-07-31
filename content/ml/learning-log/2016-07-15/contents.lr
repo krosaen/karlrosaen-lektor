@@ -1,0 +1,35 @@
+pub_date: 2016-07-15
+---
+summary: Back in the saddle with probability hw, initial steps on automatic data science project
+---
+body:
+
+July is a busy month of vacationing on both Lake MI and Lake Huron, with a trip to NYC this week in between (lucky me!). So in case you're wondering if I've gone dark here, expect to see things picking up again the week after next.
+
+I did manage to find a little bit of time this week to get back to studying and I've also been chipping away at a side project, which I'll describe a bit more below.
+
+I have also decided to keep studying all the way through August, which gives me a little bit more breathing room to stay the course. I was getting a bit flustered when I thought August was going to be the month I would turn towards looking for jobs. The challenge is in prioritizing stats study, python ML stuff and wanting to complete a side project.
+
+## Problem set organization
+
+I spent some time earlier this week identifying problem set TODOs and organizing them on [the problem set page](/ml/hw/) so I can keep picking up problems to work through. My goal is to keep working through all of the homework problems from two of CMU's stat courses that use the All of Stats page (per [my curriculum](/ml)) and I realized I hadn't really identified and written up all of the problems relevant to chapters 2 and 3 yet. 
+
+## Another RV random variable transformation problem
+
+I worked through [this problem](/ml/hw/all-of-statistics-ch2-problem-21/) today:
+
+> Let $X\_1, ..., X\_n \sim \text{Exp}(\beta)$ be IID. Let $Y = \text{max}\\{X\_1, ..., X\_n\\}.$ Find the PDF of $Y$.
+
+It's back from chapter 2, as I found a few problems I hadn't completed yet from the CMU hw assignments. This was a good problem to review as it requires reasoning about distributions soundly. The first trick is to reason about IID (independent and identically distributed). Being independent means that we can multiply together the probability of each variable's affect on the combined distribution $Y$. 
+
+The next thing that got me was actually figuring out what the CDF of the exponential distribution is. You can look it up online, but I wanted to see if I could do the basic integration of 
+
+$F\_X(x) = \int\_{-\infty}^{x} e^{-\lambda x} dx$
+
+it's a *very* simple application of [U-substitution](https://www.math.ucdavis.edu/~kouba/CalcTwoDIRECTORY/usubdirectory/USubstitution.html) but I needed to review that concept before getting it.
+
+## Automatic data science side project
+
+As [I wrote before](/ml/learning-log/2016-06-27/), one of the projects that has intrigued me is building a tool that can product a python notebook from a dataset; imagine being able to upload the titanic dataset and getting back something like [this notebook](http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/kaggle/titanic2/titanic2.ipynb. In many ways, this is as much an engineering challenge as a real application of ML, but I think it will be a great way to solidify my understanding of how to apply supervised learning effectively, and I think it's something that other aspiring data scientists would find useful, and has a lot of possibilities for the future should I get the basics working—for instance, it could automatically figure out that it is working with a time series, or geographic data, and do the appropriate exploratory analysis.
+
+The first challenge I've been working on is inferring what kind of variable each column in a dataset is: quantitative, categorical or ordinal. I'm using the actual datasets from the test sets I've worked on so far as test cases and think that some heuristics will suffice to do a decent job. But if required, it might be interesting to build a model to do this inference, pulling in many datasets with known variable types to train it.

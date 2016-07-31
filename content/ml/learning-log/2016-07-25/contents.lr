@@ -1,0 +1,23 @@
+pub_date: 2016-07-25
+---
+_discoverable: yes
+---
+body:
+
+## Morning Probability HW
+
+After [getting organized](/ml/learning-log/2016-07-15/) in enumerating more of the [homework problems](/ml/hw) from the [two Carnegie Mellon](/ml) stats courses, I spent some time working through [this problem](/ml/hw/all-of-statistics-chapter-2-binomial-in-terms-of-2-poissons/) which poses:
+
+> Assume $X \sim \text{Poisson}(\lambda)$ and $Y \sim \text{Poisson}(\mu)$, and that $X, Y$ are independent. Let $n$ be a positive integer. Show that $(X \vert X+Y = n) \sim \text{Binomial}(n, p)$ with $p = \frac{\lambda}{\lambda + \mu}$.
+
+it was a nice way to review conditional probability, joint distribution functions and play with Poisson random variables a bit, and also to hammer home the point that random variables can be manipulated, transformed, and expressed in terms of other random variables. I look forward to being fully caught up in the homework so that I can begin completing the exercises in the material I've studied in the book on expectation and then move onto inequalities and the convergence of random variables. 
+
+## Afternoon automatic data science project work
+
+This afternoon I resumed work on the automatic data science project. I'm getting started with a (seemingly) simple problem: given a labeled dataset for a classification problem along with information about which columns are the inputs, outputs, and what kind of variables they are, produce a notebook that loads the dataset, preprocesses it and applies cross validation with a logistic regression model. The notebook should explain its reasoning for doing each kind of preprocessing operation (e.g one-hot encoding of categorical variables, standardization of quantitative variables) as it goes.
+
+I figure this is just enough to define the bones of the project and will serve as a good first milestone. The very first thing I'm doing is hand writing what I'd like the output to look like for [kaggle's titanic dataset](https://www.kaggle.com/c/titanic/data) based on my learnings from [previous attempts](/ml/notebooks/), and from there I'll start working on how to automate that process so that it could work for [kaggle's forest cover type dataset](https://www.kaggle.com/c/forest-cover-type-prediction/data).
+
+After that, I can start making it a bit more rich (exploratory analysis, trying out more models) and work on inferring variable types based on the dataset so that ideally the tool could work completely hands-free with a new dataset. I had started working on this sub-problem first a few weeks ago and have made some progress, but have decided it is a bit too low-level and would rather get the bones in place first.
+---
+summary: Expressing a Binomial as the sum of two Poisson random variables, and working on automatic data science project

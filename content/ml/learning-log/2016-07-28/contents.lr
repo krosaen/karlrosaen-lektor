@@ -1,0 +1,39 @@
+pub_date: 2016-07-28
+---
+body:
+
+## Tricky problem tackled with help from study buddy
+
+I spent a couple of mornings attacking [this problem](/ml/hw/all-of-statistics-chapter-2-independence-of-rvs-associated-with-coin-flips/) which asks:
+
+> Suppose a coin has head probability $p$.
+
+> (a) If we toss the coin n times, where n is a fixed constant, and let $X, Y$ denote the number of heads and tails, respectively. Show that $X$ and $Y$ are dependent.
+
+> (b) If we toss the coin $N$ times, where $N \sim \text{Poisson}(\lambda)$ and let $X, Y$ denote the number of heads and tails, respectively. Show that $X$ and $Y$ are independent. What are their distributions?
+
+I was able to figure out the first part on my own, but part b was a bit of a head scratcher. 
+
+My first instinct was to think of it in terms of transforming a random variable, but really, the right approach is the view the problem as conditional distribution of $X$ and $Y$ given $N$. Random variable transformation is applying a function to a random variable, not plugging one random variable into another.
+
+My goal ultimately ended up being able to understand the solution set. There were a couple of tricks in using the constraint that $X+Y$ must be $N$. The solution uses conditional probability, the laws of total probability and some algebraic manipulation to make the sums of factorials end up being exponentials that look like a Poisson. 
+
+One cool result is that the number of heads you end up getting when you consider fipping a coin $N$ times where $N \sim \text{Poisson}$ is itself $\sim \text{Poisson}$ albeit of a different parameter. It's also kind of mind bending that the number of heads and tails are *independent*. If you consider a fixed number of coin flips, the number of heads and tails are related, but when you consider the joint distribution over *all* possible $n$s across a $Poisson$, they are unrelated.
+
+<a href="/ml/hw/all-of-statistics-chapter-2-independence-of-rvs-associated-with-coin-flips/">
+<img src="keanu-whoa.gif" width=310>
+</a>
+
+Anyways, I wasn't really able to fully grok part (b) until I chatted with my study buddy Veejay who I mentioned earlier. We've ended up chatting for a couple hours most weeks about probability, ML libraries and programming paradigms, it's been really great. First of all, he's awesome at math, having a PHD in physics and all, and I'm lucky he enjoys teaching to the point where he's happy to serve as my graduate student instructor of sorts. I'm honestly not sure I'd be able to get through this probability homework without having someone to consult with. I hope that any insights I have on the hands on python ML stuff and geeking out about programming at least repays him partially.
+
+## Variance and co-variance
+
+Having at least attempted each problem related to chapter 2 material, I returned my attention to chapter 3 where I last left off. I took a minute to write up an [exercise computing the expectation and variance of a Binomial random variable](/ml/hw/all-of-statistics-chapter-3-expectation-variance-binomial/) and read through the definitions of co-variance. This theorem is what I wish to remember:
+
+$$ Cov(X, Y) = E(XY) - E(X)E(Y) $$
+
+which is more intuitive to me and practical than the definition $Cov(X,Y) = E((X - \mu\_X)(Y - \mu\_Y))$. 
+
+Note that when two variables are independent, $E(XY) = E(X)E(Y)$ so the covariance is zero, which makes sense. The book mentions that the converse can't always be assumed; there can be cases where the covariance is equal to 0 but the variables are still dependent.
+---
+summary: Study buddy help on a mind blowing probability problem (Binomial where N is Poisson), forging ahead on covariance material
