@@ -1,3 +1,17 @@
 intro:
 
+### Expository notebooks
+
 Here are a collection of [Jupyter iPython](https://jupyter.org/) notebooks I've created to solidify my understanding of ideas during my studies of probability, stats and machine learning. 
+---
+outro:
+
+### Kaggle notebooks
+
+I've attempted a few [Kaggle](http://kaggle.com) competitions, here are the relevant notebooks:
+- [Titanic: Machine Learning from Disaster](https://www.kaggle.com/c/titanic)
+  - [Attempt 1](http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/kaggle/titanic/titanic.ipynb): quick and dirty first attempt with a few models
+  - [Attempt 2](http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/kaggle/titanic2/titanic2.ipynb): more exploration, feature engineering
+- [Forest Cover Type Prediction](http://kaggle.com/c/forest-cover-type-prediction)
+  - [Attempt 1](http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/kaggle/forest-cover-type-prediction/forest-cover-type-prediction.ipynb): quick and dirty first attempt with a few models, also using PCA
+  - [Attempt 2](http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/kaggle/forest-cover-type-prediction2/forest-cover-type-prediction2.ipynb): pipelines, deeper performance analysis with k-fold cross validation and learning curves, hyperparameter tuning
