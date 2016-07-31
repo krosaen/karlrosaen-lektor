@@ -1,0 +1,13 @@
+title: All of Statistics Ch3 Problem 3
+---
+body:
+
+## Problem
+
+Let $X_1, ... X_n \sim \text{Uniform}(0, 1)$ and let $Y_n = \text{max}\\{X\_1, ..., X\_n\\}.$ Find $E(Y_n)$
+
+## Solution
+
+## Sources
+
+- 36-705 hw1 problem 9

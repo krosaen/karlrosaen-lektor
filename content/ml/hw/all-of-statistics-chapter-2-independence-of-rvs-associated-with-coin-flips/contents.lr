@@ -1,0 +1,109 @@
+title:
+
+All of Statistics Chapter 2 Independence of RVs associated with coin flips 
+---
+body:
+
+## Problem
+
+Suppose a coin has head probability $p$.
+
+(a) If we toss the coin n times, where n is a fixed constant, and let $X, Y$ denote the number of heads and tails, respectively. Show that $X$ and $Y$ are dependent.
+
+(b) If we toss the coin $N$ times, where $N \sim \text{Poisson}(\lambda)$ and let $X, Y$ denote the number of heads and tails, respectively. Show that $X$ and $Y$ are independent. What are their distributions?
+
+## Solution
+
+### (a)
+
+First, let's note that $X \sim \text{Binomial}(n, p)$ and $Y \sim \text{Binomial}(n, 1-p)$
+
+To check whether $X$ and $Y$ are independent, we can see whether $f\_{X,Y}$ equals $f\_X \times f\_Y$.
+
+$f\_{X,Y}(x,y) = \text{Multinomial}(n, (p, 1-p)) = \frac{n!}{x!y!} p^x (1-p)^y$
+
+whereas
+
+$f\_X \times f\_Y = \frac{n!}{(n-x)!x!} \frac{n!}{(n-y)!y!} p^x(1-p)^{n-x} p^{n-y}(1-p)^{n-y}$
+
+These clearly are not equal, so $X$ and $Y$ are dependent.
+
+### (b) 
+
+I was stumped by this. My thought was we could view this problem as a transformation of random variables, transforming a Poisson r.v by a transformation function equal to the PMF of a Binomial, but this didn't lead anywhere.
+
+#### Deriving $X$ and $Y$
+
+Looking at the solution key, the correct approach to find the distribution for $X$ when $n$ is not fixed, but draws from $N \sim \text{Poisson}(\lambda)$ is:
+
+$P(X=x) = \sum\_{n=x}^{\infty} P(X=x \vert N = n) P(N=n)$
+
+I *think* this derives from 
+
+$P(X=x) = \sum\_{n=x}^{\infty} P(X=x, N = n)$
+
+where $P(X=x, N = n) = P(X=x \vert N = n) P(N=n)$ by conditional probability.
+
+going back to 
+
+$P(X=x) = \sum\_{n=x}^{\infty} P(X=x, N = n)$
+
+why is this true? In this case, we are using the marginal mass formula; if $(X,Y)$ have a joint distribution then the marginal mass function for $X$ is defined by
+
+$f\_X(x) = P(X=x) = \sum\_n P(X=x, N=n) = \sum\_n f(x,n)$
+
+that is, if you sum over all values of $N$, you are back to just $X$. 
+
+That leads me to another question about this problem: in summing over all values for $N$, why do we sum from *x* to $\infty$ instead of from 0 to $\infty$?  $X$ is the number of heads given we flip a coin $N$ times, I suppose it is because we must have flipped the coin at least $x$ times in order to have yielded $x$ heads?  I can buy it, but I'm still a tad frustrated that I don't think I could have come up with this myself.
+
+So to summarize, to correctly frame this problem, the insights are:
+
+- Define $P(X=x)$ in terms of its marginal distribution over the joint distribution with $N$
+- Use conditional probability to avoid needing the joint distribution function
+
+And once the problem is correctly framed, it is a matter of applying the Binomial and Poisson probability mass functions:
+
+$P(X=x) = \sum\_{n=x}^{\infty} P(X=x \vert N = n) P(N=n) \\\
+= \sum\_{n=x}^{\infty} \binom{n}{x} p^x(1-p)^{n-x}\dfrac{e^{-\lambda}\lambda^n}{n!}$ 
+
+and algebraic manipulation to
+
+$= e^{-\lambda} \sum\_{n=x}^{\infty} \dfrac{1}{x!(n-x)!}(p\lambda)^x ((1-p)\lambda)^{n-x} $ 
+
+and a cute substitution, let $m = n -x$
+
+$P(X=x) \\\
+= \dfrac {e^{-\lambda}(p\lambda)^x}{x!}
+\sum\_{m=0}^{\infty} \frac{1}{m!}((1-p)\lambda)^m \\\
+= \dfrac {e^{-\lambda}(p\lambda)^x}{x!} e^{(1-p)\lambda} \\\
+= \dfrac{e^{-p\lambda}(p\lambda)^x}{x!}
+$
+
+so we find that $P(X=x) = \text{Poisson}(p\lambda)$. 
+
+By similar reasoning, we get $P(Y=y) = \text{Poisson}((1-p)\lambda)$.
+
+#### Showing $X$ and $Y$ are independent.
+
+To show $X$ and $Y$ are independent, we need to show that the joint density $P(X=x, Y=y)$ is equal to the product of the individual density functions $P(X=x) \times P(Y=y)$.
+
+Let's start by expressing the joint density using the law of total probability over the partition of every value $n$ can take:
+
+$P(X=x, Y=y) = \sum\_{n=0}^{\infty} P(X=x, Y=y \vert N=n)P(N=n)$
+
+let's consider just $P(X=x, Y=y \vert N=n)$. Given $N=n$, we are left with a Binomial. There is also the fact that for any pair $(x,y)$, only one conditional ($N=n=x+y$) can contribute mass. This means $P(X=x, Y=y \vert N=n) = \binom{n}{x} p^x (1-p)^{n-x} \text{Indicator}(x+y)$. 
+
+Plugging this back into the sum we have:
+
+$P(X=x, Y=y) = \sum\_{n=0}^{\infty} \binom{n}{x} p^x (1-p)^{n-x} \text{Indicator}(x+y) \dfrac{e^{-\lambda}\lambda^n}{n!}$
+
+Since this expression only has value for $n=x+y$ we plug in $x+y$ for $n$ and drop the summation, leaving:
+
+$\binom{x+y}{x} p^x (1-p)^{(x+y)-x}  \dfrac{e^{-\lambda}\lambda^{x+y}}{(x+y)!} \\\
+= \dfrac{1}{x!y!}p^x(1-p)^y e^{-\lambda} \lambda^{x+y} \\\
+= \dfrac{(p\lambda)^x e^{-p\lambda}}{x!} \dfrac{((1-p)\lambda)^x e^{-(1-p)\lambda}}{y!} \\\
+= P(X=x) P(Y=y)$
+
+## Sources
+
+- 36-700 hw3 problem 4

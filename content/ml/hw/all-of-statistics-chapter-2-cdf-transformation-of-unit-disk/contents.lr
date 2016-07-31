@@ -1,0 +1,13 @@
+title: All of Statistics Chapter 2 CDF transformation of unit disk
+---
+body:
+
+## Problem
+
+Assume $(X, Y)$ have the uniform distribution on the unit disk $\\{(x,y): x^2 + y^2 \leq 1\\}$. That is, the joint pdf $f(x,y)$ is constant $c$ if $x^2 + y^2 \leq 1$ and zero otherwise. Find the cdf of $R = \sqrt{X^2 + Y^2}$.
+
+## Solution
+
+## Sources
+
+- 36-700 hw3 problem 3

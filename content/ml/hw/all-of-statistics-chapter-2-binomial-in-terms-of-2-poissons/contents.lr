@@ -1,0 +1,73 @@
+title: All of Statistics Chapter 2 Binomial in terms of 2 Poissons
+---
+body:
+
+## Problem
+
+Assume $X \sim \text{Poisson}(\lambda)$ and $Y \sim \text{Poisson}(\mu)$, and that $X, Y$ are independent. Let $n$ be a positive integer. Show that $(X \vert X+Y = n) \sim \text{Binomial}(n, p)$ with $p = \frac{\lambda}{\lambda + \mu}$.
+
+## Solution
+
+First, let's write out all of the facts in full form:
+
+- $X \sim \text{Poisson}(\lambda)$ means $f\_X(x) = e^{-\lambda} \frac{\lambda^x}{x!}$
+- $Y \sim \text{Poisson}(\mu)$ means $f\_Y(y) = e^{-\mu} \frac{\mu^y}{y!}$
+- $X, Y$ are independent means:
+  - $P(X=x, Y=y) = P(X=x)P(Y=y)$ and $f\_{X,Y}(x,y) = f\_x(x) f\_y(y)$
+  - so $\text{Poisson}(\lambda) \text{Poisson}(\mu) = \text{Poisson}(\lambda + \mu)$
+- $\text{Binomial}(n,p) = \binom{n}{x} p^x(1-p)^{n-x}$
+
+Let's apply the definition of conditional probability to $P(X=x \vert X+Y=n)$:
+
+$P(X=x \vert X+Y=n) \\\
+= \frac{P(X=x, X+Y=n)}{P(X+Y=n)}
+$
+
+And let's apply what is perhaps the *key observation* in solving this problem: $P(X+Y=n) = P(Y=n-x)$. We can do this because we are given that $X+Y=n$. (Note: I still feel a bit uneasy about this).
+
+$\dfrac{P(X=x, X+Y=n)}{P(X+Y=n)} \\\
+= \dfrac{P(X=x, Y=n-x)}{P(X+Y=n)} \\\
+= \dfrac{P(X=x)P(Y=n-x)}{P(X+Y=n)} \\\
+= \dfrac{f\_X(x) f\_Y(n-x)}{f\_{X+Y}(n)} \\\
+= \dfrac
+  { e^{-\lambda} \frac{\lambda ^ x}{x!} e^{-\mu} \frac{\mu^{(n-x)}}{(n-x)!} }
+  {  e^{-(\lambda + \mu)} \frac{(\lambda + \mu) ^ n}{n!} }
+$
+
+From here it's a matter of algebraic manipulation to make this look like $\text{Binomial}(n, p)$ with $p = \frac{\lambda}{\lambda + \mu}$:
+
+$\dfrac
+  { e^{-\lambda} \frac{\lambda ^ x}{x!} e^{-\mu} \frac{\mu^{(n-x)}}{(n-x)!} }
+  {  e^{-(\lambda + \mu)} \frac{(\lambda + \mu) ^ n}{n!} } \\\
+= \dfrac
+  { e^{-(\lambda + \mu)} \frac{\lambda ^ x}{x!} \frac{\mu^{(n-x)}}{(n-x)!} }
+  {  e^{-(\lambda + \mu)} \frac{(\lambda + \mu) ^ n}{n!} } \\\
+= \dfrac
+  { \frac{\lambda ^ x}{x!} \frac{\mu^{(n-x)}}{(n-x)!} }
+  { \frac{(\lambda + \mu) ^ n}{n!} } \\\
+= \frac{n!}{(n-x)! x!} \dfrac
+ { \lambda^x \mu^{n-x} }
+ { (\lambda + \mu)^n } \\\
+= \binom{n}{x} \dfrac
+ { \lambda^x \mu^{n-x} }
+ { (\lambda + \mu)^n } \\\
+= \binom{n}{x} \dfrac
+ { \lambda^x \mu^{n-x} }
+ { (\lambda + \mu)^x (\lambda + \mu)^{n-x} } \\\
+= \binom{n}{x} 
+ (\dfrac{\lambda}{\lambda + \mu})^x
+ (\dfrac{\mu}{\lambda + \mu})^{n-x} \\\
+= \binom{n}{x} 
+ (\dfrac{\lambda}{\lambda + \mu})^x
+ (\dfrac{\lambda + \mu}{\lambda + \mu} - \dfrac{\lambda}{\lambda + \mu})^{n-x} \\\
+= \binom{n}{x} 
+ (\dfrac{\lambda}{\lambda + \mu})^x
+ (1 - \dfrac{\lambda}{\lambda + \mu})^{n-x}
+$
+
+now setting $p = \frac{\lambda}{\lambda + \mu}$ we finally get
+$ \binom{n}{x} p^x(1-p)^{n-x} = \text{Binomial}(n,p)$
+
+## Sources
+
+- 36-700 hw3 problem 2

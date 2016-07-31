@@ -4,8 +4,51 @@ body:
 
 ## Problem
 
-Let $X\_1, ..., X\_n \sim Exp(\beta)$ be IID. Let $Y = max\\{X\_1, ..., X\_n\\}.$ Find the PDF of $Y$.
+Let $X\_1, ..., X\_n \sim \text{Exp}(\beta)$ be IID. Let $Y = \text{max}\\{X\_1, ..., X\_n\\}.$ Find the PDF of $Y$.
 
 Hint: $Y \leq y$ if and only if $X\_i \leq y$ for $i = 1, .., n$.
 
 ## Solution
+
+$F\_Y(y) = P(Y \leq y) = P(\text{max}\\{X\_1, ..., X\_n\\} \leq y) = P(X\_1 \leq y, ... X\_n \leq y)$
+
+Since $X\_1, ..., X\_n$ are IID, they are independent, making the probability the of all of them occurring the product of each:
+
+$P(X\_1 \leq y, ... X\_n \leq y = \prod\_{i=1}^{n} P(X\_1 \leq y) = P(X\_1 \leq y)^n$
+
+note we can just pick any $X\_i$ since they are identically distributed. Speaking of being identically distributed, $P(X\_1 \leq y)$ is the CDF of the exponential function.
+
+### Deriving the CDF of the exponential distribution
+
+The text provides the PDF of the exponential function but no CDF. We could just look it up online, but it is easy enough to derive starting with the PDF (we'll use the form with $\lambda = \frac{1}{\beta}$):
+
+$f\_X(x) = \lambda e^{-\lambda x}$
+
+we integrate from $-\infty$ to $x$:
+
+$F\_X(x) = \int\_{-\infty}^{x} e^{-\lambda x} dx \\\
+=-\lambda e^{-\lambda x} \bigg|\_{-\infty}^x  \\\
+= -e^{-\lambda x} - (-e^{\lambda -\infty}) \\\
+= -e^{-\lambda x} + \frac{1}{e^{-\infty}} \\\
+= 1-e^{-\lambda x}$
+
+note that $\int \lambda e^{-\lambda x} dx$ can be shown to be $-e^{-\lambda x}$ via u-substitution.
+
+### Putting it all together
+
+$F\_Y(y) = P(X\_1 \leq y)^n \\
+=(1-e^{-\lambda y})^n$
+
+we compute the PDF $f\_Y(y)$ by taking the derivative using the chain rule:
+
+$f\_Y(y) = \frac{d}{dy} (1-e^{-\lambda y})^n \\\
+= \begin{cases}
+0 & y \leq 0 \\\
+n (1-e^{-\lambda y})^{n-1}(\lambda e^{-\lambda y}) & y > 0 
+\end{cases}
+$
+
+## Sources
+
+- 36-700 hw3 problem 1 
+- 36-705 hw1 problem 7

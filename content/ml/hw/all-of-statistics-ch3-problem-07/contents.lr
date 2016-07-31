@@ -1,0 +1,15 @@
+title: All of Statistics Ch3 Problem 7
+---
+body:
+
+## Problem
+
+Let $X$ be a continuous random variable with CDF $F$. Suppose that $P(X > 0) = 1$ and that $E(X)$ exists. Show that $E(X) = \int\_0^{\infty} P(X > x)dx$.
+
+Hint: Consider integrating by parts. The following fact is helpful: if $E(X)$ exists, then $lim\_{x \to \infty} x[1 - F(x)] = 0$.
+
+## Solution
+
+## Sources
+
+- 36-705 hw1 problem 9

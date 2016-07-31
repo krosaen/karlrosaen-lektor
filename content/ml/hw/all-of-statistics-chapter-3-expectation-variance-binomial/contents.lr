@@ -1,0 +1,51 @@
+title: All of Statistics Chapter 3 Expectation and Variance of a Binomial Random Variable
+---
+body:
+
+## Problem
+
+Let $X \sim \text{Binomial}(n,p)$. What is $E(X)$ and $V(X)$?
+
+## Solution
+
+### Expectation
+
+We could attempt to compute the $E(X)$ directly using the formula for expectation and the pmf for Binomial:
+
+$E(X) = \int x dF_x(x) = \sum\_x x f\_X(x) = \sum\_{x=0}^{n} x \binom{n}{x} p^x (1-p)^{n-x}$
+
+This isn't an easy sum to compute, however. Instead we'll rely on the theorem:
+
+$$E(\sum X_i) = \sum E(X_i)$$
+
+In the case of a Binomial, each $X\_i$ is a Bernoulli coin flip. The expectation is simply:
+
+$E(X\_i) = 1 \times p + 0 \times (1-p) = p$.
+
+thus making $E(X) = \sum\_{x=i}^{n} E(X\_i) = \sum\_{x=i}^{n} p = np$.
+
+### Variance
+
+Using the theorems:
+
+$$V(X) = E(X^2) - E(X)^2$$
+
+and
+
+$$V(\sum X\_i) = \sum V(X\_i) \text{(for independent } X_i\text{)}$$
+
+we start by computing $V(X_i)$:
+
+$V(X_i) = E(X\_i^2) - E(X_i)^2$
+
+$E(X_i^2) = 1^2 \times p + 0^2 \times (1-p) = p$ 
+
+plugging this back in $V(X_i) = E(X\_i^2) - E(X_i)^2 = p - np = p(1-p)$
+
+finally, $V(X) = \sum\_{i=1}^n V(X_i) = np(1-p)$.
+
+Note that $V(X) = 0$ for $p=1$ and $p=0$, which makes intuitive sense considering flipping all heads or all tails does not have any variation in outcomes.
+
+## Sources
+
+- Examples 3.12 and 3.16
