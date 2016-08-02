@@ -56,5 +56,7 @@ $x \notin \bigcup\_{i \in I}A\_i$
 <br> $\implies x \in A^c, \forall i \in I$
 <br> $\implies x \in \bigcap\_{i \in I} A\_i^c$
 
+## Sources
 
+- 36-705 hw1 problem 2
 

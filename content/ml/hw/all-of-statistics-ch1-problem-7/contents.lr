@@ -60,3 +60,7 @@ $P(\bigcup\_{n=1}^{\infty} A\_n)$
 <br> = $\sum\_{n=1}^{\infty} P(B\_n)$ (since $B\_n$ are disjoint)
 <br> = $\sum\_{n=1}^{\infty} P(A\_n - \bigcup\_{i=1}^{n-1}A\_i) \leq \sum\_{n=1}^{\infty} P(A\_n)$
 
+## Sources
+
+- 36-705 hw1 problem 5
+

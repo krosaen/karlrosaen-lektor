@@ -1,0 +1,23 @@
+title: Variance of linear combinations of random variables
+---
+body:
+
+## Problem
+
+Let
+
+$$
+f\_{X,Y}(x,y) = 
+\begin{cases}
+c(x+y) & 0 \leq x \leq 1, 0 \leq y \leq 2 \\\
+0 & \text{otherwise}
+\end{cases}
+$$
+
+Where $c$ is a constant. Find $V(2X - 3Y + 8)$.
+
+## Solution
+
+## Sources
+
+- 36-700 hw4 problem 3

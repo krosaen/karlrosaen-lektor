@@ -25,3 +25,7 @@ $1, 2, ..., k-1$ tosses where there is only 1 head followed by the $kth$ toss wh
 How many ways are there to toss one head in $k-1$ tosses? $k-1 \choose 1$ which is just $k-1$.
 
 So $P(\text{2 heads in exactly k tosses}) = \dfrac {k-1} {2^k}$
+
+## Sources
+
+- 36-705 hw1 problem 3

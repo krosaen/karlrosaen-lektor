@@ -1,4 +1,4 @@
-title: All of Statistics Ch3 Problem 2
+title: Variance is zero iff RV has a point mass distribution
 ---
 body:
 
@@ -25,3 +25,8 @@ So $V(X) = E(X^2) - \mu^2 = c^2 - c^2 = 0$.
 ### Part 2 (TODO): show $a \implies b$
 
 I got stumped by this only to find that the solution used Chebyshev's inequality, which isn't covered until chapter 4. Screw this!
+
+## Sources
+
+- 36-705 hw1 problem 8
+

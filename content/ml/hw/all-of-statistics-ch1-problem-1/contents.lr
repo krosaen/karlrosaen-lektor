@@ -150,4 +150,6 @@ and thus
 
 $ P(A\_n) = 1 - P(A\_n^c) \rightarrow 1 - P(A^c) \rightarrow P(A)$
 
+## Sources
 
+- 36-705 hw1 problem 1

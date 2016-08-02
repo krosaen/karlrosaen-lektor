@@ -20,4 +20,6 @@ If $P$ is a uniform distribution, $P(\Omega) = 1 = \bigcup\_{i=0}^{\infty} \\{i\
 
 for some $c$. If $c=0$ then $P(\Omega) = 0$, and if $c>=$ then $P(\Omega) = \infty$, both breaking axiom #2.
 
+## Sources
 
+- 36-705 hw1 problem 4

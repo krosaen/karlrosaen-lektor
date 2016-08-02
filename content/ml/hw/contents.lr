@@ -16,34 +16,43 @@ Note: these are my own solutions to problems for which there exist a solution to
 - [Chapter 1 problem 6](/ml/hw/all-of-statistics-ch1-problem-6/)
 - [Chapter 1 problem 7](/ml/hw/all-of-statistics-ch1-problem-7/)
 - [Chapter 1 problem 9](/ml/hw/all-of-statistics-ch1-problem-9/)
-- [Chapter 1 material Math Monk Independence](/ml/hw/math-monk-independence-problem)
+- [Math Monk Independence](/ml/hw/math-monk-independence-problem)
 
 ## Chapter 2: Random Variables
 
 - [Chapter 2 problem 4](/ml/hw/all-of-statistics-ch2-problem-04/)
-- [Chapter 2 material CDF proof](/ml/hw/all-of-statistics-ch2-cdf-proof)
+- [CDF proof](/ml/hw/all-of-statistics-ch2-cdf-proof)
 - [Chapter 2 problem 8](/ml/hw/all-of-statistics-ch2-problem-08/)
 - [Chapter 2 problem 9](/ml/hw/all-of-statistics-ch2-problem-09/)
-- [Chapter 2 material uniform X, Y problem](/ml/hw/all-of-statistics-ch2-uniform-x-y-problem)
-- [Chapter 2 material uniform triangle joint density problem](/ml/hw/all-of-statistics-ch2-uniform-triangle-problem/)
+- [Uniform X, Y problem](/ml/hw/all-of-statistics-ch2-uniform-x-y-problem)
+- [Uniform triangle joint density problem](/ml/hw/all-of-statistics-ch2-uniform-triangle-problem/)
 - [Chapter 2 problem 20—transforming uniform $f\_{X,Y}$ with $X-Y$ and $X/Y$](/ml/hw/all-of-statistics-ch2-problem-20/)
 - [Chapter 2 problem 21—computing max of IID exponential RVs](/ml/hw/all-of-statistics-ch2-problem-21/)
-- [Chapter 2 material—Binomial in terms of 2 Poisson](/ml/hw/all-of-statistics-chapter-2-binomial-in-terms-of-2-poissons/)
-- [Chapter 2 material—CDF of transformation of unit disk (TODO)](/ml/hw/all-of-statistics-chapter-2-cdf-transformation-of-unit-disk/)
-- [Chapter 2 material—independence of RVs associated with coin flips](/ml/hw/all-of-statistics-chapter-2-independence-of-rvs-associated-with-coin-flips/)
+- [Binomial in terms of 2 Poisson](/ml/hw/all-of-statistics-chapter-2-binomial-in-terms-of-2-poissons/)
+- [CDF of transformation of unit disk (TODO)](/ml/hw/all-of-statistics-chapter-2-cdf-transformation-of-unit-disk/)
+- [Independence of RVs associated with coin flips](/ml/hw/all-of-statistics-chapter-2-independence-of-rvs-associated-with-coin-flips/)
+- [Independence of functions of random variables (TODO)](/ml/hw/all-of-statistics-ch3-independence-of-functions-of-rvs/)
 
 ## Chapter 3: Expectation
 
-- [Chapter 3 material: expectation and variance of a Binomial random variable](/ml/hw/all-of-statistics-chapter-3-expectation-variance-binomial/)
-- [Chapter 3 problem 2](/ml/hw/all-of-statistics-ch3-problem-02/)
-- [Chapter 3 problem 3 (TODO)](/ml/hw/all-of-statistics-ch3-problem-03/)
+- [Expectation and variance of a Binomial random variable](/ml/hw/all-of-statistics-chapter-3-expectation-variance-binomial/)
+- [Expectation and variance of a Geometric random variable (TODO)](/ml/hw/all-of-statistics-ch3-expectation-variance-geometric/)
+- [Expectation and variance of a Poisson random variable (TODO)](/ml/hw/all-of-statistics-ch3-expectation-variance-poisson/)
+- [Expectation and variance of exponential transformation of Normal RV (TODO)](/ml/hw/all-of-statistics-chapter-3-expecation-variance-exponential-of-normal/)
+- [Variance of linear combinations of random variables (TODO)](/ml/hw/all-of-statistics-ch3-variance-linear-combos-rvs/)
+- [Reasoning about RVs that are 1 when Uniform RV is within bounds (TODO)](/ml/hw/all-of-statistics-ch3-reasoning-about-rvs-that-are-1-when-uniform-rv-is-within-bounds/)
+- [Chapter 3 problem 2—Variance is zero iff RV has a point mass distribution](/ml/hw/all-of-statistics-ch3-problem-02/)
+- [Chapter 3 problem 3: Expectation and Variance of max of Uniform RVs (TODO)](/ml/hw/all-of-statistics-ch3-problem-03/)
 - [Chapter 3 problem 7 (TODO)](/ml/hw/all-of-statistics-ch3-problem-07/)
 
 ## Chapter 4: Inequalities
 
+- [Sub-Gaussian inequality (TODO)](/ml/hw/all-of-statistics-ch4-sub-gaussian/)
+- [Finding bounds with Hoeffding’s inequality and Bernstein’s inequality (TODO)](/ml/hw/all-of-statistics-ch4-finding-bounds-with-hoeffdings-inequality-and-bernsteins-inequality/)
+
 ## Chapter 5: Convergence of Random Variables
 
-
+- [Proofs about Big O in probability notation (TODO)](/ml/hw/all-of-statistics-ch5-big-o-proofs/)
 
 To transcribe and do:
 - [Chapter 5 problem 2](/ml/hw/all-of-statistics-ch5-problem-02/)

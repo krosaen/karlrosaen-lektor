@@ -1,0 +1,21 @@
+title: Finding bounds with Hoeffding’s inequality and Bernstein’s inequality
+---
+body:
+
+## Problem
+
+Let $X_1, ..., X_n$ be iid, with mean $\mu$, $\text{Var}(X\_i) = \sigma^2$ and $|X\_i| \leq c$. Bernstein’s inequality says that
+
+$$ P(|\overline{X\_n} - \mu| > t) \leq 2 e^{-\frac{nt^2}{2 \sigma^2 + 2ct/3}}  $$
+
+Suppose that $X\_i$ has a bounded density $p$ supported on $[-1, 1]$. Let $A\_n = [-\frac{1}{n^2}, \frac{1}{n^2}]$. Let $Y\_i = I(X\_i \in A\_n)$. ($I$ is the indicator function). Use both Hoeffding’s inequality and Bernstein’s inequality to get bounds on
+
+$$ P(\overline{Y\_n} - \theta\_n > t) $$
+
+where $\theta\_n = P(X\_i \in A\_n)$. Which bound is tighter?
+
+## Solution
+
+## Sources
+
+- 36-705 hw2 problem 2

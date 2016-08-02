@@ -1,0 +1,23 @@
+title: Reasoning about RVs that are 1 when Uniform RV is within bounds
+---
+body:
+
+## Problem
+
+Let $X \sim \text{Uniform}(0,1)$. 
+
+Let $a, b$ be constants satisfying $0 < a < b < 1$.
+
+Let $Y=1 (0 < X < b)$.
+
+Let $Z=1 (a < X < 1)$.
+
+(a) Are $X$ and $Y$ independent?
+
+(b) Find $E(Y \vert Z)$.
+
+## Solution
+
+## Sources
+
+- 36-700 hw4 problem 4

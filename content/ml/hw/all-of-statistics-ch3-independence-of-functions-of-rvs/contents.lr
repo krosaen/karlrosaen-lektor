@@ -1,0 +1,13 @@
+title: Independence of functions of random variables
+---
+body:
+
+## Problem
+
+Suppose that $X$ and $Y$ are independent. Let $g$ and $h$ be functions. Show that $f(X)$ and $g(Y)$ are independent.
+
+## Solution
+
+## Sources
+
+- [36-705 hw2](http://www.stat.cmu.edu/~larry/=stat705/homework2.pdf) problem 5

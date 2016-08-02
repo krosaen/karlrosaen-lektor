@@ -1,0 +1,28 @@
+title: Proofs about Big O in probability notation
+---
+body:
+
+## Problem
+
+Prove or disprove the following:
+
+(i) If $X\_n = O\_P(a\_n)$ and $Y\_n = O\_P(b\_n)$ then $X\_n Y\_n = O\_P(a\_n b\_n)$
+
+(ii) If $X\_n = O\_P(a\_n)$ and $Y\_n = O\_P(b\_n)$ then $X\_n + Y\_n = O\_P(max(a\_n, b\_n))$
+
+(iii) If $X\_n = o\_P(a\_n)$ and $Y\_n = o\_P(b\_n)$ then $X\_n Y\_n = o\_P(a\_n)$
+
+(iv) If $X\_n = o\_P(a\_n)$ and $Y\_n = o\_P(b\_n)$ then $X\_n + Y\_n = O\_P(a\_n + b\_n)$
+
+(v) If $X\_n = o\_P(a\_n)$ and $Y\_n = O\_P(b\_n)$ then $X\_n / Y\_n = O\_P(a\_n / b\_n)$
+
+(vi) If $X\_n = O\_P(a\_n)$ and $Y\_n = o\_P(b\_n)$ then $X\_n Y\_n = o\_P(a\_n b\_n)$
+
+Note: the notation $O\_p$ and $o\_p$ is [summarized on wikipedia](https://en.wikipedia.org/wiki/Big_O_in_probability_notation) as well as within [36-705 lecture 2 notes](http://www.stat.cmu.edu/~larry/=stat705/Lecture2.pdf).
+
+
+## Solution
+
+## Sources
+
+- [36-705 hw2](http://www.stat.cmu.edu/~larry/=stat705/homework2.pdf) problem 3

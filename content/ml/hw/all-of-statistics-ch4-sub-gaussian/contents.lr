@@ -1,0 +1,25 @@
+title: Sub-Gaussian inequality
+---
+body:
+
+## Problem
+
+Let $X$ have mean $\mu$. We say that $X$ is sub-Guassian if there exists $\sigma^2$ such that
+
+$$\text{log}(E[e^{t(X - \mu)}]) \leq \frac{t^2 \sigma^2}{2}$$
+
+for all t.
+
+(i) Show that $X$ is sub-Gaussian if and only if $-X$ is sub-Gaussian.
+
+(ii) Show that if $X$ is sub-Gaussian then
+
+$$ P(X - \mu \geq t) \leq e^{-t^2 / (2 \sigma^2)} $$
+
+(iii) Suppose that $X$ has mean $\mu$ and is sub-Gaussian. Also suppose that $Y$ has mean $v$ and is sub-Gaussian. Further, suppose that $X$ and $Y$ are independent. Show that $X+Y$ is sub-Gaussian.
+
+## Solution
+
+## Sources
+
+- 36-705 hw2 problem 1

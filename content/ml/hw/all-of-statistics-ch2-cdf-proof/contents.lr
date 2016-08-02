@@ -30,5 +30,10 @@ $F\_X(x) = F\_U(F(x)) = F(x)$ wherever $F(x)$ is defined, so $X \sim F$.
 
 According to the lecture notes from stats 705, the usefulness of this result is that we can view $[0, 1]$ as the original sample space, equipped with uniform probability, and the random variable $X = F^{-1}(U)$ is a mapping from the sample space to the real line, and has cdf $F$. This applies to both continuous and discrete random variables.
 
+## Sources
+
+- 36-700 hw2 problem 1
+- 36-705 hw2 problem 4 (phrased as, "Let $X$ have a continuous CDF $F$. Show that $F(X) \sim Unif(0,1)$."
+- [Notebook on inverse transform sampling](/ml/notebooks/simulating-random-variables/) explores this further
 
 

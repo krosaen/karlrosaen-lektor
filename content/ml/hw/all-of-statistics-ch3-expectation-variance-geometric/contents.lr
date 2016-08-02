@@ -1,0 +1,17 @@
+title: Expectation and Variance of a Geometric Random Variable
+---
+body:
+
+## Problem
+
+Let $X \sim \text{Geom}(p)$. 
+
+Find the distribution of $Y = X/(1+X)$.
+
+What is $E(X)$ and $V(X)$?
+
+## Solution
+
+## Sources
+
+- 36-700 hw4 problem 5
