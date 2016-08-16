@@ -24,15 +24,10 @@ So my goal in this section is to start at the bottom and work my way through:
 
 - [All of Statistics](http://www.amazon.com/All-Statistics-Statistical-Inference-Springer/dp/0387402721) book and problem sets from CMU's [course from the author of the](http://www.stat.cmu.edu/~larry/=stat705/) and its more introductory CS counterpart CS 36-700.
   - [CS 36-705 course website](http://www.stat.cmu.edu/~larry/=stat705/) with some problem sets and solutions available
-  - [CS 36-700](https://web.archive.org/web/20151110005906/http://www.stat.cmu.edu/~jinglei/Fall15.shtml) HW Files and solutions (also posting direct links to hw and sols below)
-    - [HW1](https://www.dropbox.com/s/eqvpnay5qeucped/36700-2015-Fall-hw1.pdf?dl=0) and [Sols](https://www.dropbox.com/s/dsfloozhxqxm87a/F15_700_1_Solutions.pdf?dl=0)
-    - [HW2](https://www.dropbox.com/s/bj5ycpv2kghrgos/36700-2015-Fall-hw2.pdf?dl=0) and [Sols](https://www.dropbox.com/s/lkbdtbc7llx07t2/F15_700_2_Solutions.pdf?dl=0)
-    - [HW3](https://www.dropbox.com/s/xfo202bpk0ci94w/36700-2015-Fall-hw3.pdf?dl=0) and [Sols](https://www.dropbox.com/s/6xaxppv63gws7e3/F15_700_3_Solutions.pdf?dl=0)
-    - [HW4](https://www.dropbox.com/s/oj70ds99dllx2nx/36700-2015-Fall-hw4.pdf?dl=0) and [Sols](https://www.dropbox.com/s/xr0b6rd0q82x46l/F15_700_4_Solutions.pdf?dl=0)
+  - [CS 36-700](https://web.archive.org/web/20151110005906/http://www.stat.cmu.edu/~jinglei/Fall15.shtml) HW Files and solutions (web archive page, links to hw and solution pdfs on dropbox still work as of 8/2016)
 - [Mathematical Monk's Probability Primer](https://www.youtube.com/playlist?list=PL17567A1A3F5DB5E4): excellent video series with the same level of mathematical rigor as the All of Statistics book.
 - [Stanford's Free online Probability and Statistics Course](https://lagunita.stanford.edu/courses/OLI/ProbStat/Open/about): a very basic introduction to statistics; it doesn't get to random variables until about half way through. While has seemed almost *too* basic at times, for instance reviewing the mean, median and mode, I'm already glad to have spent time on it and have spiced it up by applying some of the basics to data sets of interest to me (e.g [box plots of NBA teams' margin of victory](http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/basic-stats/nba-games-net-rating-boxplots/NbaTeamGameNetRatingsPlots.ipynb)).
 - [Khan Academy's videos and exercises on Probability and Statistics](https://www.khanacademy.org/math/probability?t=table-of-contents): really good material for the introductory stuff covered by Stanford's course. A good place to look for a second explanation, though I'm not working through these exhaustively.
--  [The Theory of Probability](https://www.amazon.com/Theory-Probability-Explorations-Applications/dp/1107024471): another text book that takes more time to motivate the need for the theory of probability while providing the same rigor as All of Statistics. It covers less material and is a bit longer though, revealing a tradeoff between providing background vs concision and breadth. I've found this to be a great second resource and would have considered working my way through it as a main resource had I found it earlier.
 
 What I appreciate about the All of Statistics book compared to others I've looked at, including my text from college, is that it doesn't spend too much time on counting methods (knowing how many ways one can deal a full house with a deck of cards isn't particularly relevant) and is otherwise more comprehensive, getting into some techniques for statistical inference.
 
@@ -51,6 +46,8 @@ One great resource for this is [Kaggle](https://www.kaggle.com) which hosts data
 - [Quora: What Kaggle competitions should a beginner start with?](https://www.quora.com/What-Kaggle-competitions-should-a-beginner-start-with-1)
 - [Quora: https://www.quora.com/What-background-do-I-need-to-do-Kaggle-competitions-1](What background do I need to do Kaggle competitions?)
 - [Kaggle Tutorials](https://www.kaggle.com/wiki/Tutorials)
+
+*Update*: I've completed a couple of kaggle competitions, you can find write ups on the [notebooks section](/ml/notebooks/). I've also begun working on a side project concerning automatic data science. Read my [learning log](/ml/learning-log) to keep up with progress.
 
 ### Exhaustive list of Resources
 
@@ -83,14 +80,16 @@ Statistical Learning](http://statweb.stanford.edu/~tibs/ElemStatLearn/)
 - [Math Monk's YouTube playlist: Probability Primer](https://www.youtube.com/playlist?list=PL17567A1A3F5DB5E4)
 - [On Probability Axioms and Sigma Algebras](http://ee.usc.edu/stochastic-nets/docs/probability-axioms-sigma-algebras.pdf): a nice complement to all of stats and Math Monk videos for grokking when measure theory is important to probabiltiy axioms
 - [Khan Academy's videos and exercises on Probability and Statistics](https://www.khanacademy.org/math/probability?t=table-of-contents)
+- [Stanford's online intro to Probability and Statistics](https://lagunita.stanford.edu/courses/OLI/ProbStat/Open/about)
+-  [The Theory of Probability](https://www.amazon.com/Theory-Probability-Explorations-Applications/dp/1107024471): another text book that takes more time to motivate the need for the theory of probability while providing the same rigor as All of Statistics. It covers less material and is a bit longer though, revealing a tradeoff between providing background vs concision and breadth. I've found this to be a great second resource and would have considered working my way through it as a main resource had I found it earlier.
+- [Guy Lebanon's The Analysis of Data Vo1: Probability](http://theanalysisofdata.com/probability/): Prof turned industry ML champ (LinkedIn, Netflix) published a free book on probability theory. A nice resource to cross reference concepts covered in the 1st half of Wasserman. Guy also has a bunch of [notes](http://www.cc.gatech.edu/~lebanon/notes/) on his website that are interesting to peruse.
 - [Penn State's Stat 414/415 Course Materials](https://onlinecourses.science.psu.edu/stat414/): another good place to cross reference concepts with some examples and solutions. I recently found perusing the [section on functions of random variables](https://onlinecourses.science.psu.edu/stat414/node/127) helpful and wish I'd found it sooner!
 - [Penn State's Stat 505 Course Materials](https://onlinecourses.science.psu.edu/stat505/): applied multivariate statistical analysis
-- [Stanford's online intro to Probability and Statistics](https://lagunita.stanford.edu/courses/OLI/ProbStat/Open/about)
+- [UAH's Random: Probability, Mathematical Statistics, Stochastic Processes](http://www.math.uah.edu/stat/): comprehensive coverage of many important topics in probability and statistics, including some illustrative web app / simulations and exercises. Creative Commons license. Another great resource to cross reference.
 - [Peter Norvig's Introduction to Probability iPython Notebook](http://nbviewer.jupyter.org/url/norvig.com/ipython/Probability.ipynb)
 - [University of Michigan's SOCR probability & stats ebook](http://wiki.socr.umich.edu/index.php/EBook): worth cross referencing for comprehensive list of topics
 - Wikipedia's outlines of [Statistics](https://en.wikipedia.org/wiki/Outline_of_statistics) and [Probability](https://en.wikipedia.org/wiki/Outline_of_probability)
 - [Free Introduction to Probability Book from Dartmouth](http://www.dartmouth.edu/~chance/teaching_aids/books_articles/probability_book/pdf.html)
-- [Random: Probability, Mathematical Statistics, Stochastic Processes](http://www.math.uah.edu/stat/): another good resource to cross reference when you'd like another take
 
 ### Linear Algebra
 
