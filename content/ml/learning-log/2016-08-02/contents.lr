@@ -55,6 +55,6 @@ preprocessor = Pipeline([
 ])
 ```
 
-along with pros describing the different preprocessing steps necessary.
+along with prose describing the different preprocessing steps necessary.
 ---
 summary: Santosh Venkatesh's Theory of Probability Book, lining up more problems TODO and progress on preprocessing functionality of automatic data science tool
