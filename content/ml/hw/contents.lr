@@ -36,10 +36,11 @@ Note: these are my own solutions to problems for which there exist a solution to
 ## Chapter 3: Expectation
 
 - [Expectation and variance of a Binomial random variable](/ml/hw/all-of-statistics-chapter-3-expectation-variance-binomial/)
-- [Expectation and variance of a Geometric random variable (TODO)](/ml/hw/all-of-statistics-ch3-expectation-variance-geometric/)
+- [Expectation and variance of a Geometric random variable](/ml/hw/all-of-statistics-ch3-expectation-variance-geometric/)
 - [Expectation and variance of a Poisson random variable (TODO)](/ml/hw/all-of-statistics-ch3-expectation-variance-poisson/)
 - [Expectation and variance of exponential transformation of Normal RV (TODO)](/ml/hw/all-of-statistics-chapter-3-expecation-variance-exponential-of-normal/)
-- [Variance of linear combinations of random variables (TODO)](/ml/hw/all-of-statistics-ch3-variance-linear-combos-rvs/)
+- [Conditional Expectation of Uniform of Uniform](/ml/hw/all-of-statistics-ch3-conditional-expectation-example/)
+- [Variance of linear combinations of random variables](/ml/hw/all-of-statistics-ch3-variance-linear-combos-rvs/)
 - [Reasoning about RVs that are 1 when Uniform RV is within bounds (TODO)](/ml/hw/all-of-statistics-ch3-reasoning-about-rvs-that-are-1-when-uniform-rv-is-within-bounds/)
 - [Chapter 3 problem 2—Variance is zero iff RV has a point mass distribution](/ml/hw/all-of-statistics-ch3-problem-02/)
 - [Chapter 3 problem 3: Expectation and Variance of max of Uniform RVs (TODO)](/ml/hw/all-of-statistics-ch3-problem-03/)

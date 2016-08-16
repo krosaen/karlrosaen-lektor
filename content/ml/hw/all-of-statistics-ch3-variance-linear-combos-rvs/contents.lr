@@ -18,6 +18,74 @@ Where $c$ is a constant. Find $V(2X - 3Y + 8)$.
 
 ## Solution
 
+Solving this problem involves a few steps:
+
+1. Finding the constant c by noting that integrating the joint distribution must equal 1
+2. Finding the marginal distributions for X and Y
+3. Finding E(X), E(Y), V(X), V(Y) and Cov(X,Y)
+4. Breaking down V(2X - 3Y +8) into components of the above to make the final calculation
+
+### 1. Finding C
+
+$ \int\_0^1\int\_0^2 c(x+y) dy dx = c \int\_0^1 xy + \frac{y^2}{2} \rvert\_{y=0}^{y=2} dx = c \int\_0^1 2x + 2 dx = c(x^2 + 2x \rvert\_{x=0}^{x=1} = c(1+2) = 3c$
+
+Probability distributions must integrate over all possible values to equal 1, so $3c = 1$ and $c = \frac{1}{3}$
+
+### 2. Finding marginals
+
+Finding the marginals is a matter of integrating out the other term.
+
+$f\_X(x) = \frac{1}{3} \int\_{0}^2 x + y dy =  \frac{1}{3} (xy + \frac{y^2}{2} \rvert\_{y=0}^{y=2}) = \frac{1}{3} (2x + 2) = \frac{2x}{3} + \frac{2}{3}$
+
+$f\_Y(y) = \frac{1}{3} \int\_{0}^1 x + y dx = \frac{1}{3} (\frac{x^2}{2} + xy \rvert\_{x=0}{x=1}) = \frac{1}{3}(\frac{1}{2} + y) = \frac{y}{3} + \frac{1}{6}$
+
+### 3. Finding all the expectations and (co)variances
+
+$E(X) = \int x f\_X(x) dx = \int\_0^1 \frac{2}{3}x^2 + \frac{2}{3}x = \frac{2}{9}x^3 + \frac{1}{3}x^2 \rvert\_{x=0}^{x=1} = \frac{2}{9} + \frac{1}{3} = \frac{5}{9}$
+
+$E(X^2) = \int x^2 f\_X(x) dx = \int\_0^1 \frac{2}{3}x^3 + \frac{2}{3}x^2 = \frac{1}{6}x^4 + \frac{2}{9}x^3 \rvert\_{x=0}{x=1} = \frac{1}{6}+\frac{2}{9} = \frac{3}{18} + \frac{4}{18} = \frac{7}{18}$
+
+$E(Y) = \int y f\_Y(y) dx =\int\_0^2 \frac{y^2}{3} + \frac{y}{6} dy = \frac{y^3}{9} + \frac{y^2}{12} \rvert\_{0}^2 = \frac{8}{9} + \frac{4}{12} = \frac{16}{18} + \frac{6}{18} = \frac{22}{18} = \frac{11}{9}$
+
+$E(Y^2) = \int y^2 f\_Y(y) dx =\int\_0^2 \frac{y^3}{3} + \frac{y^2}{6} dy = \frac{y^4}{12} + \frac{y^3}{18} \rvert\_0^2 = 
+\frac{16}{12} + \frac{8}{18} = \frac{4}{3} + \frac{4}{9} = \frac{12}{9} + \frac{4}{9} = \frac{16}{9}
+$
+
+$V(X) = E(X^2) - E(X)^2 
+= \frac{7}{18} - \frac{25}{81}
+= \frac{63}{162} - \frac{50}{162} = \frac{13}{162}$
+
+$V(Y) = E(Y^2) - E(Y)^2 
+= \frac{16}{9} - \frac{121}{81} 
+= \frac{144}{81} - \frac{121}{81} = \frac{23}{81}$
+
+$E(XY) = \frac{1}{3} \int \int xy(x+y)dx dy 
+= \frac{1}{3} \int\_0^2 \int\_0^1 x^2y + xy^2 dx dy
+= \frac{1}{3} \int\_0^2 (\frac{x^3y}{3} + \frac{x^2y^2}{2} \rvert\_{x=0}^{x=1}) dy
+= \frac{1}{3} \int\_0^2 \frac{y}{3} + \frac{y^2}{2} dy
+= \frac{1}{3} (\frac{y^2}{6} + \frac{y^3}{6} \rvert\_0^2)
+= \frac{1}{3}(\frac{4}{6} + \frac{8}{6}) = \frac{2}{3}
+$
+
+$Cov(X,Y) = E(XY) - E(X)E(Y)
+= \frac{2}{3} - \frac{5}{9}\frac{11}{9} 
+= \frac{2}{3} - \frac{55}{81}
+= \frac{54}{81} - \frac{55}{81}
+= -\frac{1}{81}
+$
+
+### 4. Putting it all together
+
+Phew. Now we have everything we need to calculate $V(2X - 3Y + 8)$.
+
+First, $V(2X - 3Y + 8) = V(2X - 3Y)$ as the constant has no variance. Applying the formula for linear combinations of variance, 
+
+$ V(2X-3Y) = 2^2 V(X) + 3^2V(Y) - 2 \times 2 \times 3 Cov(X,Y) 
+= 4V(X) + 9V(Y) - 12 Cov(X,Y) \\\
+= 4\frac{13}{162} + 9\frac{23}{81} - 12\frac{-1}{81}
+= \frac{26}{81} + \frac{207}{81} + \frac{12}{81}
+= \frac{245}{81}$
+
 ## Sources
 
 - 36-700 hw4 problem 3

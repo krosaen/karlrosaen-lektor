@@ -4,7 +4,7 @@ body:
 
 ## Problem
 
-Let $X \sim N(0,1)$ and $Y = e^X$. Find $E(X)$ and $V(X)$.
+Let $X \sim N(0,1)$ and $Y = e^X$. Find $E(Y)$ and $V(Y)$.
 
 ## Solution
 

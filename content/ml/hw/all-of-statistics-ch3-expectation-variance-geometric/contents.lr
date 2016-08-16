@@ -12,6 +12,57 @@ What is $E(X)$ and $V(X)$?
 
 ## Solution
 
+### Finding the distribution for $Y$
+
+This is a pretty straightforward transformation of random variable problem, with $r(x) = /frac{x}{1+x}$.
+
+$F\_Y(y) = P(Y \leq y) = P(r(X) \leq y) = P(X \leq r^{-1}(y)) = F\_X(r^{-1}(y))$.
+
+$F\_X(x)$, the cumulative distribution function for a [geometric distribution](https://en.wikipedia.org/wiki/Geometric_distribution), is known to be $1-(1-p)^x$.
+
+Let's find $r^-1(x)$ by swapping x and y in $y=x/(1+x)$ and solving for y:
+
+$x = y(1+y) \\\
+x + xy = y \\\
+y - xy = x \\\
+y(1 - x) = x \\\
+y = r^{-1}(x) = \frac{x}{1-x}$
+
+Finally, $F\_Y(y) = F\_X(r^{-1}(y)) = 1-(1-p)^{\frac{y}{1-y}}$.
+
+Note that as $x$ goes from $1, 2, ... \infty$, $y$ ranges from $\frac{1}{2}, \frac{2}{3}, ... 1$.
+
+### Finding $E(X)$
+
+This problem is mostly plug and chug, using some tricks in evaluating infinite series.
+
+$E(X) = \sum\_{x=1}^{\infty} x f\_X(x) = \sum\_{x=1}^{\infty} xp(1-p)^{x-1}$
+
+We know the formula for a geometric series: $\sum\_{k=a}^{b} r^k = \frac{r^a - r^{b+1}}{1-r}$
+
+The trick is to turn our problem of calculating $\sum\_{x=1}^{\infty} xp(1-p)^{x-1}$ into this problem. First, let's set $\alpha = 1-p$ and work in terms of $k$ instead of $x$ to make this look more familiar:
+
+$\sum\_{x=1}^{\infty} xp(1-p)^{x-1} = p \sum\_{k=1}^{\infty} k \alpha^{k-1} = p \sum\_{k=1}^{\infty} \frac{d}{d \alpha} \alpha^k$ = $p \frac{d}{d \alpha} \sum\_{k=1}^{\infty} \alpha^k$ = $p \frac{d}{d \alpha} \frac{\alpha}{1-\alpha}$
+
+Applying the [quotient rule](https://en.wikipedia.org/wiki/Quotient_rule), $\frac{d}{d \alpha} \frac{\alpha}{1-\alpha} = \frac{1}{(1-\alpha)^2}$
+
+Finally leaving us with $E(X) = \frac{p}{(1-\alpha)^2} = \frac{p}{(1-(1-p))^2} = \frac{p}{p^2} = \frac{1}{p}$.
+
+### Finding $V(X)$
+
+This is a similar plug and chug operation; given that 
+
+$V(X) = E(X^2) - (E(X))^2$, and that we've already calculated $E(X)$, this is a matter of calculating $E(X^2)$.
+
+I couldn't bring myself to work it out in as quite as much detail, but here are some steps:
+
+$E(X^2) = \sum\_{k=1}^{\infty} k^2 * p(1-p)^{k-1} = \frac{p}{1-p} \sum\_{k=1}^{\infty} k^2(1-p)^k
+= \frac{p}{1-p} \frac{(1-p)(1 + (1-p)}{(1-(1-p))^3} = \frac{2-p}{p^2}.$
+
+So
+
+$V(X) = E(X^2) - (E(X))^2 = \frac{2-p}{p^2} - \frac{1}{p^2} = \frac{1-p}{p^2}$
+
 ## Sources
 
 - 36-700 hw4 problem 5
