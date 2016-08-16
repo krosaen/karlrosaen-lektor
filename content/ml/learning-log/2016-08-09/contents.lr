@@ -1,0 +1,80 @@
+pub_date: 2016-08-09
+---
+body:
+
+## A hw problem on variance
+
+Continuing to chug my way through homework problems, I worked through [this problem](/ml/hw/all-of-statistics-ch3-variance-linear-combos-rvs/) which asks
+
+Let
+
+$$
+f\_{X,Y}(x,y) = 
+\begin{cases}
+c(x+y) & 0 \leq x \leq 1, 0 \leq y \leq 2 \\\
+0 & \text{otherwise}
+\end{cases}
+$$
+
+Where $c$ is a constant. Find $V(2X - 3Y + 8)$.
+
+This was a pretty straightforward problem, albeit a tad tedious as in taking all of these steps
+
+1. Finding the constant c by noting that integrating the joint distribution must equal 1
+2. Finding the marginal distributions for X and Y
+3. Finding E(X), E(Y), V(X), V(Y) and Cov(X,Y)
+4. Breaking down V(2X - 3Y +8) into components of the above to make the final calculation
+
+It still helped to play with the formulas and iron in the concepts of expectation and variance. It also was a good refresher on finding marginal distributions by integrating out variables within a joint distribution.
+
+## Probability inequalities
+
+I got started reading about probability inequalities. The first two theorems, Markov's inequality and Chebyshev's inequality are pretty easy to understand. As the book puts it
+
+> Inequalities are useful for bounding quantities that might otherwise be hard to compute. They will be used in the theory of convergence in the next chapter.
+
+### Markov's inequality
+
+Markov's inequality helps bound non-negative random variables. Let's say $X$ is a non-negative random variable, and we know its mean, $E(X)$. We wish to know $P(X > t)$, but let's say $X$'s distribution function is hard to compute for some reason. We can find a bound on $P(X > t)$ by starting with the definition of expectation (note we'll use shorthand $f(x)$ for $f\_X(x)$):
+
+$E(X) = \int\_0^{\infty} x f(x)dx$
+
+and breaking this into two parts:
+
+$\int\_0^{\infty} x f(x)dx = \int\_0^{t} x f(x) dx + \int\_t^{\infty} x f(x)dx$
+
+which must be greater than
+
+$\int\_t^{\infty} x f(x)dx$
+
+from here it follows that 
+
+$\int\_t^{\infty} x f(x)dx \geq \int\_t^{\infty} t f(x)dx \geq t \int\_t^{\infty} f(x)dx = t P(X > t)$
+
+So we have 
+
+$E(X) \geq t P(X > t)$
+
+which can be rearranged as 
+
+$P(X > t) \leq \frac{E(X)}{t}$
+
+and there you have Markov's inequality.
+
+### Chebyshev's inequality
+
+We can use this result to reason about $P(|X - \mu| \geq t)$ by plugging this into Markov's inequality, squaring both sides, and noting the definition of variance:
+
+$P(|X-\mu| \geq t) = P(|X-\mu|^2 \geq t^2) \leq \frac{E(X-\mu)^2}{t^2} = \frac{\sigma^2}{t^2}$.
+
+It's pretty neat that such simple derivations lead to results that are so useful. As [Wikipedia](https://en.wikipedia.org/wiki/Chebyshev%27s_inequality) notes
+
+> Chebyshev's inequality guarantees that, for a wide class of probability distributions, "nearly all" values are close to the mean—the precise statement being that no more than $\frac{1}{k^2}$ of the distribution's values can be more than k standard deviations away from the mean... The inequality has great utility because it can be applied to any probability distribution in which the mean and variance are defined.
+
+And to paraphrase wikipedia further, it also provides a more generalized, albeit looser, rule of thumb to the [68–95–99.7 rule](https://en.wikipedia.org/wiki/68%E2%80%9395%E2%80%9399.7_rule) which applies to Normal distributions, as under Chebyshev's inequality a minimum of just 75% of values must lie within two standard deviations of the mean and 89% within three standard deviations.
+
+## Side project
+
+I continue to work on the automatic notebook generator. Will report more when I have a decent chunk of progress to coherently describe.
+---
+summary: Variance of linear combos of R.Vs, Markov's and Chebyshev's inequalities

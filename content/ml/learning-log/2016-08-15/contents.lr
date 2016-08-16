@@ -1,0 +1,60 @@
+pub_date: 2016-08-15
+---
+summary: Multi-stage sampling, Moment Generating Functions
+---
+body:
+
+## Hierarchical models
+
+Example 3.28 in Wasserman (p. 56) runs through an example that I found interesting: choose a county at random, and then randomly sample n people. Note how many of those people have a disease. We can model this as conditional probability using two random variables:
+
+- X = number of people who have disease within the county
+- Q = the % of people in a county with a disease
+
+Since Q varies from county to county it is a random variable. Let's assume $Q \sim \text{Uniform}(0, 1)$, we now have:
+
+$$ X|Q = q \sim \text{Binomial}(n, q) $$
+
+E.g the number of people with disease from a sample in a given county is conditioned on the county randomly chosen and the proportion of people there who have the disease. Having posed the problem this way, we can find the expectation and variance using familiar tricks, e.g $E(X) = E(E(X|Q)) = E(nQ) = nE(Q) = n / 2$.
+
+I like that this example and the concept of hirerchical models ties conditional probability to the idea of ["multi-stage sampling" that I studied a ways back](/ml/learning-log/2016-04-27/) in [Stanford's basic stats course](https://lagunita.stanford.edu/courses/OLI/ProbStat/Open/about).
+
+## Moment generating functions
+
+Wasserman briefly covers Moment Generating functions, which are useful as an alternative approach to finding moments of random variables, and therefore the expected value (the 1st moment) and variance (combination of 1st and second moment). 
+
+The moment generating function, or Laplace transform of a random variable $X$ is defined as:
+
+$$ \psi\_X(t) = E(e^{tX}) = \int e^{tx}dF(x)$$
+
+and it turns out that evaluating derivatives of $\psi$ at 0 yields successive moments of X:
+
+$$ \psi^{(k)}(0) = E(X^k)$$
+
+Aside from the mechanics of using these functions to find moments of a couple of random variables in examples, I was left wanting for more background.
+
+In googling around I came across [this book](http://theanalysisofdata.com/probability/) which had just a bit [more background](http://theanalysisofdata.com/probability/2_4.html) on the topic that I found helpful. Side note: this (free) book strikes me as very similar in spirit to Wasserman's in that it aims to strike a balance between concision and rigor, though it only covers about the 1st half of the material All of Statistics does. I've added a link to the [curriculum page](/ml) for future reference. I also found [this coverage of generating functions](http://www.math.uah.edu/stat/expect/Generating.html) which includes moment generating functions to he helpful in putting MGFs in broader context.
+
+Anyways, to understand moment generating functions, it's worth taking a step back and think about [generating functions](https://en.wikipedia.org/wiki/Generating_function) and specifically how you can use a [Taylor series](https://en.wikipedia.org/wiki/Taylor_series) to approximate any function as a sum of its derivatives taken at a single point. 
+
+With this in mind, taking the first derivative of $\psi$ evaluated at zero can be evaluated using a taylor expansion of $e^X$:
+
+$\psi'(0) = \frac{d}{dt} E(1 + tX + \frac{t^2X^2}{2!} + ...)\vert\_{t=0} \\\
+= E(\frac{d}{dt}(1 + tX + \frac{t^2x^2}{2!} + ...))\vert\_{t=0} \\\
+= E(X)$
+
+similarly:
+
+$\psi''(0) = \frac{d^2}{dt^2} E(1 + tX + \frac{t^2X^2}{2!} + ...)\vert\_{t=0} \\\
+= E(\frac{d^2}{dt^2}(1 + tX + \frac{t^2x^2}{2!} + ...))\vert\_{t=0} \\\
+= E(X^2)$
+
+etc.
+
+So I'm not sure why diving into these details was helpful, maybe to just sit with the details long enough to see that, yes, this is a clever formulation that allows us an alternate way to find moments. Note that instead of needing to integrate, we instead need to take a successive derivatives, and in some contexts this could be easier to work with.
+
+It also turns out to be true that if two random variables have the same MGF, they have the same CDFs:
+
+> Let $X1,X2$ be two RVs with mgfs $m1,m2$. If $m1(t)=m2(t)$ for all $t\in(−\epsilon,+\epsilon)$, for some $\epsilon>0$ then the two RVs have identical cdfs (and therefore identical pdfs or pmfs).
+
+So for now I think I'll tuck this fact away and remember there exists this alternative way of working with random variables.

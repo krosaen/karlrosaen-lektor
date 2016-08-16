@@ -1,0 +1,41 @@
+pub_date: 2016-08-04
+---
+body:
+
+## Morning probability work
+
+I worked out the expected value and variance of a [geometric random variable](/ml/hw/all-of-statistics-ch3-expectation-variance-geometric/), which wasn't all that fun or illuminating as it came down to using the formulas for expectation and variance:
+
+- $E(X) = \sum\_{x} x f\_X(x)$
+- $V(X) = E(X^2) - E(X)^2 = \sum\_{x} x^2 f\_X(x) - E(X)^2$
+
+and futzing around with algebraic manipulation and a some tricks for evaluating infinite series. This didn't make me eager to do the same with [a Poisson RV](/ml/hw/all-of-statistics-ch3-expectation-variance-poisson/) so I'm going to leave that as a TODO for now, might just skip it for good.
+
+I will say it's pretty neat that the expectation and variance of a Poisson, having $F\_X(x) = e^\{-\lambda} \frac{\lambda^x}{x!}$ both turn out to be $\lambda$. This prompted me to review the Poisson distribution by watching [this video](https://www.youtube.com/watch?v=jmqZG6roVqU&list=PLvxOuBpazmsNIHP5cz37oOPZx0JKyNszN&index=7) and a couple of others from that playlist.
+
+## Preprocessing pandas dataframes 
+
+I'm continuing to progress on my automatic preprocessing pipeline builder. One challenge has been that all of the built in pipeline transformers that [scikit-learn provides](http://scikit-learn.org/stable/modules/preprocessing.html) are dealing with numpy arrays, so while they work when you pass in a pandas dataframe, the output is always a 2d numpy array. 
+
+I prefer to keep things as dataframes so that the column names remain available after preprocessing, in case there is any other intermediate exploration.
+
+I wrote this helper class which helps adapt most of the basic transformers:
+
+```
+class DfTransformerAdapter(BaseTransformer):
+    """Adapts a scikit-learn Transformer to return a pandas DataFrame"""
+    def __init__(self, transformer):
+        self.transformer = transformer
+
+    def fit(self, X, y=None, **fit_params):
+        self.transformer.fit(X, y=y, **fit_params)
+        return self
+
+    def transform(self, X, **transform_params):
+        raw_result = self.transformer.transform(X, **transform_params)
+        return pd.DataFrame(raw_result, columns=X.columns)
+```
+
+but some of the more complex transformers that update or combine the columns in some way, including [FeatureUnion](http://scikit-learn.org/stable/modules/generated/sklearn.pipeline.FeatureUnion.html) and [one hot encoding](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html) are requiring more work.
+---
+summary: A couple of expectation problems and progress on building preprocessing pipelines

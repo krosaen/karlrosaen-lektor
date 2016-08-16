@@ -1,0 +1,62 @@
+title: Conditional Expectation of Uniform of Uniform
+---
+body:
+
+We look at a series of examples from All of Statistics that build off each other, starting with defining a conditional random variable, and then finding its expectation, and the expectation of a marginal.
+
+### A Conditional Distribution
+
+Example 2.39 (page 37) describes a conditional distribution
+
+> Suppose that $X \sim Uniform(0, 1$). After obtaining a value of $X$ we generate $Y|X = x \sim Uniform(x,1)$.
+
+and then asks,
+
+> What is the marginal distribution of $Y$?
+
+First, let's define note that with $X \sim Uniform(0, 1)$
+
+$f\_X(x) = 
+\begin{cases}
+1 & 0 \leq x \leq 1 \\\
+0 & \text{otherwise}
+\end{cases}
+$ 
+
+And that
+
+$f\_{Y|X}(y|x) = 
+\begin{cases}
+\frac{1}{1-x} & 0 \leq x \leq y \leq 1 \\\
+0 & \text{otherwise}
+\end{cases}
+$
+
+Side note: I find this example interesting in that it describes the conditional distribution directly, in describing one value conidtioned on another, rather than describing a joint distribution asking to derive via the definition $f\_{Y|X}(y|x) = \frac{f\_{X,Y}(x, y)}{f\_X(x)}$.
+
+To find $F_Y(y)$ we first find the joint distribution
+
+$f\_{X,Y}(x,y) = f\_{Y|X}(y|x) f\_X(x) = 
+\begin{cases}
+\frac{1}{1-x} & 0 \leq x \leq y \leq 1 \\\
+0 & \text{otherwise}
+\end{cases}
+$
+
+and then the marginal for $Y$
+
+$f\_Y(y) = \int\_0^y f\_{X,Y}(x,y)dx = \int\_0^y \frac{dx}{1 - x} = -\int\_1^{1-y} \frac{du}{u} = -log(1-y)$
+
+### Conditional Expectation
+
+Example 3.23 (page 54) continues with this conditional distribution and asks to compute $E(Y|X=x)$.
+
+$E(Y|X=x) = \int\_x^1 y f\_{Y|X}(y|x) dy = \frac{1}{1-x} \int\_x^1 y dy = \frac{1+x}{2}$
+
+### Finding E(Y) with help of The Rule of Iterated Expectation
+
+Example 3.25 (page 55) asks to compute $E(Y)$ and notes that, knowing $E(Y|X=x)$, this can be done easily with The Rule of Iterated Expectations, which states that $E[E(Y|X)] = E(Y)$. So,
+
+$E(Y) = E[E(Y|X)] = E(\frac{1+x}{2}) = \frac{1 + E(X)}{2} = \frac{1 + 1/2}{2} = 3/4$
+
+

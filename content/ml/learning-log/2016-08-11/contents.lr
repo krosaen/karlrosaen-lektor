@@ -1,0 +1,19 @@
+pub_date: 2016-08-11
+---
+body:
+
+## Conditional Expectation
+
+I returned to chapter 3 this morning since I still hadn't covered conditional expectation. At first glance, the definition of conditional expectation is pretty straight forward:
+
+$$E(X|Y=y) = \int x f\_{X|Y}(x|y) dx$$
+
+what's a bit subtle is that this is not a value, but a function of $y$. As the book states,
+
+> Whereas $E(X)$ is a number, $E(X|Y=y)$ is a function of $y$. Before we observe $Y$ we don't know the value of $E(X|Y=y)$ so it is a random variable which we denote $E(X|Y)$. In other words, $E(X|Y)$ is the random variable whose value is $E(X|Y=y)$ when $Y=y$.
+
+I wrote up [a series of examples](/ml/hw/all-of-statistics-ch3-conditional-expectation-example/) related to conditional distributions and conditional expectation as way of both reviewing conditional expectation and solidifying the reading. It also uses The Rule of Iterated Expectations which says $E[E(Y|X)] = E(Y)$.
+
+With this review of conditional probability in mind, I went back and looked at [this problem](/ml/hw/all-of-statistics-chapter-2-independence-of-rvs-associated-with-coin-flips/) again which considers flipping a coin $N$ times where $N \sim Poisson(\lambda)$. I previously [found this problem mind blowing](/ml/learning-log/2016-07-28/) but it seems more straightforward thinking in terms of conditional expectation, even though the fact that the resulting random variable is also a Poisson remains pretty nifty.
+---
+summary: Conditional Expectation
