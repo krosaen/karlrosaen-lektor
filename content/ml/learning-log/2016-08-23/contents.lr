@@ -1,0 +1,55 @@
+pub_date: 2016-08-23
+---
+body:
+
+## Inequalities applied to bounding expected loss of classifiers
+
+I returned to reading on Probability Inequalities that [I started weeks ago](/ml/learning-log/2016-08-09/) with Markov's and Chebyshev's inequalities. Reminding myself,
+
+> Inequalities are useful for bounding quantities that might otherwise be hard to compute. 
+
+I was excited to find a concrete link between this reading and some of the decision theory I dived into and took [some notes on last week](/ml/learning-log/2016-08-19/). 
+
+We can model training data as a series of IID samples drawn from a joint distribution:
+
+$$ (X\_1, Y\_1), ... (X\_n, Y\_n) \sim P\_{X,Y} $$ 
+
+and a classifier as a function $\hat{Y} = f(X)$. The expected loss of the classifier is:
+
+$$ \sum\_{y \neq \hat{y}} p(y|x) $$
+
+and the empirical risk on our training set to be:
+
+$$ \frac{1}{n} \sum\_{y \neq \hat{y}} 1 $$
+
+e.g the fraction of times our classifier is wrong on our training set. What can we say about the true error rate of our classifier? 
+
+We can think of each sample from our training set as a Bernoulli trial (a coin flip) with unknown mean $p$. The true mean would tell us our true error rate, and the probability that any given sample is misclassified. What we do know is the observed or sample mean $\bar{X}\_n$ noted above.
+
+We can use probability inequalities to help us here! First let's use Chebyshev's inequality:
+
+$$ P(|X - \mu| \geq t) \leq \frac{\sigma^2}{t^2} $$
+
+we can apply this to reason about how likely our sample mean $\bar{X}\_n$ is to be within some bound $\epsilon$ of $p$:
+
+$$ P(|\bar{X}\_n - p| > \epsilon) \leq \frac{V(\bar{X}\_n)}{\epsilon^2} = \frac{p(1-p)}{n\epsilon^2} \leq \frac{1}{4n\epsilon^2} $$ 
+
+since $p(1-p) \leq \frac{1}{4}$ for all $p$. So for instance, say we have 100 samples, and wish to know how likely the observed error rate is within 20% of the true error rate, we plug in $\epsilon =0.2$ and $n=100$ to get a bound of $0.0625$.
+
+This is kind of neat. We can state with certainty the bounds of the true error rate of our classifier.
+
+### Hoeffding's Inequality
+
+Hoeffding's inequality as applied to a Bernoulli random variable provides a tighter bound than Chebyshev's:
+
+$$ P(|\bar{X}\_n - p| > \epsilon) \leq 2e^{-2n\epsilon^2} $$
+
+(note this is proven in an appendix in all of statistics as well on [the wikipedia page](https://en.wikipedia.org/wiki/Hoeffding%27s_inequality)) 
+
+plugging in the same parameters, we get 
+
+$$ P(|\bar{X}\_n - p| > 0.2) \leq 2e^{-2(100)(0.2)^2} = 0.00067 $$
+
+so with a 100 samples, we can be pretty damn certain that the observed error rate is within 20% of the true error rate. 
+---
+summary: Probability inequalities applied to bounding expected loss of classifiers

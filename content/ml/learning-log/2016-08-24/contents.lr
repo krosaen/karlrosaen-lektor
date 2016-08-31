@@ -1,0 +1,76 @@
+pub_date: 2016-08-24
+---
+body:
+
+## Challenges in automatic preprocessing
+
+I took a crack at another Kaggle competition, [Predicting Redhat Business Value](http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/kaggle/predicting-red-hat-business-value/predicting-red-hat-business-value.ipynb) in part to get another data point in evaluating my seemingly universal approach to building a preprocessing function:
+
+- one-hot encode categorical variables
+- impute missing values for quantitative variables 
+
+There are a few nuances to doing this well, including avoiding one-hot encoding binary variables, and doing some additional preprocessing before feeding the data into algorithms that prefer scaled data. But one of the biggest premises of my project is that this boring somewhat tedious exercise of building a preprocessing pipeline could be automated.
+
+The problem I ran into that prevented me from quickly getting to a point where I'd preprocessed the data and could feed it into a couple of first classifiers (I usually start with logistic regression and random forest) was that some of the categorical variables had thousands of possible values, so applying one-hot encoding resulted in a dataframe with almost 10,000 columns! This exhausted the ram of my laptop, and even after sampling down to 1% of the data so that it would work, it was an unreasonable amount of dimensionality to be working with.
+
+So in my first attempt, I simply dropped the problematic columns. From there, my usual approach got me up to the mid 80s in performance, nothing impressive, particularly given that there's a trick everyone discovered that means the top 100 submissions are above 99%.
+
+Ideally there would be an approach that could handle categorical variables like this more gracefully. I'm [not the first one to observe / play with this](http://www.willmcginnis.com/2015/11/29/beyond-one-hot-an-exploration-of-categorical-variables/). So far I've tried a basic approach of re-including the categorical columns with many unique values by converting them to a single quantitative column. The updated pipeline looks like this:
+
+```
+preprocessor = Pipeline([
+    ('features', DfFeatureUnion([
+        ('quantitative', Pipeline([
+            ('combine-q', DfFeatureUnion([
+                ('highd', Pipeline([
+                    ('select-highd', ColumnSelector(high_dim_cat_columns)),
+                    ('encode-highd', EncodeCategorical())                        
+                ])),
+                ('select-quantitative', ColumnSelector(q_columns, c_type='float')),
+            ])),
+            ('impute-missing', DfTransformerAdapter(Imputer(strategy='median'))),
+            ('scale', DfTransformerAdapter(StandardScaler()))
+        ])),
+        ('categorical', Pipeline([
+            ('select-categorical', ColumnSelector(cat_columns)),
+            ('apply-onehot', DfOneHot()),
+            ('spread-binary', SpreadBinary())
+        ])),
+    ]))
+])
+```
+
+where `EncodeCategorical` maps each unique value to a sequential number. This boosted my performance from 85% to 88%.
+
+I think my next step in handling this case will be to have some rules of thumb for encoding based on the number of unique values a categorical variable has:
+
+- less than 20 values: one-hot encode
+- more than that: create log_2(num_unique_values) columns and assign the bits of the quantative encoding to each. 
+
+The latter option is explored in the [aforementioned post]((http://www.willmcginnis.com/2015/11/29/beyond-one-hot-an-exploration-of-categorical-variables/)) and it seems like that gives nearly the performance of one-hot encoding while obviously having fewer resulting dimensions. The post finds that
+
+>  it seems that with decent consistency binary coding performs well, without a significant increase in dimensionality.  Ordinal, as expected, performs consistently poorly.
+
+## Project update
+
+My automatic data science project is plodding along, I have code to build a preprocessing pipeline from a list of quantitative, categorical and binary (e.g already one-hot encoded) variables, as well as to generate code that could be posted into a cell. So I should be getting close to generating a real notebook, as the rest of the steps are pretty straight forward once you have a preprocessing pipeline to combine with various classifiers; each notebook has a cell like this:
+
+```
+pipe_lr = Pipeline([
+        ('wrangle', preprocessor),
+        ('lr', LogisticRegression(C=100.0, random_state=0))
+    ])
+
+pipe_rf = Pipeline([
+        ('wrangle', preprocessor),
+        ('rf', RandomForestClassifier(criterion='entropy', n_estimators=10, random_state=0))
+    ])
+```
+
+followed by cross validation. 
+
+
+
+
+---
+summary: A Wrinkle in Universal Preprocessing of Dataframes
