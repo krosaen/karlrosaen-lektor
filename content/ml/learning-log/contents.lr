@@ -3,3 +3,8 @@ _model: learning-log
 author: Karl Rosaen
 ---
 summary: Day to day reflections as I work my way through the curriculum.
+---
+leadin:
+
+Day to day reflections as I work my way through the curriculum. 
+Find related [IPython notebooks here](/ml/notebooks).

@@ -10,10 +10,8 @@
 {% block body %}
     <h2>Learning Log</h2>
 
-    <p>
-        Day to day reflections as I work my way through the curriculum. Find related
-        <a href="https://github.com/krosaen/ml-study">IPython notebooks and Python sourcecode here</a>.
-    </p>
+    {{ this.leadin }}
+
     <ul class="ll-list">
         {% for note in this.pagination.items %}
             <li>
