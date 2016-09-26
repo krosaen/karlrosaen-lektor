@@ -1,0 +1,98 @@
+pub_date: 2016-09-05
+---
+body:
+
+My summer of full-time learning is winding down—I've lined up a job as a research engineer at [a lab](http://droplab.engin.umich.edu/) focused on autonomous vehicles. I'll be able to apply some of my learnings as well as my general software engineering skills while continuing to learn. Perhaps I'll write more on the process of finding a job later, for now I'll just say I feel extremely fortunate to have found something that meets the learning / applying criteria so quickly and to put a nice bow on the summer.
+
+I'm finding that I want to shift my thinking to plan for the longer haul process of continuing to gain expertise in machine learning. But first, what did I learn these past few months?
+
+Most broadly speaking, I'd say I've made a lot of progress in these areas:
+- I've become comfortable with the practical concerns in attacking supervised learning problems presented in the form of a (perhaps messy) labeled dataset, where one hopes to train a model that generalizes well to unlabeled data. 
+- I've laid laid some of the theoretical foundations for continuing to study machine learning from a probabilistic perspective. Along the way I've gained an appreciation for thinking mathematically in general, and a desire to continue to strengthen my foundations in math.
+- I've continued a breadth first perusal of the huge field of machine learning and am better able to connect the dots with some of the foundations of statistics and probability theory under my belt
+
+## Applied Machine Learning
+
+Working through most of [Python Machine Learning](http://www.amazon.com/Python-Machine-Learning-Sebastian-Raschka/dp/1783555130) turned out to be a perfect first step in getting my hands dirty applying ML. As an experienced programmer, this was mostly pure fun; a lot of the nitty gritty details in thinking about getting an environment setup to work with [Jupyter notebooks](http://jupyter.org/) and [scikit-learn](http://scikit-learn.org/), and thinking about how to pipe data through various transformations and making it all work in Python came pretty naturally. The author is a gifted teacher and when he delves into the underlying theory, he does a nice job at making it approachable. 
+
+A quick brain dump of what I've covered here:
+
+- how supervised learning problems are framed
+- the process of working with a data set
+  - preprocessing and cleaning
+  - exploring relationships of variables
+  - building a pipeline to combine with different classifiers
+  - reducing dimensionality
+  - examining feature importance
+  - evaluating generality of model with cross-validation
+  - understanding whether more data would benefit your model with learning curves
+  - tuning parameters of model
+- models & techniques
+  - gradient descent 
+  - logistic regression
+  - decision trees
+  - ensemble learning: bagging trees to make a random forest
+
+One chapter I didn't cover yet that I'd like to soon is regression. I get the idea of regression and feel like I could plug in scikit learn models like linear and random forest regression, so it didn't feel as compelling to study compared with some of the probability theory I spent time on instead. But it's still worth going through the exercise, and there are some data sets I'd like to play with that would require regression (e.g predicting margin of victory of an nba game).
+
+## Probability Fundamentals
+
+I've studied these specific topics as I work through [Wasserman's All of Statistics](https://www.amazon.com/All-Statistics-Statistical-Inference-Springer/dp/0387402721):
+
+- axioms of probability
+  - a mathematical definition of probability: sample space, sigma algebra (subset of sample space that is measurable), mapping from every subset to a number
+- random variables
+  - mathematical definition
+  - transformation of random variables
+- basic statistics and sampling theory
+- probability distributions: densities and cumulative distribution functions
+- joint probability distributions, marginal distributions
+- conditional probability
+- expectation
+- probability inequalities
+
+I've also begun to study the convergence of random variables, but have found that my rusty recollection of real analysis and the study of convergence of sequences of regular ol' numbers to be a bit lacking. This motivates wanting to study real analysis. But I've gotten far enough to appreciate The Central Limit Theorem and some of its implications, even if I couldn't prove it :)
+
+On a related note, [I wrote a review](https://www.amazon.com/gp/customer-reviews/R12Y2OKPFRBQKM/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8&ASIN=0387402721) of this book on Amazon if you're curious about more thoughts on this book. 
+
+So I only barely covered the first half of that book and never really got into the inference part. Doh! But I think this provides a realistic sense of what one might hope to cover in a few months, particularly if also studying other stuff along the way. I spent plenty of time dabbling in some of the more advanced inference techniques, both bayesian and frequentist, but wouldn't say I've studied them rigorously. I think I'm merely *ready* to study these at this point:
+
+- I have a good understanding of how the concepts of random variables and joint distributions relate to datasets 
+- I'm getting more comfortable reading and writing math notation
+- I'm beginning to understand how probability theory is useful not only in the definition of some predictive models but also in reasoning about the predictive quality of models
+
+## Math fundamentals
+
+One area of study that I didn't anticipate emerging was what you might call mathematical reasoning. I'll excerpt from [Introduction to Mathematical Thinking](https://www.amazon.com/gp/product/0615653634/ref=crt_ewc_title_dp_4?ie=UTF8&psc=1&smid=ATVPDKIKX0DER) to provide some motivation:
+
+> But during the nineteenth century, as mathematicians tackled problems of ever greater complexity, they began to discover that their intuitions were sometimes inadequate to guide their work...This introspection led, in the middle of the nineteenth century, to the adoption of a new and different conception of the mathematics, where the primary focus was no longer on performing a calculation or computing an answer, but formulating and understanding abstract concepts and relationships. This was a shift in emphasis from doing to understanding. Mathematical objects were no longer thought of as given primarily by formulas, but rather as carriers of conceptual properties. Proving something was no longer a matter of transforming terms in accordance with rules, but a process of logical deduction from concepts.
+
+> This revolution—for that is what it amounted to—completely changed the way mathematicians thought of their subject. Yet, for the rest of the world, the shift may as well have not occurred. The first anyone other than professional mathematicians knew that something had changed was when the new emphasis found its way into the undergraduate curriculum. If you, as a college math student, find yourself reeling after your first encounter with this “new math,” you can lay the blame at the feet of the mathematicians Lejeune Dirichlet, Richard Dedekind, Bernhard Riemann, and all the others who ushered in the new approach.
+
+and then
+
+> Over many years, we have grown accustomed to the fact that advancement in an industrial society requires a workforce that has mathematical skills. But if you look more closely, those skills fall into two categories. The first category comprises people who, given a mathematical problem (i.e., a problem already formulated in mathematical terms), can find its mathematical solution. The second category comprises people who can take a new problem, say in manufacturing, identify and describe key features of the problem mathematically, and use that mathematical description to analyze the problem in a precise fashion.
+
+> In the past, there was a huge demand for employees with type 1 skills, and a small need for type 2 talent. Our mathematics education process largely met both needs. It has always focused primarily on producing people of the first variety, but some of them inevitably turned out to be good at the second kind of activities as well. So all was well. But in today’s world, where companies must constantly innovate to stay in business, the demand is shifting toward type 2 mathematical thinkers—to people who can think outside the mathematical box, not inside it. Now, suddenly, all is not well.
+
+> There will always be a need for people with mastery of a range of mathematical techniques, who are able to work alone for long periods, deeply focused on a specific mathematical problem, and our education system should support their development. But in the twenty-first century, the greater demand will be for type 2 ability. Since we don’t have a name for such individuals (“mathematically able” or even “mathematician” popularly imply type 1 mastery), I propose to give them one: innovative mathematical thinkers.
+
+>This new breed of individuals (well, it’s not new, I just don’t think anyone has shone a spotlight on them before) will need to have, above all else, a good conceptual (in an operational sense) understanding of mathematics, its power, its scope, when and how it can be applied, and its limitations. They will also have to have a solid mastery of some basic mathematical skills, but that skills mastery does not have to be stellar. A far more important requirement is that they can work well in teams, often cross-disciplinary teams, they can see things in new ways, they can quickly learn and come up to speed on a new technique that seems to be required, and they are very good at adapting old methods to new situations.
+
+I stumbled upon this by way of studying the axioms of probability. At first I found it really hard to understand things presented in this way. I wanted a "intuitive" description. But in trying over and over again to fully understand the material as well as the [problem sets](/ml/hw) I started to see some of the beauty in feeling comfortable reasoning about concepts this way, and not always wanting to shy away from mathematical notation; shying away means waiting around for someone else to provide a much more verbose description of the formula. It’s kind of like not being able to read a map and instead waiting for someone to write out a series of turn by turn directions. Wouldn’t you like to be able to read math natively? It's clear that the pioneers of ML are really good at thinking mathematically, and often what they bring to the table is precisely framing problems involving uncertainty and inference mathematically from a probabilistic perspective.
+
+## Where this leaves me
+
+I need to spend some more time planning my studies for the next few months as I start my job but so far this is what I'm imagining:
+
+- Deeper dive into machine learning from a probabilistic perspective, specifically the book [Machine Learning: A Probabilistic Perspective](https://www.amazon.com/Machine-Learning-Probabilistic-Perspective-Computation/dp/0262018020) seems like a perfect next step as the sometime dense mathematical exposition feels approachable now. Some of it will be review, but a lot of it will be a natural follow up to my probability studies; I'll likely make this my primary roadmap instead of the second half of Wasserman.
+- Bring my practical skills to larger scale datasets: I'd like to be able to do all the things I'm now comfortable with in scikit-learn and notebooks in a distributed fashion. Part of this will be devops stuff like bringing up a cluster of machines hosting docker containers, using Spark, some of the deep learning frameworks (MxNet, tensorflow) etc, and another will be gaining comfort authoring custom transformation logic (e.g a preprocessing technique) that could work at scale. 
+- Continued study of some math fundamentals. I mentioned real analysis as one topic. I also might work my way through  [Thinking Mathematically](https://www.amazon.com/gp/product/0273728911/ref=oh_aui_detailpage_o07_s00?ie=UTF8&psc=1)
+- Specific study of deep learning. Surprisingly, I hardly touched deep learning during the past few months. Being the hottest most advanced technique out there it was quite tempting to dive in, but I felt it was smarter to start with the fundamentals. But now's the time to really get into it. I already understand how a multi-layer perceptron could be plugged into my usual supervised learning evaluation playbook, but I have a lot to learn about convolutional networks, recurrent networks, how deep learning can automatically learn features and other topics specific to computer vision. Thankfully all of this will be required by my new job.
+
+I also am bursting with ideas and would like to keep playing with datasets, and chipping away at my csv -> notebook automatic data science starter kit side-project, but we'll see.
+
+
+
+---
+summary: Reflections on a summer of learning
