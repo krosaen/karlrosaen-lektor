@@ -81,7 +81,7 @@ Evaluating random forest omni 50
 
 and worst of all, all the trouble I went through to write this new encoder performed no better than ordinal encoding (simply assuming the thousands of unique values could be mapped to a sequence of numbers), which goes [contrary to results reported elsewhere](http://www.willmcginnis.com/2015/11/29/beyond-one-hot-an-exploration-of-categorical-variables/). Side note: I also profiled that author's binary encoder and it was just as slow as mine.
 
-So I'm glad to have my `OmniEncoder` as a tool ready to apply to other data sets, but it was disappointing to see it didn't so anything for me here.
+So I'm glad to have my `OmniEncoder` as a tool ready to apply to other data sets, but it was disappointing to see it didn't do anything for me on this particular dataset.
 
 ---
 summary: Disappointing improvements using one-hot / binary encoding, improving performance with help of Python profiler

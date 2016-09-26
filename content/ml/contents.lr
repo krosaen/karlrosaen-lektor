@@ -73,6 +73,7 @@ Statistical Learning](http://statweb.stanford.edu/~tibs/ElemStatLearn/)
 - [Tom Griffiths' reading list on Bayesian methods](http://cocosci.berkeley.edu/tom/bayes.html)
 - [Doing Bayesian Data Analysis](http://www.indiana.edu/~kruschke/DoingBayesianDataAnalysis/) and examples ported to [Python and PyMC3](https://github.com/aloctavodia/Doing_bayesian_data_analysis) and [iPython notebook](http://nbviewer.jupyter.org/github/aloctavodia/Doing_bayesian_data_analysis/blob/master/IPython/Kruschkes_Doing_Bayesian_Data_Analysis_in_PyMC3.ipynb)
 - [Notebook Lectures from University of Michigan EECS 545: Machine Learning](https://github.com/thejakeyboy/umich-eecs545-lectures)
+- [Computer Vision:  Models, Learning, and Inference](http://www.computervisionmodels.com/) Full text available as PDF. Can get nice hard copy from [Amazon](https://www.amazon.com/Computer-Vision-Models-Learning-Inference/dp/1107011795/ref=sr_1_1?s=books&ie=UTF8&qid=1334662414&sr=1-1) too.
 
 ### Probability and statistics
 
@@ -101,6 +102,8 @@ Statistical Learning](http://statweb.stanford.edu/~tibs/ElemStatLearn/)
 
 ### Math & Proofs fundamentals
 
+- [Introduction to Mathematical Thinking](https://www.amazon.com/gp/product/0615653634/ref=crt_ewc_title_dp_4?ie=UTF8&psc=1&smid=ATVPDKIKX0DER): the at-cost primer written to accompany [the coursera course](https://www.coursera.org/learn/mathematical-thinking): perfect motivation for studying mathematical thinking. The coursera course can be found as a torrent if you can't wait for the next enrollment.
+- [Thinking Mathematically](https://www.amazon.com/gp/product/0273728911/ref=oh_aui_detailpage_o07_s00?ie=UTF8&psc=1): I ordered a used copy that took 2 weeks to ship from the UK, worth the wait (and ~\$20 instead of $100+ new). I found it to be a more approachable alternative to [Polya's How to Solve it](https://en.wikipedia.org/wiki/How_to_Solve_It)
 - [Introduction to Proofs, an Inquiry-Based approach](http://joshua.smcvt.edu/proofs/)
 - "Everything You Always Wanted To Know About Mathematics (But didn’t even know to ask)"—the text for [CMU's Concepts of Mathematics course](https://www.andrew.cmu.edu/course/21-127/) by [Brendan Sullivan](http://math.cmu.edu/~bwsulliv/): he apparently wrote this book for [his PHD thesis](http://math.cmu.edu/~bwsulliv/defense.pdf). The book doesn't seem to be available for purchase or download online, but the author was kind enough to send me a copy when I emailed and asked: how cool!
 - [Jeremy Kun's "methods of proof" primers](https://jeremykun.com/primers/)
@@ -109,7 +112,7 @@ Statistical Learning](http://statweb.stanford.edu/~tibs/ElemStatLearn/)
 
 I have a sense that if I were comfortable proving, or at least following the proofs of important theorems in statistics, deeper insights would stick. I think that's the problem I've had in the past with stats coursework: it's so easy to glaze over 3 pages of dense text that includes 4-5 theorems without understanding much more than how to plug and chug. One theorem I've already spent some time with proving and re-proving is Bayes', and many of the [problem sets](/ml/hw/) I've worked through have required some basic proofs.
 
-However, the idea that I will become a master mathematician along the way is quixotic and I want to make sure I keep my eye on the ball, so I view these as nice reference material more than material I would like to plan on working through comprehensively.
+While the idea that I will become a master mathematician along the way is quixotic, I think spending some time on mathematical thinking and problem solving is a nice prerequisite for the kind of reasoning required in thinking about machine learning probabilistically.
 
 ### Getting inspired
 
@@ -132,6 +135,7 @@ This is not an original idea and there are some great posts & resources out ther
 - [How to Start Learning Deep Learning](http://ofir.io/How-to-Start-Learning-Deep-Learning/): nice roundup of recent material on deep learning
 - Xavier Amatriain's (VP of Eng at Quora) [How should you start a career in Machine Learning?](https://www.quora.com/How-should-you-start-a-career-in-Machine-Learning/answer/Xavier-Amatriain) and [How do I learn machine learning?](https://www.quora.com/How-do-I-learn-machine-learning-1/answer/Xavier-Amatriain)
 - François Chollet (author of Keras) on [What advice would you give to people studying ML/DL from MOOCs (Udacity, Coursera, edx, MIT Opencourseware) or from books in their own time?](https://www.quora.com/What-advice-would-you-give-to-people-studying-ML-DL-from-MOOCs-Udacity-Coursera-edx-MIT-Opencourseware-or-from-books-in-their-own-time/answer/Fran%C3%A7ois-Chollet)
+- [HOW TO LEARN ADVANCED MATHEMATICS WITHOUT HEADING TO UNIVERSITY - PART 1](https://www.quantstart.com/articles/How-to-Learn-Advanced-Mathematics-Without-Heading-to-University-Part-1): a London quant's curriculum list for advanced mathematics. Great list of resources for linear algebra, real analysis, foundations of mathematics and the like.
 
 ### Starting Point
 
