@@ -6,6 +6,28 @@ _discoverable: no
 ---
 curriculum:
 
+This past summer I [took the summer off to study Machine Learning](/learning-sabbatical/) with a goal of laying the foundations in skills for a transition to a career in the field. I feel fortunate to have landed a job as a senior research engineer at the [DROP Lab](http://droplab.engin.umich.edu/) at the University of Michigan, which is currently focused on research related to autonomous vehicles [in collaboration with Ford](https://media.ford.com/content/fordmedia/fna/us/en/news/2016/09/15/ford-u-m-accelerate-autonomous-vehicle-research.html). 
+
+In addition to the curriculum summary below, I maintain the following resources to keep myself organized and to share in case they are of any help to others approaching the field:
+
+- [Learning Log](/ml/learning-log): day to day reflections as I work my way through the curriculum
+- [Problem Sets](/ml/hw): solutions to individual math problems I've worked through.
+- [Notebooks](/ml/notebooks): Various iPython notebooks that accompany my learning log.
+- [More IPython Notebooks and Python code](https://github.com/krosaen/ml-study) on github: includes attempts on Kaggle competitions and chapter by chapter notebooks for Python Machine Learning.
+
+## Curriculum Phase 1: Summer
+
+- Probability and Statistics
+  - Primary Resources
+    - All of Statistics: the first 4 chapters
+  - Supporting Resources
+- Applied ML techniques
+- Hands on
+
+## Curriculum Phase 2: Ongoing Learning
+
+## Full list of resources
+
 My curriculum includes 3 areas:
 
 - Probability and Statistics fundamentals: [All of Statistics](http://www.amazon.com/All-Statistics-Statistical-Inference-Springer/dp/0387402721) text and problem sets from [CMU's intermediate stats course (from the author)](http://www.stat.cmu.edu/~larry/=stat705/), cross referencing with [Mathematical Monk's probability primer playlist](https://www.youtube.com/playlist?list=PL17567A1A3F5DB5E4), [Stanford's Free online Probability and Statistics Course](https://lagunita.stanford.edu/courses/OLI/ProbStat/Open/about), and [Khan Academy's videos on Probability and Statistics](https://www.khanacademy.org/math/probability?t=table-of-contents).
