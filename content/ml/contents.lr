@@ -6,7 +6,9 @@ _discoverable: no
 ---
 curriculum:
 
-This past summer I [took the summer off to study Machine Learning](/learning-sabbatical/) with a goal of laying the foundations in skills for a transition to a career in the field. I feel fortunate to have landed a job as a senior research engineer at the [DROP Lab](http://droplab.engin.umich.edu/) at the University of Michigan, which is currently focused on research related to autonomous vehicles [in collaboration with Ford](https://media.ford.com/content/fordmedia/fna/us/en/news/2016/09/15/ford-u-m-accelerate-autonomous-vehicle-research.html). 
+# Machine Learning Curriculum
+
+This past summer I [took the summer off to study Machine Learning](/learning-sabbatical/) with a goal of laying the foundations in skills for a transition to a career in the field. I landed a job as a senior research engineer at the [DROP Lab](http://droplab.engin.umich.edu/) at the University of Michigan, which is currently focused on research related to autonomous vehicles [in collaboration with Ford](https://media.ford.com/content/fordmedia/fna/us/en/news/2016/09/15/ford-u-m-accelerate-autonomous-vehicle-research.html), and am now planning a second iteration of continued learning.
 
 In addition to the curriculum summary below, I maintain the following resources to keep myself organized and to share in case they are of any help to others approaching the field:
 
@@ -15,16 +17,72 @@ In addition to the curriculum summary below, I maintain the following resources 
 - [Notebooks](/ml/notebooks): Various iPython notebooks that accompany my learning log.
 - [More IPython Notebooks and Python code](https://github.com/krosaen/ml-study) on github: includes attempts on Kaggle competitions and chapter by chapter notebooks for Python Machine Learning.
 
-## Curriculum Phase 1: Summer
+## Phase 1: Applied Machine Learning & Probability & Statistics
+
+As I approached my summer of studying, I felt that gaining practical experience applying machine learning algorithms was within reach. I also knew just enough to appreciate that my rusty understanding of probability & statistics would prevent me from gaining a deeper understanding of how many of the techniques work in the long run.
+
+As such, I laid out two main tracks of study, one focused on practical machine learning techniques using Python, scikit-learn and Jupyter notebooks, and the other on probability and statistics to lay foundations for a more rigorous dive in the future. In each track, there's a sequential list of resources, and several supporting resources I consulted along the way.
+
+<img src="ml-curriculum-flowchart-phase1.svg" width='100%'>
+
+### Applied Machine Learning
+
+The track:
+
+1. [Stanford's Free online Probability and Statistics Course](https://lagunita.stanford.edu/courses/OLI/ProbStat/Open/about): a nice gentle introduction before approaching the more axiomatic coverage of Wasserman. Good coverage of basic exploratory data analysis too.
+2. The first 5 chapters of Wasserman's [All of Statistics](http://www.amazon.com/All-Statistics-Statistical-Inference-Springer/dp/0387402721) text and problem sets from CMU's [intermediate stats course (from the author)](http://www.stat.cmu.edu/~larry/=stat705/) and [another more introductory counterpart](https://web.archive.org/web/20151110005906/http://www.stat.cmu.edu/~jinglei/Fall15.shtml)
+
+Supporting resources:
+
+- [Khan Academy's videos on Probability and Statistics](https://www.khanacademy.org/math/probability?t=table-of-contents): I didn't watch comprehensively, but did turn to for a second explaination many times.
+- [Math Monk's YouTube playlist: Probability Primer](https://www.youtube.com/playlist?list=PL17567A1A3F5DB5E4): These felt like the missing MOOC lectures for Wasserman's book
+- [UAH's Random: Probability, Mathematical Statistics, Stochastic Processes](http://www.math.uah.edu/stat/): comprehensive coverage of many important topics in probability and statistics, including some illustrative web app / simulations and exercises. 
+- [First Look at Rigorous Probability Theory](https://www.amazon.com/First-Look-Rigorous-Probability-Theory/dp/9812703713/ref=cm_cr_arp_d_product_top?ie=UTF8): another good textbook that I bought and consulted for a second explanation on many of the topics covered in Wasserman
+-  [The Theory of Probability](https://www.amazon.com/Theory-Probability-Explorations-Applications/dp/1107024471): yet another text book that takes more time to motivate the need for the theory of probability while providing the same rigor as All of Statistics. It covers less material and is a bit longer though, revealing a tradeoff between providing background vs concision and breadth.
+- [Peter Norvig's Introduction to Probability iPython Notebook](http://nbviewer.jupyter.org/url/norvig.com/ipython/Probability.ipynb)
+- Wikipedia's outlines of [Statistics](https://en.wikipedia.org/wiki/Outline_of_statistics) and [Probability](https://en.wikipedia.org/wiki/Outline_of_probability)
+- [IUPUI's ECE 302 Probabilistic Methods in Electrical Engineering](http://www.engr.iupui.edu/~skoskie/ECE302/ECE302_s15.html): course website with nicely written up homework and exam solutions.
+- [Penn State's Stat 414/415 Course Materials](https://onlinecourses.science.psu.edu/stat414/): another good place to cross reference concepts with some examples and solutions. I found perusing the [section on functions of random variables](https://onlinecourses.science.psu.edu/stat414/node/127) helpful and wish I'd found it sooner!
+[Guy Lebanon's The Analysis of Data Vo1: Probability](http://theanalysisofdata.com/probability/): Prof turned industry ML champ (LinkedIn, Netflix) published a free book on probability theory. A nice resource to cross reference concepts covered in the 1st half of Wasserman. Guy also has a bunch of [notes](http://www.cc.gatech.edu/~lebanon/notes/) on his website that are interesting to peruse.
+
+
+### Probability Fundamentals
 
 - Probability and Statistics
   - Primary Resources
-    - All of Statistics: the first 4 chapters
+    - Basic stats / exploratory analysis
+    - The first five chapters of [All of Statistics](http://www.amazon.com/All-Statistics-Statistical-Inference-Springer/dp/0387402721) text and problem sets from [CMU's intermediate stats course (from the author)](http://www.stat.cmu.edu/~larry/=stat705/)
   - Supporting Resources
 - Applied ML techniques
-- Hands on
+- Hands on: Kaggle and other data sets
 
-## Curriculum Phase 2: Ongoing Learning
+## Phase 2: Probabilistic ML and Math fundamentals
+
+I've emerged from the summer with a lot of practical skills and comfort working with labeled datasets to build classification and regression models. I also laid some foundations in probability and statistics. (read more details in [my summer recap learning log entry](/ml/learning-log/2016-09-05/)).
+
+I know a lot more about what I don't know and am ready to plan out the next few months of studying. One of the more surprising outcomes of the summer was an appreciation for math in general; my plans include a core math-major style track accordingly.
+
+<img src="ml-curriculum-flowchart-phase2.svg" width='100%'>
+
+### Probabilistic ML
+
+As the book notes, "bayesian" isn't quite accurate, but that's a lot of what I'd like to have more comfort approaching.
+
+In addition to questions like, "what percentage of the test set can my model correctly classify" I would like to be able to reason about ML in the following ways:
+- Is my model providing a joint distribution (generative), a conditional distribution (discriminative), or merely a predictive function? 
+- How confident is my model about a given prediction?
+- If my model can fit a non-linear dataset, what tradeoffs are being made in terms of predictive accuracy, adaptiveness of any basis function, ability to reason probabilistically etc?
+
+### Math fundamentals
+
+- Math fundamentals
+  - Thinking mathematically
+  - Real Analysis
+  - Revisit convergence of random variables
+- Probabilistic approach to ML
+  - Pattern Recognition and Machine Learning by Christopher Bishop
+- On the job: applying deep learning at scale
+
 
 ## Full list of resources
 
