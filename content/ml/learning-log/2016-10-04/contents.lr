@@ -1,0 +1,14 @@
+pub_date: 2016-10-04
+---
+body:
+
+Most of the first week's lectures was pure review based on the usual summary ANNs and Machine Learning, but one thing I appreciated was the summary of unsupervised learning [from this lecture](https://www.coursera.org/learn/neural-networks/lecture/am4sh/three-types-of-learning-8-min). It defines several related goals:
+
+- To create an internal representation of the input that is useful for subsequent supervised or reinforcement learning
+- To provide a compact, low-dimensional representation of the input (e.g PCA is a linear method for this)
+- To provide an economical high-dimensional representation of the input in terms of learned features
+- To find sensible clusters in the input, which is an example of a very sparse code in which only one of the features is non-zero
+
+I understood that dimensionality reduction and clustering were forms of unsupervised learning, but the connection that clustering is really just a one dimensional representation is interesting. I'm excited that half of the course will cover unsupervised learning, as I haven't really covered any material with ANNs for that purpose, and I'm beginning to understand that one of the coolest parts of ANNs is the learned features.
+---
+summary: Getting started with Geoffery Hinton's Coursera Neural Networks class, a nice summary of unsupervised learning
