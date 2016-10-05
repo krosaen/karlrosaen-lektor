@@ -1,0 +1,22 @@
+pub_date: 2016-10-05
+---
+body:
+
+Another day, another [Coursera course](https://www.coursera.org/learn/probabilistic-graphical-models/)! 
+
+I previously grumbled about this course having been taken back online, glad that it is back. It appears they have broken the original course into 3 pieces and slowed things down a bit, e.g "week 1" in the original now spans about a week and a half. Given that I'm going to attempt to keep up with this and the ANN course, that's fine by me :)
+
+In the introductory lectures from week one covers how graphical models represent relationships between random variables. I'm mostly familiar with the high level concepts at this level, and it was nice to find the probability review of joint distributions, conditioning on one or more variables, integrating out variables with marginalization etc completely familiar. 
+
+## Factors
+
+One new concept to me is that of **factors**. A factor is a mapping of every possible assignment of the cross-product space of a set of random variables to a real number. A probability distribution is an example of a factor, as it maps every possible outcome in the event space to a real number.  A conditional distribution is another example. A factor's **scope** is the set of variables who's cross-product it assigns values to.
+
+Factors can be marginalized just as probability distributions can, and can also be **multiplied** together. When you multiply two factors, you essentially get a cross join of the two with the assigned value being the product of the output from the two original factors.
+
+**Factor reduction** is kind of like a 'select where', only looking at rows where a variable has a particular value.
+
+The video explains that factors are useful because the tools for manipulating factors are the tools we'll use to work with high dimensional probability distributions.
+
+---
+summary: Getting started with Coursera Probabilistic Graphical Models Course
