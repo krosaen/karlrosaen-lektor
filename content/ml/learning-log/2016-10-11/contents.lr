@@ -1,0 +1,17 @@
+pub_date: 2016-10-11
+---
+body:
+
+I continued on watching week 2's lectures of the [Geoffrey Hinton's neural network Coursera course](https://www.coursera.org/learn/neural-networks) where it covered some some of the different kinds of high level architectures, including feed forward and recurrent neural networks.
+
+One interesting perspective I hadn't fully understood is that a key benefit of ANNs is the potential to *learn* the feature units. A standard pattern recognition system starts out with some feature representation of the data that is usually hand coded, and the model is then trained to weight the features to best recognize the data. With ANNs, you deliberately start out with a more raw source of data and leave it to the network to learn features which emerge in the earlier layer(s) of the network, and the subsequent layers then weight those features as per the standard pattern recognition paradigm.
+
+This also reminds me of the idea of an "adaptive basis function" that I came across in perusing [MLPP](https://www.amazon.com/Machine-Learning-Probabilistic-Perspective-Computation/dp/0262018020), meaning the model adapts the basis function that is applied before training a linear model. So you could contrast, say, kernel methods where a hand picked kernel is used as a basis function to get the overall model to fit non-linear decision boundaries with a multi-layer ANN that learns its basis function (the first layers of the network) adaptively based on the training data.
+
+## Perceptron
+
+The lecture reviewed the perceptron algorithm, where the model is a linear combination of weights and the input vector plus a bias weight. You iterate over each training sample and update the weights if the output does not match as follows: if the output is zero when it should be one, add the sample to the weights. If the output is one when it should be zero, subtract the sample from the weights. This can be proven to always provide the correct answer if the data can be perfectly fit. The big caveat is that if the data cannot be perfectly fit (e.g is not linearly separable), then it will not converge.
+
+The perceptron is also covered in second chapter of [Python Machine Learning](http://nbviewer.jupyter.org/github/rasbt/python-machine-learning-book/blob/master/code/ch02/ch02.ipynb).
+---
+summary: Learning features in ANNs and review of Perceptron
