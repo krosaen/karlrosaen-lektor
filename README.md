@@ -25,3 +25,12 @@ and then run:
 ```
 $ . render-notebooks.sh
 ```
+
+## running with docker
+
+If you wish to run with docker, you can build an image and run it like so:
+
+```
+$ docker build -t lektor lektor-dockerfile
+$ . start-lektor
+```
