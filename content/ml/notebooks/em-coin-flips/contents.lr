@@ -1,5 +1,7 @@
-pub_date: 2016-12-07
+pub_date: 2016-12-22
 ---
 title: Expectation Maximization with Coin Flips
 ---
-_discoverable: no
+_discoverable: yes
+---
+_hidden: no
