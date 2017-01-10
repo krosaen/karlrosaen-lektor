@@ -1,0 +1,22 @@
+pub_date: 2016-12-22
+---
+body:
+
+I've been offline in my logging of learning for a while and it's in part because I, in addition to my regular job (where I'm learning of practical stuff about running NN toolkits, especially MXNet), I ended up helping out with the University of Michigan's ML class. It was a great opportunity to learn some concepts, but also took up most of my free learning time, including the time to write up my learning! 
+
+In any case, I figured I'd link to the notebooks I helped develop, they are available on [the courses github repo](https://github.com/eecs445-f16/umich-eecs445-f16). I helped with hands-on lectures 12-21, covering:
+- Ensemble learning with bagging
+- Evaluating models with learning curves
+- Unsupervised learning and Principal Components Analysis (PCA)
+- Bayesian networks
+- Latent Variable models and Expectation Maximization
+- Hidden Markov Models, the forward-backward algorithm and the Baum-Welch algorithm (EM for HMMs)
+- Introduction to neural networks: the backpropogation algorithm and some of the basics on convolutional neural networks
+
+I'm not sure how instructive they will be without having also read through the lecture notes and perhaps attended the lectures, but perhaps there's some good stuff in there for others.
+
+For some of these I already was familiar with the material and was able pull something together pretty easily (e.g decision trees, bagging, learning curves, PCA) but towards the end it was quite challenging: each week I both needed to learn *and* develop an exercise for a topic, including bayesian networks, EM and HMMs.
+
+One concept that was particularly vexing to me was expectation maximization. I've followed up on the original hands-on lecture to go a bit more deeply into it with an [in progress notebook](/ml/notebooks/em-coin-flips/) (that is currently unlisted). I will say more once I've wrapped it up, but I hope to make a nice standalone notebook that will help others get up to speed more quickly.
+---
+summary: Hands-on lecture development for University of Michigan's undergrad ML course and a WIP EM notebook
