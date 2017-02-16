@@ -6,26 +6,25 @@ _discoverable: no
 ---
 curriculum:
 
-# Machine Learning Curriculum
+## How to Learn Machine Learning
 
-This past summer I [took the summer off to study Machine Learning](/learning-sabbatical/) with a goal of laying the foundations in skills for a transition to a career in the field. I landed a job as a senior research engineer at [Next Generation Vehicle Lab](http://robots.engin.umich.edu/Projects/NGV) (now run by [these guys](http://droplab.engin.umich.edu/)) at the University of Michigan, where I'm excited to continue learning.
+Based on my experiences studying machine learning, here are my recommendations that are probably most relevant to experienced programmers, but may be useful to others as well.
 
-In addition to the curriculum summary below, I maintain the following resources to keep myself organized and to share in case they are of any help to others approaching the field:
+Having the goal of "learning machine learning" is daunting. I've found the best way to make it tractable is to approach it in phases. Each phase should include at least one track that leaves you with practical skills and one track that builds some theoretical foundations. Additionally, it's always worth spending time regularly surveying the field at your current level of fluency to be on the look out for the next phase and to continue to build a mental map of interconnected topics, and prerequisites for the techniques and applications that you find most exciting.
 
-- [Learning Log](/ml/learning-log): day to day reflections as I work my way through the curriculum
-- [Problem Sets](/ml/hw): solutions to individual math problems I've worked through.
-- [Notebooks](/ml/notebooks): Various iPython notebooks that accompany my learning log.
-- [More IPython Notebooks and Python code](https://github.com/krosaen/ml-study) on github: includes attempts on Kaggle competitions and chapter by chapter notebooks for Python Machine Learning.
+Each track should focus on a specific curriculum resource, and then draw on supporting resources. For instance, you might choose a specific book or MOOC course you want to work through, and then draw on several related resources to cross-reference as you proceed. Sticking with a single main resource is important to staying focused; it's really easy and tempting to jump around various resources without making as much progress past introductory material. It's worth spending time upfront researching curriculum options before deciding; I usually find several good resources on a topic and do some initial skimming before deciding which becomes the primary resource, bookmarking the rest as supporting.
 
-## Phase 1: Applied Machine Learning & Probability & Statistics
+### Phase 1: Applied Machine Learning & Probability & Statistics
 
-As I approached my summer of studying, I felt that gaining practical experience applying machine learning algorithms was within reach. I also knew just enough to appreciate that my rusty understanding of probability & statistics would prevent me from gaining a deeper understanding of how many of the techniques work in the long run.
+Phase 1, which took me about 5 months to complete full-time studying, includes two tracks:
 
-As such, I laid out two main tracks of study, one focused on practical machine learning techniques using Python, scikit-learn and Jupyter notebooks, and the other on probability and statistics to lay foundations for a more rigorous dive in the future. In each track, there's a sequential list of resources, and several supporting resources I consulted along the way.
+<img src="ml-curriculum-phase1.svg" width="100%">
 
-<img src="ml-curriculum-flowchart-phase1.svg" width='100%'>
+#### Track 1: Probability and Statistics
 
-### Applied Machine Learning
+The goal of this track is to get comfortable with basic statistics and exploratory data analysis, and to build a solid theoretical foundation in probability theory that will make thinking more rigorously about machine learning possible.  IMHO it is insufficient to rely solely on the brief intros to probability contained at the beginning of many machine learning texts; eating your spinach early will payoff over and over again as you approach more advanced models and techniques later on. Some specific topics that come to mind that require these foundations: probabilistic graphical models, latent variable models (hidden markov models, kalman filters), gaussian processes, mixture models, sampling methods (MCMC)).
+
+Slowing way down and struggling through real math problems is key here. I'd often spend hours, sometimes days on a single problem. Getting stuck = real learning. I recommend finding a study buddy and/or expert who's willing to help you get over the hump when you are truly stuck.
 
 The track:
 
@@ -34,55 +33,115 @@ The track:
 
 Supporting resources:
 
-- [Khan Academy's videos on Probability and Statistics](https://www.khanacademy.org/math/probability?t=table-of-contents): I didn't watch comprehensively, but did turn to for a second explaination many times.
+- [Khan Academy's videos on Probability and Statistics](https://www.khanacademy.org/math/probability?t=table-of-contents): I didn't watch comprehensively, but did turn to for a second explanation many times.
 - [Math Monk's YouTube playlist: Probability Primer](https://www.youtube.com/playlist?list=PL17567A1A3F5DB5E4): These felt like the missing MOOC lectures for Wasserman's book
 - [UAH's Random: Probability, Mathematical Statistics, Stochastic Processes](http://www.math.uah.edu/stat/): comprehensive coverage of many important topics in probability and statistics, including some illustrative web app / simulations and exercises. 
 - [First Look at Rigorous Probability Theory](https://www.amazon.com/First-Look-Rigorous-Probability-Theory/dp/9812703713/ref=cm_cr_arp_d_product_top?ie=UTF8): another good textbook that I bought and consulted for a second explanation on many of the topics covered in Wasserman
--  [The Theory of Probability](https://www.amazon.com/Theory-Probability-Explorations-Applications/dp/1107024471): yet another text book that takes more time to motivate the need for the theory of probability while providing the same rigor as All of Statistics. It covers less material and is a bit longer though, revealing a tradeoff between providing background vs concision and breadth.
 - [Peter Norvig's Introduction to Probability iPython Notebook](http://nbviewer.jupyter.org/url/norvig.com/ipython/Probability.ipynb)
 - Wikipedia's outlines of [Statistics](https://en.wikipedia.org/wiki/Outline_of_statistics) and [Probability](https://en.wikipedia.org/wiki/Outline_of_probability)
 - [IUPUI's ECE 302 Probabilistic Methods in Electrical Engineering](http://www.engr.iupui.edu/~skoskie/ECE302/ECE302_s15.html): course website with nicely written up homework and exam solutions.
 - [Penn State's Stat 414/415 Course Materials](https://onlinecourses.science.psu.edu/stat414/): another good place to cross reference concepts with some examples and solutions. I found perusing the [section on functions of random variables](https://onlinecourses.science.psu.edu/stat414/node/127) helpful and wish I'd found it sooner!
 [Guy Lebanon's The Analysis of Data Vo1: Probability](http://theanalysisofdata.com/probability/): Prof turned industry ML champ (LinkedIn, Netflix) published a free book on probability theory. A nice resource to cross reference concepts covered in the 1st half of Wasserman. Guy also has a bunch of [notes](http://www.cc.gatech.edu/~lebanon/notes/) on his website that are interesting to peruse.
 
+What I appreciate about the All of Statistics book compared to others I've looked at, including my text from college, is that it doesn't spend too much time on counting methods (knowing how many ways one can deal a full house with a deck of cards isn't particularly relevant) and is otherwise more comprehensive on probability theory most relevant to machine learning. It is concise and somewhat dry, but it serves as a great roadmap of topics to study; the supporting resources and lectures can provide the additional context when necessary. Math Monk's videos are a particularly nice companion.
 
-### Probability Fundamentals
+#### Track 2: Applied Machine Learning
 
-- Probability and Statistics
-  - Primary Resources
-    - Basic stats / exploratory analysis
-    - The first five chapters of [All of Statistics](http://www.amazon.com/All-Statistics-Statistical-Inference-Springer/dp/0387402721) text and problem sets from [CMU's intermediate stats course (from the author)](http://www.stat.cmu.edu/~larry/=stat705/)
-  - Supporting Resources
-- Applied ML techniques
-- Hands on: Kaggle and other data sets
+The goal of this track is to gain practical experience applying supervised and unsupervised learning and data analysis techniques using Python, [Scikit-learn](http://scikit-learn.org/) and [Jupyter notebooks](http://jupyter.org/) and many of the practical considerations wrangling data using tools like [Pandas](http://pandas.pydata.org/) and [Numpy](http://www.numpy.org). By the end you will be able to build and evaluate predictive models that work with real data, and get exposed to many theoretical models. It's nice to get your feet wet and gain powerful skills right away even if you don't yet fully understand how everything works under the hood.
 
-## Phase 2: Probabilistic ML and Math fundamentals
+The track:
+- [Python Machine Learning](http://www.amazon.com/Python-Machine-Learning-Sebastian-Raschka/dp/1783555130) and accompanying notebooks [available on github](https://github.com/rasbt/python-machine-learning-book)
+- [Kaggle](http://kaggle.com) competitions starting with [two](https://www.kaggle.com/c/titanic) [basic](https://www.kaggle.com/c/forest-cover-type-prediction) classification challenges (as recommended [here](https://www.quora.com/What-Kaggle-competitions-should-a-beginner-start-with-1)) and moving onto whatever catches your eye.
 
-I've emerged from the summer with a lot of practical skills and comfort working with labeled datasets to build classification and regression models. I also laid some foundations in probability and statistics. (read more details in [my summer recap learning log entry](/ml/learning-log/2016-09-05/)).
+Supporting resources:
+- Andrew NG's [Machine Learning coursee](https://www.coursera.org/learn/machine-learning/): even if not worked through as a main track, worth perusing video lectures for any overlapping topics, NG does a great job of explaining things.
+- [scikit-learn website](http://scikit-learn.org/stable/)
 
-I know a lot more about what I don't know and am ready to plan out the next few months of studying. One of the more surprising outcomes of the summer was an appreciation for math in general; my plans include a core math-major style track accordingly.
+The Python Machine Learning book provides a great blend of practical concerns working with data (preprocessing, cross-validating) and exposure to models used for classification, regression and unsupervised learning. By the end of chapter 4 you should be ready to take on your first Kaggle competition, and by the time you finish, approach many more and even tackle interesting new analysis problems that interest you. I recommend reading the book and working through all of the examples in a Jupyter notebook, looking at his provided notebooks whenever necessary and/or to copy over boilerplate code.
 
-<img src="ml-curriculum-flowchart-phase2.svg" width='100%'>
 
-### Probabilistic ML
+#### Survey the field
 
-As the book notes, "bayesian" isn't quite accurate, but that's a lot of what I'd like to have more comfort approaching.
+These are the resources that inspired me to leap into machine learning head first, and continued to provide companionship throughout phase 1.
 
-In addition to questions like, "what percentage of the test set can my model correctly classify" I would like to be able to reason about ML in the following ways:
-- Is my model providing a joint distribution (generative), a conditional distribution (discriminative), or merely a predictive function? 
-- How confident is my model about a given prediction?
-- If my model can fit a non-linear dataset, what tradeoffs are being made in terms of predictive accuracy, adaptiveness of any basis function, ability to reason probabilistically etc?
+- [Talking Machines Podcast](http://www.thetalkingmachines.com): each episode includes an introduction to a topic and an interview with an expert in the field. 
+- [The Master Algorithm](http://www.amazon.com/The-Master-Algorithm-Ultimate-Learning/dp/0465065708): great lay persons overview of the field. Also see [my review on Amazon](http://www.amazon.com/review/R1BR5BVSKJAE7A).
+- [Becoming a data scientist podcast](http://www.becomingadatascientist.com): interviews with people who've successfully pursued or transitioned to careers in data science, which has plenty of overlap with aspirations to apply machine learning.
 
-### Math fundamentals
+I also bought [Bishop's PRML](https://www.amazon.com/gp/product/0387310738) and [Murphy's MLPP](https://www.amazon.com/Machine-Learning-Probabilistic-Perspective-Computation/dp/0262018020) a couple of months into my studies and wish I had sooner. They are great for perusing to plant seeds for future studies, and to begin connecting the dots from exciting advanced concepts back to probability theory.
 
-- Math fundamentals
-  - Thinking mathematically
-  - Real Analysis
-  - Revisit convergence of random variables
-- Probabilistic approach to ML
-  - Pattern Recognition and Machine Learning by Christopher Bishop
-- On the job: applying deep learning at scale
+### Phase 2: Probabilistic ML and Computer Vision
 
+The goal of phase 2 is to build on the theoretical knowledge of probability theory from phase 1 to gain a richer, probabilistic understanding of machine learning, and build on the practical skills by diving into a more advanced topic.
+
+<img src="ml-curriculum-phase2.svg" width="100%">
+
+I think track 1 would be appropriate for everyone, and track 2 depends on what field of machine learning you are most interested in (and perhaps where you have taken a job!); in my case it is computer vision, but could just as well be something like natural language processing, or bioinformatics.
+
+#### Track 1: Probabilistic ML
+
+The track:
+- Read and work through [Bishop's Pattern Recognition and Machine Learning  book](https://www.amazon.com/gp/product/0387310738)
+- Author [notebooks](/ml/notebooks) about topics along the way (e.g [Expectation Maximization](/ml/notebooks/em-coin-flips/)
+
+Supporting Resources:
+- [Kevin Murphy's Machine Learning from a Probabilistic Perspective](https://www.amazon.com/Machine-Learning-Probabilistic-Perspective-Computation/dp/0262018020): was a close second for the learning track. More comprehensive than PRML, but feels more like a great reference than a book to work through cover to cover.
+- [Coursera course on Probabilistic Graphical Models](https://www.coursera.org/learn/probabilistic-graphical-models): the original course has been broken into 3. I've found the video lectures a great complement to the coverage of graphical models in Bishop's book.
+- Notebook Lectures from University of Michigan's [EECS 545](https://github.com/thejakeyboy/umich-eecs545-lectures) and [EECS 445](https://github.com/eecs445-f16/umich-eecs445-f16) Machine Learning courses (some of which [I helped to develop!](/ml/learning-log/2016-12-22/))
+- [Mathematical Monk's ML YouTube playlist](https://www.youtube.com/playlist?list=PLD0F06AA0D2E8FFBA)
+
+This track is all about going deeper into the theory underlying machine learning, often viewing models in terms of joint probability distributions. Why bother? Well, beyond viewing machine learning fields like supervised learning as a useful black box that can make predictions, being able to reason more soundly about how confident you are in the model's predictions requires it. And as you wade into more advanced topics and bayesian methods, you will find you simply cannot understand the material without fluently seeing how it is modeled as a joint probability distribution, and reasoning about when and how you can infer the model from data, for instance, which models provide for exact inference, and which require sampling methods like MCMC.
+
+Having spent time perusing both MLPP and PRML during phase 1 was helpful in determining which book to choose. I ultimately decided that MLPP was a better choice as I find it does a more thorough job covering the fundamentals and structuring the book to progress linearly. PRML both benefits and is burdened with nearly a decade more material, so it feels more like a really good and pretty thorough survey of nearly every field of ML. That it is nearly a thousand pages long also means it would be pretty impractical to attempt to read it cover to cover in a single 4-6 month phase. And while MLPP is "out of date", everything in it is feels like essential material.
+
+#### Track 2: Computer Vision
+
+The track:
+
+- Stanford's cs231n course [materials](http://cs231n.github.io/) and
+[video lectures](https://www.youtube.com/playlist?list=PLkt2uSq6rBVctENoVBg1TpCC7OQi31AlC)
+
+Supporting resources:
+
+- [Hugo Larochelle's deep learning lectures](https://www.youtube.com/playlist?list=PL6Xpj9I5qXYEcOhn7TqghAJ6NAPrNmUBH): could be a learning track in itself. Covers conv nets, great for cross referencing.
+
+Once I started [a job](http://fcav.engin.umich.edu) helping with research related to autonomous vehicles, the most exciting practical application of ML became computer vision. Examples of core tasks include image classification (given an image, what is it), object detection (given an image, where are the things in it, and what are they) and pose detection (given this image of a person, how are they oriented). I've had a chance to learn a lot about a lot of topics, but a lot of focus at the state of the art involves various applications of deep convolutional neural networks. So I'm focusing on learning the fundamentals of convolutional neural networks instead of some of the more fundamental topics within computer vision like multi-view geometry.
+
+Stanford's cs231n course is perfect for mastering convolutional neural networks as it presents the theory and has assignments that require implementing the core required models. The main instructor, Andrej Karpathy, is a great teacher too.
+ 
+#### Survey the field: read books and papers!
+
+I'm finding that during this phase I'm capable of reading recent research (e.g the papers on object detection [listed here](https://github.com/songrotek/Deep-Learning-Papers-Reading-Roadmap)) and watching research talks (e.g [this one about scaleable gaussian processes](http://slideshot.epfl.ch/play/k5FuJcUA0L0c). It feels similar to how perusing PRML and MLPP felt during phase 1: I don't always understand everything, but I continue to build a mental map of what lies ahead and get a sense of what is most exciting.
+
+## Future Phases and tracks
+
+I won't know for sure until I've completed phase 2, but I think future (and life long!) studying of machine learning will likely consist of diving deep into particular topics in machine learning, mathematics, computer science and engineering. Some ideas: generative adversarial networks, reinforcement learning, real analysis, information theory, projective geometry, and high performance numerical computing. I will update this section as ideas for future tracks become clear.
+
+## Prior Art
+
+I'm far from the first person to give advice on studying machine learning; here are some resources I've found helpful along the way:
+
+- [The Open Source Data Science Masters](http://datasciencemasters.org): another person who laid out a curriculum and worked through it.
+- [Quora thread: How do I learn Machine Learning?](https://www.quora.com/Machine-Learning/How-do-I-learn-machine-learning-1)
+- [Recommended ML Curriculum](http://sebastianraschka.com/faq/docs/ml-curriculum.html) from Sebastian Raschka, the author of the Python Machine Learning book that I'm working through
+- [Metacademy Roadmaps](https://www.metacademy.org/roadmaps/): guides to learning ML and how to learn on your own in general
+- [Dive into Machine Learning](https://github.com/hangtwenty/dive-into-machine-learning): a good guide if you wish to get your hands dirty ASAP
+- [Metromap diagram to becoming a data scientist](http://nirvacana.com/thoughts/becoming-a-data-scientist/): cool way to visualize suggested curriculum across subfields
+- [How to Start Learning Deep Learning](http://ofir.io/How-to-Start-Learning-Deep-Learning/): nice roundup of recent material on deep learning
+- Xavier Amatriain's (VP of Eng at Quora) [How should you start a career in Machine Learning?](https://www.quora.com/How-should-you-start-a-career-in-Machine-Learning/answer/Xavier-Amatriain) and [How do I learn machine learning?](https://www.quora.com/How-do-I-learn-machine-learning-1/answer/Xavier-Amatriain)
+- François Chollet (author of Keras) on [What advice would you give to people studying ML/DL from MOOCs (Udacity, Coursera, edx, MIT Opencourseware) or from books in their own time?](https://www.quora.com/What-advice-would-you-give-to-people-studying-ML-DL-from-MOOCs-Udacity-Coursera-edx-MIT-Opencourseware-or-from-books-in-their-own-time/answer/Fran%C3%A7ois-Chollet)
+- [HOW TO LEARN ADVANCED MATHEMATICS WITHOUT HEADING TO UNIVERSITY - PART 1](https://www.quantstart.com/articles/How-to-Learn-Advanced-Mathematics-Without-Heading-to-University-Part-1): a London quant's curriculum list for advanced mathematics. Great list of resources for linear algebra, real analysis, foundations of mathematics and the like.
+- [Machine Learning for Software Engineers](https://github.com/ZuzooVn/machine-learning-for-software-engineers): very thoroughly researched curriculum and study plans
+
+
+---
+intro:
+
+I recently [embarked on a learning sabbatical](/learning-sabbatical) focused on machine learning. Here are resources for you to follow along if you like.
+
+
+---
+resoures:
 
 ## Full list of resources
 
@@ -129,6 +188,8 @@ One great resource for this is [Kaggle](https://www.kaggle.com) which hosts data
 
 *Update*: I've completed a couple of kaggle competitions, you can find write ups on the [notebooks section](/ml/notebooks/). I've also begun working on a side project concerning automatic data science. Read my [learning log](/ml/learning-log) to keep up with progress.
 
+
+
 ### Exhaustive list of Resources
 
 Here are the resources on my radar—let me know if there's anything not here that I should seriously consider or that might bump one of the choices made above.
@@ -136,6 +197,9 @@ Here are the resources on my radar—let me know if there's anything not here th
 Some areas, like linear algebra, I've decided to skip completely for the time being and get by on my rusty skills as long as I can, but it may turn out I find it becomes vital to brush up.
 
 ### ML
+
+
+
 
 - [Andrew NG's ML course](https://www.coursera.org/learn/machine-learning)
 - [The Elements of 
@@ -220,10 +284,4 @@ This is not an original idea and there are some great posts & resources out ther
 ### Starting Point
 
 I'm not starting from scratch: I've written software professionally for many years in everything from C/C++ and Java to Python and Ruby and have a masters degree in computer engineering, which included a general engineering education with lot's of calculus courses. I've also dabbled with different ML tools and perused books over the years. So my curriculum doesn't include things like learning Python or how to slurp data from websites and clean things up and you may wish to consult other guides for good resources on the fastest way to get up to speed on programming as it most relates to ML / data science.
-
----
-intro:
-
-I recently [embarked on a learning sabbatical](/learning-sabbatical) focused on machine learning. Here are resources for you to follow along if you like.
-
 
