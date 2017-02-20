@@ -20,7 +20,7 @@ Phase 1, which took me about 5 months to complete full-time studying, includes t
 
 #### Track 1: Probability and Statistics
 
-The goal of this track is to get comfortable with basic statistics and exploratory data analysis, and to build a solid theoretical foundation in probability theory that will make thinking more rigorously about machine learning possible.  IMHO it is insufficient to rely solely on the brief intros to probability contained at the beginning of many machine learning texts; eating your spinach early will payoff over and over again as you approach more advanced models and techniques later on. As Wasserman puts it in the preface to All of Statistic:
+The goal of this track is to get comfortable with basic statistics and exploratory data analysis, and to build a solid theoretical foundation in probability theory that will make thinking more rigorously about machine learning possible.  IMHO it is insufficient to rely solely on the brief intros to probability contained at the beginning of many machine learning texts; eating your spinach early will payoff over and over again as you approach more advanced models and techniques later on. As Wasserman puts it in the preface to All of Statistics:
 
 > Using fancy tools like neural nets, boosting, and support vector machines without understanding basic statistics is like doing brain surgery before knowing how to use a band-aid.
 

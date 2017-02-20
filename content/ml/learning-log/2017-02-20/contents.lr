@@ -1,0 +1,20 @@
+pub_date: 2017-02-20
+---
+body:
+
+Continuing through [cs231n lectures](https://www.youtube.com/watch?v=qlLChbHhbg4&index=3&list=PLkt2uSq6rBVctENoVBg1TpCC7OQi31AlC) it's mostly a review of linear optmization. But I found the motivation for regularization [here](https://youtu.be/qlLChbHhbg4?t=23m16s) interesting:
+
+$x = [1, 1, 1, 1]$<br>
+$w_1 = [1, 0, 0, 0]$<br>
+$w_2 = [0.25, 0.25, 0.25, 0.25]$<br>
+$w_1^Tx = w_2^Tx =1 $
+
+Without regularization, these two weight vectors will contribute the same loss for this example, but we prefer $w_2$ as it draws on more features. An L2 regularization term will penalize $w_1$ more than $w_2$; regularization is a way to prefer an even spread of weights across the features.
+
+The way I've thought about regularization [previously](/ml/learning-log/2016-05-24/) is simply that large weights allow the function to "stretch further" to fit the training set, making the model less likely to generalize to unseen data. This might be more relevant when considering non-linear classifiers.
+
+To reconcile both of these interpretations: all else being equal, if you are relying solely on a smaller set of features, you are more likely to be over-fitting the examples you are training on.
+
+
+---
+summary: Another take on regularization: preffering use of more features
