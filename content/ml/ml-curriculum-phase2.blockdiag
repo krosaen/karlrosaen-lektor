@@ -1,0 +1,43 @@
+blockdiag {
+    orientation = portrait;
+    shadow_style=none;
+
+    group {
+        color = "#FFFFFF";
+
+        lbl-2 [label="Track 1:Probabilistic\nMachine Learning", width=180, style=none, fontsize=14];
+
+        prml-book [label="Bishop's PRML book", width=150];
+        prml-notebooks [label="Notebooks on topics"];
+
+
+        lbl-2 -> prml-book [style = none];
+        prml-book -> prml-notebooks;
+        prml-notebooks -> prml-book;
+    }
+
+    group {
+        color = "#FFFFFF";
+
+        lbl [label="Track 2:\nComputer Vision", width=150, style=none, fontsize=14];
+        course [label="Standford CS231n\nConvolutional Neural Networks"];
+        job [label="Robotic Perception\non the job"]
+
+        lbl -> course [style = none];
+        course -> job;
+        job -> course;
+    }
+
+    group {
+        color = "#FFFFFF";
+
+        lbl-3 [label="Survey the field", width=180, style=none, fontsize=14];
+
+        peruse-books [label="Peruse MLPP,\nGaussian Processes\nbooks"];
+        peruse-papers [label="Read Papers"];
+
+        lbl-3 -> peruse-books [style = none];
+        peruse-books -> peruse-papers [style = none];
+    }
+
+}

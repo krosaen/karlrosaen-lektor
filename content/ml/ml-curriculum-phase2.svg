@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg viewBox="0 0 766 280" xmlns="http://www.w3.org/2000/svg" xmlns:inkspace="http://www.inkscape.org/namespaces/inkscape" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs id="defs_block">
+    <filter height="1.504" id="filter_blur" inkspace:collect="always" width="1.1575" x="-0.07875" y="-0.252">
+      <feGaussianBlur id="feGaussianBlur3780" inkspace:collect="always" stdDeviation="4.2" />
+    </filter>
+  </defs>
+  <title>blockdiag</title>
+  <desc>blockdiag {
+    orientation = portrait;
+    shadow_style=none;
+
+    group {
+        color = "#FFFFFF";
+
+        lbl-2 [label="Track 1:Probabilistic\nMachine Learning", width=180, style=none, fontsize=14];
+
+        prml-book [label="Bishop's PRML book", width=150];
+        prml-notebooks [label="Notebooks on topics"];
+
+
+        lbl-2 -&gt; prml-book [style = none];
+        prml-book -&gt; prml-notebooks;
+        prml-notebooks -&gt; prml-book;
+    }
+
+    group {
+        color = "#FFFFFF";
+
+        lbl [label="Track 2:\nComputer Vision", width=150, style=none, fontsize=14];
+        course [label="Standford CS231n\nConvolutional Neural Networks"];
+        job [label="Robotic Perception\non the job"]
+
+        lbl -&gt; course [style = none];
+        course -&gt; job;
+        job -&gt; course;
+    }
+
+
+    group {
+        color = "#FFFFFF";
+
+        lbl-3 [label="Survey the field", width=180, style=none, fontsize=14];
+
+        peruse-books [label="Peruse MLPP,\nGaussian Processes\nbooks"];
+        peruse-papers [label="Read Papers"];
+
+        lbl-3 -&gt; peruse-books [style = none];
+        peruse-books -&gt; peruse-papers [style = none];
+    }
+
+}
+</desc>
+  <rect fill="rgb(255,255,255)" height="220" style="filter:url(#filter_blur)" width="196" x="56" y="30" />
+  <rect fill="rgb(255,255,255)" height="220" style="filter:url(#filter_blur)" width="166" x="300" y="30" />
+  <rect fill="rgb(255,255,255)" height="220" style="filter:url(#filter_blur)" width="196" x="514" y="30" />
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" stroke-dasharray="0 65535" width="180" x="64" y="40" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="160" x="154.0" y="59">Track 1:Probabilistic</text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="122" x="154.0" y="75">Machine Learning</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="150" x="79" y="120" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="108" x="154.0" y="146">Bishop's PRML book</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="128" x="90" y="200" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="114" x="154.0" y="226">Notebooks on topics</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" stroke-dasharray="0 65535" width="150" x="308" y="40" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="61" x="383.5" y="59">Track 2:</text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="114" x="383.0" y="75">Computer Vision</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="128" x="319" y="120" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="96" x="383.0" y="133">Standford CS231n</text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="126" x="383.0" y="146">Convolutional Neural </text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="48" x="383.0" y="159">Networks</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="128" x="319" y="200" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="108" x="383.0" y="219">Robotic Perception</text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="60" x="383.0" y="232">on the job</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" stroke-dasharray="0 65535" width="180" x="522" y="40" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="122" x="612.0" y="67">Survey the field</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="128" x="548" y="120" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="72" x="612.0" y="133">Peruse MLPP,</text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="108" x="612.0" y="146">Gaussian Processes</text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="30" x="612.0" y="159">books</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="128" x="548" y="200" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="66" x="612.0" y="226">Read Papers</text>
+  <path d="M 154 160 L 154 192" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="154,199 150,192 158,192 154,199" stroke="rgb(0,0,0)" />
+  <path d="M 154 240 L 154 260" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 154 260 L 260 260" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 260 260 L 260 105" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 154 105 L 260 105" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 154 105 L 154 112" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="154,119 150,112 158,112 154,119" stroke="rgb(0,0,0)" />
+  <path d="M 383 160 L 383 192" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="383,199 379,192 387,192 383,199" stroke="rgb(0,0,0)" />
+  <path d="M 383 240 L 383 260" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 383 260 L 474 260" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 474 260 L 474 105" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 383 105 L 474 105" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 383 105 L 383 112" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="383,119 379,112 387,112 383,119" stroke="rgb(0,0,0)" />
+</svg>

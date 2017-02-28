@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg viewBox="0 0 766 360" xmlns="http://www.w3.org/2000/svg" xmlns:inkspace="http://www.inkscape.org/namespaces/inkscape" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs id="defs_block">
+    <filter height="1.504" id="filter_blur" inkspace:collect="always" width="1.1575" x="-0.07875" y="-0.252">
+      <feGaussianBlur id="feGaussianBlur3780" inkspace:collect="always" stdDeviation="4.2" />
+    </filter>
+  </defs>
+  <title>blockdiag</title>
+  <desc>blockdiag {
+    orientation = portrait;
+    shadow_style=none;
+
+    group {
+        color = "#FFFFFF";
+
+        lbl-2 [label="Track 1: Probability\n&amp; Statistics", width=180, style=none, fontsize=16];
+
+        stats-mooc [label="Stanford's Probability\n&amp; Stats MOOC", width=150];
+
+        stats-book [label="All of Statistics\nch 1-5"];
+
+        lbl-2 -&gt; stats-mooc [style = none];
+        stats-mooc -&gt; stats-book;
+    }
+
+    group {
+        color = "#FFFFFF";
+
+        lbl [label="Track 2:\nApplied ML", width=150, style=none, fontsize=16];
+        book [label="Python Machine\n Learning Book"];
+
+        kaggle [label="Kaggle Competitions"];
+
+        lbl -&gt; book [style = none];
+        book -&gt; kaggle;
+        kaggle -&gt; book;
+    }
+
+
+    group {
+        color = "#FFFFFF";
+
+        lbl-3 [label="Survey the field", width=180, style=none, fontsize=16];
+
+        tlkn-pod [label="Talking Machines\nPodcast"];
+        master-book [label="The Master Algorithm"];
+        peruse [label="Peruse\nPRML, MLPP books"];
+
+        lbl-3 -&gt; tlkn-pod [style = none];
+        tlkn-pod -&gt; master-book [style = none];
+        master-book -&gt; peruse [style = none];
+    }
+
+}
+</desc>
+  <rect fill="rgb(255,255,255)" height="220" style="filter:url(#filter_blur)" width="196" x="56" y="30" />
+  <rect fill="rgb(255,255,255)" height="220" style="filter:url(#filter_blur)" width="166" x="300" y="30" />
+  <rect fill="rgb(255,255,255)" height="300" style="filter:url(#filter_blur)" width="196" x="514" y="30" />
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" stroke-dasharray="0 65535" width="180" x="64" y="40" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="16" font-style="normal" font-weight="normal" text-anchor="middle" textLength="174" x="154.0" y="59">Track 1: Probability</text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="16" font-style="normal" font-weight="normal" text-anchor="middle" textLength="104" x="154.0" y="77">&amp; Statistics</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="150" x="79" y="120" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="132" x="154.0" y="139">Stanford's Probability</text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="72" x="154.0" y="152">&amp; Stats MOOC</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="128" x="90" y="200" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="102" x="154.0" y="219">All of Statistics</text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="36" x="154.0" y="232">ch 1-5</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" stroke-dasharray="0 65535" width="150" x="308" y="40" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="16" font-style="normal" font-weight="normal" text-anchor="middle" textLength="69" x="383.5" y="59">Track 2:</text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="16" font-style="normal" font-weight="normal" text-anchor="middle" textLength="87" x="383.5" y="77">Applied ML</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="128" x="319" y="120" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="84" x="383.0" y="139">Python Machine</text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="78" x="383.0" y="152">Learning Book</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="128" x="319" y="200" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="114" x="383.0" y="226">Kaggle Competitions</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" stroke-dasharray="0 65535" width="180" x="522" y="40" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="16" font-style="normal" font-weight="normal" text-anchor="middle" textLength="139" x="612.5" y="68">Survey the field</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="128" x="548" y="120" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="96" x="612.0" y="139">Talking Machines</text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="42" x="612.0" y="152">Podcast</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="128" x="548" y="200" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="120" x="612.0" y="226">The Master Algorithm</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="128" x="548" y="280" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="36" x="612.0" y="299">Peruse</text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="96" x="612.0" y="312">PRML, MLPP books</text>
+  <path d="M 154 160 L 154 192" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="154,199 150,192 158,192 154,199" stroke="rgb(0,0,0)" />
+  <path d="M 383 160 L 383 192" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="383,199 379,192 387,192 383,199" stroke="rgb(0,0,0)" />
+  <path d="M 383 240 L 383 260" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 383 260 L 474 260" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 474 260 L 474 105" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 383 105 L 474 105" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 383 105 L 383 112" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="383,119 379,112 387,112 383,119" stroke="rgb(0,0,0)" />
+</svg>

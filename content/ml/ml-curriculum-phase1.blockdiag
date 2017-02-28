@@ -1,0 +1,46 @@
+blockdiag {
+    orientation = portrait;
+    shadow_style=none;
+
+    group {
+        color = "#FFFFFF";
+
+        lbl-2 [label="Track 1: Probability\n& Statistics", width=180, style=none, fontsize=16];
+
+        stats-mooc [label="Stanford's Probability\n& Stats MOOC", width=150];
+
+        stats-book [label="All of Statistics\nch 1-5"];
+
+        lbl-2 -> stats-mooc [style = none];
+        stats-mooc -> stats-book;
+    }
+
+    group {
+        color = "#FFFFFF";
+
+        lbl [label="Track 2:\nApplied ML", width=150, style=none, fontsize=16];
+        book [label="Python Machine\n Learning Book"];
+
+        kaggle [label="Kaggle Competitions"];
+
+        lbl -> book [style = none];
+        book -> kaggle;
+        kaggle -> book;
+    }
+
+
+    group {
+        color = "#FFFFFF";
+
+        lbl-3 [label="Survey the field", width=180, style=none, fontsize=16];
+
+        tlkn-pod [label="Talking Machines\nPodcast"];
+        master-book [label="The Master Algorithm"];
+        peruse [label="Peruse\nPRML, MLPP books"];
+
+        lbl-3 -> tlkn-pod [style = none];
+        tlkn-pod -> master-book [style = none];
+        master-book -> peruse [style = none];
+    }
+
+}

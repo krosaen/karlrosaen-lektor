@@ -14,20 +14,25 @@
     </p>
 
     <ul>
-        <li><a href="{{ '/ml/learning-log' }}">Learning Log</a>: day to day reflections as I work my way through the
-            curriculum
+        <li>
+            <a class='atom-link' href="/ml/learning-log/feed.xml"><img src="{{ '/static/feed-icon-28x28.png' | asseturl }}" width="14px"></a>
+
+            <a href="{{ '/ml/learning-log' }}">Learning Log</a>: day to day reflections as I work my way through the
+            curriculum (not quite as good about updating this as during full time summer of studying)
         </li>
         <li><a href="{{ '/ml/hw' }}">Problem Sets</a>: solutions to individual math problems I've worked through.
         </li>
-        <li><a href="{{ '/ml/notebooks' }}">Notebooks</a>: Various iPython notebooks that accompany my learning log.
+        <li><a href="{{ '/ml/notebooks' }}">Notebooks and Kaggle submissions</a>: Various iPython notebooks covering topics in probability
+            and ML I write to solidify understanding, perhaps help others. Also some submissions to Kaggle competitions.
         </li>
         <li><a href="https://github.com/krosaen/ml-study">More IPython Notebooks and Python code</a> on github: includes
-            attempts on Kaggle competitions and chapter by chapter notebooks for Python Machine Learning.
+            chapter by chapter notebooks for Python Machine Learning and various other materials.
         </li>
     </ul>
 
-    <h2>Curriculum</h2>
-
     {{ this.curriculum }}
+
+{#    {{ this.resources }}#}
+
 
 {% endblock %}

@@ -30,7 +30,7 @@ $$\lambda \sum\_{i=1}^n w\_i^2$$
 
 Chapter 3 of Python Machine Learning covers this briefly, though I think the choice of example with logistic regression wasn't the best, since it doesn't actually correspond to a bias / variance tradeoff.
 
-<a href=http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/python-ml-book/ch03/ch03.ipynb#Tackling-overfitting-via-regularization>
+<a href="http://nbviewer.jupyter.org/github/krosaen/ml-study/blob/master/python-ml-book/ch03/ch03.ipynb#Tackling-overfitting-via-regularization">
 <img src='regularization-logistic-regression.png' width=400>
 </a>
 
