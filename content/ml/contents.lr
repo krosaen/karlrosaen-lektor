@@ -41,7 +41,8 @@ Supporting resources:
 - Wikipedia's outlines of [Statistics](https://en.wikipedia.org/wiki/Outline_of_statistics) and [Probability](https://en.wikipedia.org/wiki/Outline_of_probability)
 - [IUPUI's ECE 302 Probabilistic Methods in Electrical Engineering](http://www.engr.iupui.edu/~skoskie/ECE302/ECE302_s15.html): course website with nicely written up homework and exam solutions.
 - [Penn State's Stat 414/415 Course Materials](https://onlinecourses.science.psu.edu/stat414/): another good place to cross reference concepts with some examples and solutions. I found perusing the [section on functions of random variables](https://onlinecourses.science.psu.edu/stat414/node/127) helpful and wish I'd found it sooner!
-[Guy Lebanon's The Analysis of Data Vo1: Probability](http://theanalysisofdata.com/probability/): Prof turned industry ML champ (LinkedIn, Netflix) published a free book on probability theory. A nice resource to cross reference concepts covered in the 1st half of Wasserman. Guy also has a bunch of [notes](http://www.cc.gatech.edu/~lebanon/notes/) on his website that are interesting to peruse.
+- [Guy Lebanon's The Analysis of Data Vo1: Probability](http://theanalysisofdata.com/probability/): Prof turned industry ML champ (LinkedIn, Netflix) published a free book on probability theory. A nice resource to cross reference concepts covered in the 1st half of Wasserman. Guy also has a bunch of [notes](http://www.cc.gatech.edu/~lebanon/notes/) on his website that are interesting to peruse.
+- [Seeing Theory](http://students.brown.edu/seeing-theory/): very nice visualizations to aid understanding of fundamental concepts in probability and statistics
 
 What I appreciate about the All of Statistics book compared to others I've looked at, including my text from college, is that it doesn't spend too much time on counting methods (knowing how many ways one can deal a full house with a deck of cards isn't particularly relevant) and is otherwise more comprehensive on probability theory most relevant to machine learning. It is concise and somewhat dry, but it serves as a great road map of topics to study; the supporting resources and lectures can provide the additional context when necessary. Math Monk's videos are a particularly nice companion.
 
@@ -106,7 +107,7 @@ Supporting resources:
 
 Once I started [a job](http://fcav.engin.umich.edu) helping with research related to autonomous vehicles, the most exciting practical application of ML became computer vision. Examples of core tasks include image classification (given an image, what is it), object detection (given an image, where are the things in it, and what are they) and pose detection (given this image of a person, how are they oriented). I've had a chance to learn a lot about a lot of topics, but a lot of focus at the state of the art involves various applications of deep convolutional neural networks. So I'm focusing on learning the fundamentals of convolutional neural networks instead of some of the more fundamental topics within computer vision like multi-view geometry.
 
-Stanford's cs231n course is perfect for mastering convolutional neural networks as it presents the theory and has assignments that require implementing the core required models. The main instructor, Andrej Karpathy, is a great teacher too.
+Stanford's cs231n course is perfect for mastering convolutional neural networks as it presents the theory and has assignments that require implementing the core required models. The main instructor, Andrej Karpathy, is a great teacher too. I have a github repo for my WIP solutions [here](https://github.com/krosaen/cs231n).
  
 #### Survey the field: read books and papers!
 
