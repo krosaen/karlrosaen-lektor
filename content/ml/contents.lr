@@ -104,6 +104,8 @@ The track:
 Supporting resources:
 
 - [Hugo Larochelle's deep learning lectures](https://www.youtube.com/playlist?list=PL6Xpj9I5qXYEcOhn7TqghAJ6NAPrNmUBH): could be a learning track in itself. Covers conv nets, great for cross referencing.
+- [Understanding Higher Order Local Gradient Computation for Backpropagation in Deep Neural Networks](https://danieltakeshi.github.io/2017/01/21/understanding-higher-order-local-gradient-computation-for-backpropagation-in-deep-neural-networks/): nice tips on reasoning about computing gradients of functions of tensors with respect to tensors from Daniel Seita, who TA'd the cs231n-like course at Berkeley
+- [Vector Deriviatives notes](http://cs231n.stanford.edu/vecDerivs.pdf): more notes on computing derivatives of tensors from Erik Learned-Miller
 
 Once I started [a job](http://fcav.engin.umich.edu) helping with research related to autonomous vehicles, the most exciting practical application of ML became computer vision. Examples of core tasks include image classification (given an image, what is it), object detection (given an image, where are the things in it, and what are they) and pose detection (given this image of a person, how are they oriented). I've had a chance to learn a lot about a lot of topics, but a lot of focus at the state of the art involves various applications of deep convolutional neural networks. So I'm focusing on learning the fundamentals of convolutional neural networks instead of some of the more fundamental topics within computer vision like multi-view geometry.
 
