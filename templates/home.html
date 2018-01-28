@@ -31,11 +31,9 @@
         and <a href="https://www.linkedin.com/in/karlrosaen">LinkedIn</a>.
     </p>
 
-    <h3>Latest Posts</h3>
-    <p>
-        Less technical musings:
-    </p>
+    <h3>Highlighted content</h3>
     <ul>
+        <li><a href="/ml/notebooks/em-coin-flips/">Expectation Maximization with Coin Flips</a></li>
         {% for article in this.children %}
             <li><a href="{{ article | url }}">{{ article.title }}</a></li>
         {% endfor %}
