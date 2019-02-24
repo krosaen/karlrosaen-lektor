@@ -7,12 +7,21 @@ _discoverable: no
 body:
 
 <p>
-    I'm a senior research engineer at
+   I'm a senior engineer on the SLAM (simultaneous localization and mapping) team at 
+  <a href="https://tri.global">Toyota Research Institute</a> and before that 
+    was a senior research engineer at
     <a href="https://fcav.engin.umich.edu/">UM & Ford Center for Autonomous Vehicles (FCAV)<a/>
-    at the University of Michigan. I took this past summer as a
+    at the University of Michigan. 
+</p>
+
+<p>In the summer of 2016 I took the summer off as a
     <a href="{{ '/learning-sabbatical' | url }}">learning sabbatical</a>
-    focused <a href="{{ '/ml' | url }}">on machine learning</a> in Ann Arbor
-    and before that lead product and engineering at <a href="http://food52.com">Food52</a>.
+    focused <a href="{{ '/ml' | url }}">on machine learning</a> and before that lead product and engineering at <a href="http://food52.com">Food52</a>.
+</p>
+
+<p>I'm a board member at <a href="http://leaveitbetter.org">Leave it Better Foundation</a> and 
+ a mentor for the 
+<a href="https://ycsrobotics.org/">student robotics team at Ypsilanti STEMM Middle College</a>
 </p>
 
 <p>
@@ -20,8 +29,6 @@ body:
     <a href="http://brosaen.com">a podcast</a> about them.
 </p>
 
-<p>I'm a board member at <a href="http://leaveitbetter.org">Leave it Better Foundation</a>
-</p>
 
 <p>
     You can find me on
@@ -29,9 +36,8 @@ body:
     <a href="http://github.com/krosaen">Github</a>,
     <a href="http://instagram.com/krosaen">Instagram</a>,
     <a href="https://food52.com/users/43983-karl-rosaen">Food52</a>,
-    and <a href="https://www.linkedin.com/in/karlrosaen">LinkedIn</a>.
+    and read a more detailed work history on <a href="https://www.linkedin.com/in/karlrosaen">LinkedIn</a>.
 </p>
-
 
 
 <p>
